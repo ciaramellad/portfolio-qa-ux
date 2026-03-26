@@ -217,6 +217,7 @@ const AppleVisualSlider: React.FC<{ projects: any[], theme: 'dark' | 'light', t:
               src={project.img}
               alt={project.title}
               className="w-full h-full object-cover object-center"
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
             />
           </div>
  
@@ -303,12 +304,9 @@ export default function App() {
                   <span className="block">Daiana</span>
                   <span className="block">Ciaramella</span>
                 </h1>
-                <p className={`section-subheading !normal-case !tracking-[0.3em] !mb-4 ${theme === 'dark' ? 'opacity-50' : 'opacity-60'}`}>
-                  {t.heroSub}
-                </p>
-                {/* Skills: single line with bullet separators */}
-                <p className={`text-[14px] md:text-sm font-medium tracking-[0.15em] uppercase whitespace-nowrap overflow-hidden text-ellipsis max-w-full px-4 ${theme === 'dark' ? 'opacity-35' : 'opacity-70'}`}>
-                  Manual Testing&nbsp;&nbsp;•&nbsp;&nbsp;Bug Reporting&nbsp;&nbsp;•&nbsp;&nbsp;UX-Oriented QA&nbsp;&nbsp;•&nbsp;&nbsp;Web App Testing
+
+                <p className={`text-[14px] md:text-sm font-medium tracking-[0.15em] whitespace-nowrap overflow-hidden text-ellipsis max-w-full px-4 ${theme === 'dark' ? 'opacity-35' : 'opacity-70'}`}>
+                  FUNCTIONAL TESTING&nbsp;&nbsp;•&nbsp;&nbsp;BUG REPORTING&nbsp;&nbsp;•&nbsp;&nbsp;UX-ORIENTED QA&nbsp;&nbsp;•&nbsp;&nbsp;API TESTING (POSTMAN)
                 </p>
               </div>
 
@@ -389,7 +387,7 @@ export default function App() {
 
             {/* SECTION 6 — CONTACT */}
             <Section id="contact" theme={theme} className="items-center text-center">
-              <span className={`section-subheading ${theme === 'dark' ? 'opacity-50' : 'opacity-80'}`}>05 / {t.contact}</span>
+              <span className={`section-subheading ${theme === 'dark' ? 'opacity-50' : 'opacity-80'}`}>05 / {t.contactSectionLabel}</span>
               <h2 className="font-bold mb-16 tracking-tighter leading-none text-center w-full">
                 <span className="block">{lang === 'es' ? 'TRABAJEMOS' : "LET'S WORK"}</span>
                 <span className="block">{lang === 'es' ? 'JUNTOS.' : 'TOGETHER.'}</span>

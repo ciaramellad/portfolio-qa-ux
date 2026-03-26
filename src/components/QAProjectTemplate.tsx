@@ -50,36 +50,44 @@ interface BugCardProps {
   id?: string;
   testCaseId?: string;
   title: string;
-  severity: 'High' | 'Medium' | 'Low';
+  severity: 'Critical' | 'High' | 'Medium' | 'Low';
   type?: string;
+  wcag?: string;
   description?: string;
+  precondition?: string;
   steps: string[];
   expected: string;
   actual: string;
+  impact?: string;
   evidence?: string | string[];
   theme: 'dark' | 'light';
   lang: 'en' | 'es';
   onViewEvidence?: (url: string | string[]) => void;
 }
  
-const BugCard: React.FC<BugCardProps> = ({ id, testCaseId, title, severity, type, description, steps, expected, actual, evidence, theme, lang, onViewEvidence }) => {
+const BugCard: React.FC<BugCardProps> = ({ id, testCaseId, title, severity, type, wcag, description, precondition, steps, expected, actual, impact, evidence, theme, lang, onViewEvidence }) => {
   const isDark = theme === 'dark';
  
   const severityStyles = {
-    High: {
-      badge: isDark ? 'bg-red-500/15 text-red-400 border-red-500/20' : 'bg-red-500/20 text-red-400 border-red-500/30',
+    Critical: {
+      badge: isDark ? 'bg-red-500/15 text-red-500 border-red-500/20' : 'bg-red-500/20 text-red-500 border-red-500/30',
       dot: 'bg-red-500',
-      button: 'text-red-400 bg-red-500/10 hover:bg-red-500/20',
+      button: 'text-red-500 bg-red-500/10 hover:bg-red-500/20',
+    },
+    High: {
+      badge: isDark ? 'bg-orange-500/15 text-orange-500 border-orange-500/20' : 'bg-orange-500/20 text-orange-500 border-orange-500/30',
+      dot: 'bg-orange-500',
+      button: 'text-orange-500 bg-orange-500/10 hover:bg-orange-500/20',
     },
     Medium: {
-      badge: isDark ? 'bg-yellow-500/15 text-yellow-400 border-yellow-500/20' : 'bg-yellow-500/20 text-yellow-400 border-yellow-500/30',
-      dot: 'bg-yellow-400',
-      button: 'text-yellow-400 bg-yellow-500/10 hover:bg-yellow-500/20',
+      badge: isDark ? 'bg-yellow-500/15 text-yellow-500 border-yellow-500/20' : 'bg-yellow-500/20 text-yellow-500 border-yellow-500/30',
+      dot: 'bg-yellow-500',
+      button: 'text-yellow-500 bg-yellow-500/10 hover:bg-yellow-500/20',
     },
     Low: {
-      badge: 'bg-green-500/20 text-green-400 border-green-500/30',
+      badge: isDark ? 'bg-green-500/15 text-green-500 border-green-500/20' : 'bg-green-500/20 text-green-500 border-green-500/30',
       dot: 'bg-green-500',
-      button: isDark ? 'text-green-400 bg-green-500/10 hover:bg-green-500/20' : 'text-green-400 bg-green-500/20 hover:bg-green-500/30',
+      button: 'text-green-500 bg-green-500/10 hover:bg-green-500/20',
     }
   }[severity];
  
@@ -103,7 +111,7 @@ const BugCard: React.FC<BugCardProps> = ({ id, testCaseId, title, severity, type
         <span className={`flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-full border ${severityStyles.badge}`}>
           <span className={`w-1.5 h-1.5 rounded-full ${severityStyles.dot}`} />
           {lang === 'es' ? (
-            severity === 'High' ? 'GRAVE' : severity === 'Medium' ? 'MEDIO' : 'LEVE'
+            severity === 'Critical' ? 'CRÍTICO' : severity === 'High' ? 'GRAVE' : severity === 'Medium' ? 'MEDIO' : 'LEVE'
           ) : severity}
         </span>
       </div>
@@ -126,6 +134,20 @@ const BugCard: React.FC<BugCardProps> = ({ id, testCaseId, title, severity, type
             {description}
           </p>
         )}
+        
+        {/* Precondition */}
+        {precondition && (
+          <div className="mb-2">
+            <span className={`block mb-1 text-[11px] uppercase tracking-widest font-bold
+              ${isDark ? 'text-white/30' : 'text-white/50'}`}>
+              {lang === 'es' ? 'Precondiciones' : 'Preconditions'}
+            </span>
+            <p className={`text-[13px] leading-relaxed font-light whitespace-pre-line
+              ${isDark ? 'text-white/50' : 'text-white/70'}`}>
+              {precondition}
+            </p>
+          </div>
+        )}
  
         {/* Steps */}
         <div className="flex-1">
@@ -139,7 +161,7 @@ const BugCard: React.FC<BugCardProps> = ({ id, testCaseId, title, severity, type
           </ol>
         </div>
  
-        {/* Expected / Actual */}
+        {/* Expected / Actual / Impact */}
         <div className={`mt-auto pt-5 border-t
           ${isDark ? 'border-white/6' : 'border-white/15'}`}>
           <div className="grid grid-cols-1 gap-4">
@@ -221,7 +243,7 @@ export interface QAProjectProps {
   testScenarios?: {
     title: string;
     description?: string;
-    table: { id: string, feature?: string, scenario: string, objective?: string }[];
+    table: { id: string, feature?: string, scenario: string, objective?: string, priority?: string }[];
     idHeader?: string;
     featureHeader?: string;
     scenarioHeader?: string;
@@ -266,9 +288,11 @@ export interface QAProjectProps {
     result: string,
     status?: 'pass' | 'fail',
     bug?: string,
+    tipo?: string,
     details?: {
       precondition: string;
       steps: string[];
+      testData?: string;
       evidence?: {
         request: string;
         response: string;
@@ -281,7 +305,7 @@ export interface QAProjectProps {
     id?: string,
     testCaseId?: string,
     title: string, 
-    severity: 'High' | 'Medium' | 'Low', 
+    severity: 'Critical' | 'High' | 'Medium' | 'Low', 
     type?: string,
     description?: string,
     steps: string[], 
@@ -800,6 +824,7 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                         {testScenarios.scenarioHeader || (lang === 'es' ? 'Escenario de Prueba' : 'Test Scenario')}
                       </th>
                       {testScenarios.table[0].objective && <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Objetivo' : 'Objective'}</th>}
+                      {testScenarios.table[0].priority && <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Prioridad' : 'Priority'}</th>}
                     </tr>
                   </thead>
                   <tbody className="text-[14px] md:text-sm">
@@ -821,6 +846,24 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                         {row.feature && <td className="py-3 px-4 md:px-6 font-bold tracking-tight text-[14px] md:text-sm">{row.feature}</td>}
                         <td className="py-3 px-4 md:px-6 font-light opacity-70 text-[14px] md:text-sm">{row.scenario}</td>
                         {row.objective && <td className="py-3 px-4 md:px-6 font-medium text-[14px] md:text-sm">{row.objective}</td>}
+                        {row.priority && (
+                          <td className="py-3 px-4 md:px-6 font-bold text-[11px] uppercase tracking-widest">
+                            <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase
+                              ${
+                                row.priority.toUpperCase() === 'CRÍTICO' || row.priority.toUpperCase() === 'CRITICAL' || row.priority.toUpperCase() === 'CRITICO'
+                                  ? 'bg-red-500/15 text-red-500 border border-red-500/30'
+                                  : row.priority.toUpperCase() === 'GRAVE' || row.priority.toUpperCase() === 'HIGH' || row.priority.toUpperCase() === 'ALTO' || row.priority.toUpperCase() === 'SERIOUS'
+                                  ? 'bg-orange-500/15 text-orange-500 border border-orange-500/30'
+                                  : row.priority.toUpperCase() === 'MEDIO' || row.priority.toUpperCase() === 'MEDIUM'
+                                  ? 'bg-yellow-500/15 text-yellow-500 border border-yellow-500/30'
+                                  : row.priority.toUpperCase() === 'LEVE' || row.priority.toUpperCase() === 'LOW'
+                                  ? 'bg-green-500/15 text-green-500 border border-green-500/30'
+                                  : 'bg-white/10 text-white/50 border border-white/10'
+                              }`}>
+                              {row.priority}
+                            </span>
+                          </td>
+                        )}
                       </tr>
                     ))}
                   </tbody>
@@ -991,16 +1034,16 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
           )}
           <div className={`border rounded-2xl overflow-hidden backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'}`}>
             <div className="overflow-x-auto">
-              <table className="w-full text-left border-collapse">
+              <table className="w-full text-left border-collapse table-fixed">
                 <thead>
                   <tr className={`border-b ${isDark ? 'border-white/10' : 'border-black'}`}>
-                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'ID de Prueba' : 'Test ID'}</th>
-                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Escenario' : 'Scenario'}</th>
-                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Función' : 'Feature'}</th>
-                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Caso de Prueba' : 'Test Case'}</th>
-                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Resultado Esperado' : 'Expected Result'}</th>
-                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Estado' : 'Status'}</th>
-                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Bug' : 'Bug'}</th>
+                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold w-[10%] ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'ID' : 'ID'}</th>
+                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold w-[10%] ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'TS' : 'TS'}</th>
+                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold w-[25%] ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Título' : 'Title'}</th>
+                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold w-[25%] ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Detalle' : 'Detail'}</th>
+                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold w-[10%] ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Estado' : 'Status'}</th>
+                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold w-[10%] ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Bug' : 'Bug'}</th>
+                    <th className={`py-4 px-3 md:px-4 text-[9px] md:text-[10px] uppercase tracking-widest font-bold w-[10%] ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Tipo' : 'Type'}</th>
                   </tr>
                 </thead>
                 <tbody className="text-[11px] md:text-[14px]">
@@ -1021,31 +1064,34 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                         <td className={`py-3 px-3 md:px-4 font-mono whitespace-nowrap ${isDark ? 'opacity-50' : 'opacity-70'}`}>
                           {row.scenarioId || '-'}
                         </td>
-                        <td className="py-3 px-3 md:px-4 font-bold tracking-tight">
+                        <td className="py-3 px-3 md:px-4 font-bold tracking-tight whitespace-normal break-words">
                           {(() => {
                             const parts = row.feature.split(' ');
                             if (parts.length >= 2) {
-                              const method = parts[0];
-                              const path = parts.slice(1).join(' ');
-                              let colorClass = '';
-                              switch (method.toUpperCase()) {
-                                case 'GET': colorClass = 'text-emerald-500'; break;
-                                case 'PUT': colorClass = 'text-blue-500'; break;
-                                case 'POST': case 'PUSH': colorClass = 'text-orange-500'; break;
-                                case 'DELETE': colorClass = 'text-red-500'; break;
-                                case 'PATCH': colorClass = 'text-purple-500'; break;
+                              const method = parts[0].toUpperCase();
+                              const isApiMethod = ['GET', 'PUT', 'POST', 'PUSH', 'DELETE', 'PATCH'].includes(method);
+                              
+                              if (isApiMethod) {
+                                const path = parts.slice(1).join(' ');
+                                let colorClass = '';
+                                switch (method) {
+                                  case 'GET': colorClass = 'text-emerald-500'; break;
+                                  case 'PUT': colorClass = 'text-blue-500'; break;
+                                  case 'POST': case 'PUSH': colorClass = 'text-orange-500'; break;
+                                  case 'DELETE': colorClass = 'text-red-500'; break;
+                                  case 'PATCH': colorClass = 'text-purple-500'; break;
+                                }
+                                return (
+                                  <span className="whitespace-nowrap">
+                                    <span className={colorClass}>{parts[0]}</span> {path}
+                                  </span>
+                                );
                               }
-                              return (
-                                <span className="whitespace-nowrap">
-                                  <span className={colorClass}>{method}</span> {path}
-                                </span>
-                              );
                             }
-                            return row.feature;
+                            return <span className="text-wrap break-words">{row.feature}</span>;
                           })()}
                         </td>
-                        <td className="py-3 px-3 md:px-4 font-light opacity-70 min-w-[120px]">{row.scenario}</td>
-                        <td className="py-3 px-3 md:px-4 font-light opacity-70 min-w-[150px]">{row.result}</td>
+                        <td className="py-3 px-3 md:px-4 font-light opacity-70 whitespace-normal break-words text-pretty">{row.scenario}</td>
                         <td className="py-3 px-3 md:px-4">
                           {row.status === 'pass' ? (
                             <div className="flex items-center gap-2 text-emerald-500 font-bold">
@@ -1063,6 +1109,13 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                           {row.bug ? (
                             <span className={`text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded-md ${isDark ? 'bg-red-500/10 text-red-400' : 'bg-red-100 text-red-600'}`}>
                               {row.bug}
+                            </span>
+                          ) : '-'}
+                        </td>
+                        <td className="py-3 px-3 md:px-4">
+                          {row.tipo ? (
+                            <span className={`text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded-md ${isDark ? 'bg-white/6 text-white/40' : 'bg-black/10 text-black/50'}`}>
+                              {row.tipo}
                             </span>
                           ) : '-'}
                         </td>
@@ -1087,6 +1140,19 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                                   {row.details.steps.map((step, si) => <li key={si}>{step}</li>)}
                                 </ul>
                               </div>
+                              {row.details.testData && (
+                                <div>
+                                  <span className="text-[10px] uppercase tracking-widest opacity-40 font-bold block mb-2">{lang === 'es' ? 'Dato de Prueba' : 'Test Data'}</span>
+                                  <p className={`font-light text-sm leading-relaxed whitespace-pre-line ${isDark ? 'opacity-70' : 'opacity-80'}`}>{row.details.testData}</p>
+                                </div>
+                              )}
+                              
+                              {row.result && (
+                                <div>
+                                  <span className="text-[10px] uppercase tracking-widest opacity-40 font-bold block mb-2">{lang === 'es' ? 'Resultado Esperado' : 'Expected Result'}</span>
+                                  <p className={`font-light text-sm leading-relaxed whitespace-pre-line ${isDark ? 'opacity-70' : 'opacity-80'}`}>{row.result}</p>
+                                </div>
+                              )}
  
                               {row.details.evidence && (
                                 <div>
@@ -1225,10 +1291,13 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                         title={bug.title}
                         severity={bug.severity}
                         type={bug.type}
+                        wcag={bug.wcag}
                         description={bug.description}
+                        precondition={bug.precondition}
                         steps={bug.steps}
                         expected={bug.expected}
                         actual={bug.actual}
+                        impact={bug.impact}
                         evidence={bug.evidence}
                         onViewEvidence={setSelectedImage}
                       />

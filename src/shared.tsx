@@ -277,8 +277,9 @@ export const translations = {
     projectsUX: "UX/UI Projects",
     skills: "Skills",
     contact: "Contact me!",
+    contactSectionLabel: "contact",
     heroTitle: "Daiana Ciaramella",
-    heroSub: "QA MANUAL TESTER | UX-ORIENTED",
+    heroSub: "TESTER QA MANUAL | UX UI",
     aboutTitle: "Bridging the gap between design and software quality",
     aboutP1: "With a background in UX/UI design and Frontend development, I possess a unique perspective in the QA field: I understand how products are built, which allows me to anticipate where they might fail. This holistic approach enables me to identify not only functional defects but also experience inconsistencies that impact end-user satisfaction.",
     aboutP2: "With over 3 years of experience in digital product environments, I specialize in functional testing, test case design and execution, regression testing, and defect management. I thrive in agile teams, ensuring that every release meets both technical specifications and user expectations.",
@@ -324,38 +325,38 @@ export const translations = {
     visualProjects: [
       {
         title: "Onus",
-        desc: "A personal finance app designed to practice functional testing, exploratory testing, and user flow validation in a real-world environment.",
+        desc: "Visual identity and user experience design for Onus Solutions, including brand definition, color palette, and web design focused on content clarity and navigation. This approach allows me to evaluate visual coherence, interface consistency, and detect friction in the user experience.",
         img: "/img/onus-proyectouxui.png"
       },
-      { title: "Grinplug", desc: "Visual regression testing and performance optimization for a global retail platform.", img: "/img/grinplug-proyectouxui.png" },
-      { title: "Uminti", desc: "End-to-end testing of real-time interactions and data visualization for an educational system.", img: "/img/uminti-proyectouxui.png" },
-      { title: "Game On!", desc: "A community-driven app for women's football, facilitating match organization and player networking.", img: "/img/app-futfem.png" }
+      { title: "Grinplug", desc: "Comprehensive design of an electric charging platform, defining product flows and architecture. This experience allows me to anticipate edge cases in complex business rules and validate consistency in products with multiple user profiles.", img: "/img/grinplug-proyectouxui.png" },
+      { title: "Uminti", desc: "Visual identity and web experience design for a specialized service, focused on communication clarity and conversion flow optimization. This allows me to validate critical processes from the user's perspective and detect friction points in the interaction.", img: "/img/uminti-proyectouxui.png" },
+      { title: "HAY EQUIPO! – App", desc: "Research, product definition, and UX/UI design of an app for organizing football matches and community building. Includes research, flow definition, wireframes, and visual design, strengthening my user-centered testing approach.", img: "/img/app-futfem.png" }
     ],
     qaProjects: [
       {
-        title: "DAILY APP",
-        description: "Personal multi-currency financial application that I developed to manage ARS, USD, and EUR simultaneously — a real problem with no solution on the market. Tested under real daily use conditions.",
+        title: "DAILY – App",
+        description: "QA Testing · Financial Web App (PWA) — Functional testing of a multi-currency financial application (ARS, USD, EUR), validating critical daily-use flows, error handling, and data consistency.",
         link: "/proyectos-qa/daily_app"
       },
       {
-        title: "API Testing with Postman",
-        description: "Validation of an e-commerce REST API using Postman, verifying endpoints for products and shopping carts, HTTP responses, and error handling.",
+        title: "UX & Accessibility - Ryanair",
+        description: "Accessibility & UX Testing · Web Audit — Accessibility and usability evaluation of the Ryanair website using Axe DevTools, identifying WCAG barriers, navigation issues, and user experience improvements.",
+        link: "/ux-testing"
+      },
+      {
+        title: "API Testing - Postman",
+        description: "API Testing · E-commerce — Validation of an e-commerce REST API using Postman, analyzing product and cart endpoints, HTTP responses, data structure, and error handling.",
         link: "/proyectos-qa/testing-api-postman"
       },
       {
         title: "E-commerce Testing",
         description: "Analysis and functional testing of an e-commerce purchase flow, validating user registration, shopping cart, and checkout.",
         link: "/proyectos-qa/ecommerce-testing"
-      },
-      {
-        title: "UX & Accessibility",
-        description: "Accessibility and usability evaluation of the Ryanair website using Axe DevTools, identifying accessibility barriers, visual inconsistencies, and navigation problems that impact the user experience.",
-        link: "/ux-testing"
       }
     ],
     daily_app: {
-      title: "DAILY APP",
-      subtitle: "Personal financial management application designed to track expenses and income across multiple bank accounts.",
+      title: "DAILY – App",
+      subtitle: "Multi-currency financial management application designed to centralize accounts, record transactions, and visualize balances in real time.",
       description: "DAILY was born from a real need: no app on the market offered multi-currency financial management adapted to those who operate simultaneously with ARS, USD, and EUR in different countries. The app centralizes multiple bank accounts and virtual wallets, calculates consolidated totals by currency in real-time, and allows linking expenses to trips with budget tracking. \n\nI tested the app under real daily use conditions, which allowed me to detect behaviors that only emerge with real data and genuine usage flows.",
       objective: "Validate the correct functioning of the application's main flows, ensuring financial balance consistency and a clear user experience on mobile devices.",
       platform: "PWA (Progressive Web App), published on Vercel, optimized for Android and iOS.",
@@ -379,47 +380,220 @@ export const translations = {
       testScenariosTitle: "TEST SCENARIOS",
       testScenariosDesc: "Based on the main functionalities of the application, different test scenarios were defined to validate the critical flows of the system.",
       testScenariosTable: [
-        { id: "TS-001", feature: "Authentication", scenario: "Access to the application via PIN or fingerprint", objective: "Validate that the user can correctly access the application" },
-        { id: "TS-002", feature: "Accounts", scenario: "Creation and management of multiple accounts", objective: "Verify that the system allows registering bank accounts and wallets in different currencies" },
-        { id: "TS-003", feature: "Transactions", scenario: "Recording expenses and income in an account", objective: "Validate that each operation correctly updates the balance of the corresponding account" },
-        { id: "TS-004", feature: "Multi-currency", scenario: "Updating totals by currency in dashboard", objective: "Verify that ARS, USD, and EUR totals are updated independently and correctly" },
-        { id: "TS-005", feature: "Dashboard", scenario: "Visual consistency of data and currency symbols", objective: "Verify that charts show the correct symbol according to the currency of each account" },
-        { id: "TS-006", feature: "Travels", scenario: "Recording expenses within an active trip", objective: "Verify that each expense is associated with the trip and updates the total and progress bar" },
-        { id: "TS-007", feature: "Travels", scenario: "Exceeding a trip's budget", objective: "Verify system behavior when total spending exceeds the defined limit" },
-        { id: "TS-008", feature: "Debts", scenario: "Recording in I Owe / They Owe Me views", objective: "Validate that each debt appears in the correct view with associated amount and note" },
-        { id: "TS-009", feature: "Budgets", scenario: "Monthly budget creation with limit", objective: "Validate the calculation of accumulated spending and behavior when approaching the limit" },
-        { id: "TS-010", feature: "Validations", scenario: "Recording transactions with incomplete data", objective: "Verify system behavior in the face of empty fields or invalid data" }
+        { id: "TS-001", feature: "Authentication", scenario: "Access via PIN or biometrics", objective: "Validate correct authentication and handling of invalid attempts with clear feedback", priority: "Critical" },
+        { id: "TS-002", feature: "Accounts", scenario: "Multi-currency account management", objective: "Verify account creation and data consistency between currencies", priority: "Critical" },
+        { id: "TS-003", feature: "Transactions", scenario: "Transaction recording", objective: "Validate impact of income and expenses on balances and views", priority: "Critical" },
+        { id: "TS-004", feature: "Multi-currency", scenario: "Totals by currency", objective: "Verify independence of calculations between currencies", priority: "Critical" },
+        { id: "TS-005", feature: "Dashboard", scenario: "Visual data representation", objective: "Validate currency symbols and visual consistency", priority: "Serious" },
+        { id: "TS-006", feature: "Travels", scenario: "Travel management", objective: "Verify expense association and progress update", priority: "Serious" },
+        { id: "TS-007", feature: "Travels", scenario: "Trip budget", objective: "Validate behavior when exceeding limits and UX feedback", priority: "Critical" },
+        { id: "TS-008", feature: "Debts", scenario: "Debt management", objective: "Validate correct recording and visualization of debts", priority: "Serious" },
+        { id: "TS-009", feature: "Budgets", scenario: "Monthly budget", objective: "Verify calculation of accumulated spending and percentage", priority: "Serious" },
+        { id: "TS-010", feature: "Validations", scenario: "Input validations", objective: "Validate handling of invalid data without inconsistencies", priority: "Critical" }
       ],
       testScenariosFooter: "",
       testCasesDesc: "Each test case is linked to its corresponding scenario. The statuses reflect the results obtained during execution.",
       testCasesTable: [
         {
-          id: "TC-001",
-          scenarioId: "TS-003",
-          feature: "Transactions",
-          scenario: "Register a new expense associated with an account",
-          result: "The expense is saved and the balance is updated correctly",
-          status: "pass",
+          id: "TC-001", scenarioId: "TS-003",
+          feature: "Register a new expense associated with an account",
+          scenario: "Authenticated user. Active ARS account with balance > $0. At least one category available.",
+          result: "Expense saved correctly. Balance goes from $2000 to $1500 and is reflected consistently in dashboard and transactions.",
+          status: "fail", bug: "BUG-002", tipo: "Functional",
           details: {
-            precondition: "The user has at least one registered account.",
+            precondition: "Authenticated user. Active ARS account with balance > $0. At least one category available.",
             steps: [
-              "Open the application",
-              "Select 'Add expense'",
-              "Enter amount",
-              "Select account",
-              "Confirm operation"
-            ]
+              "Go to Transactions → New transaction",
+              "Select type: Expense",
+              "Select ARS account",
+              "Enter amount: $500",
+              "Select category: Food",
+              "Save",
+              "Verify balance",
+              "Verify dashboard"
+            ],
+            testData: "Account: ARS, initial balance: $2000 / Expense: $500 / Category: Food"
           }
         },
-        { id: "TC-002", scenarioId: "TS-003", feature: "Transactions", scenario: "Register an income in an existing account", result: "The income is reflected correctly in the balance", status: "pass" },
-        { id: "TC-003", scenarioId: "TS-002", feature: "Accounts", scenario: "Create a new bank account in EUR currency", result: "The account is created and appears in the list with the correct symbol", status: "pass" },
-        { id: "TC-004", scenarioId: "TS-004", feature: "Dashboard", scenario: "Register expense in USD and verify that EUR and ARS totals do not change", result: "Each total is updated only in its corresponding currency", status: "pass" },
-        { id: "TC-005", scenarioId: "TS-005", feature: "Dashboard", scenario: "Verify currency symbol in EUR account chart", result: "The value must show \"€\" and not \"$\"", status: "fail", bug: "BUG-002" },
-        { id: "TC-006", scenarioId: "TS-006", feature: "Travels", scenario: "Register expense within an active trip and verify account linking", result: "The expense is associated with the trip and the progress bar is updated", status: "pass" },
-        { id: "TC-007", scenarioId: "TS-007", feature: "Travels", scenario: "Register expenses until exceeding the trip budget", result: "The system actively notifies that the limit was exceeded", status: "fail", bug: "BUG-001" },
-        { id: "TC-008", scenarioId: "TS-008", feature: "Debts", scenario: "Register debt in \"They Owe Me\" with amount and note", result: "The debt appears in the correct view with all data visible", status: "pass" },
-        { id: "TC-009", scenarioId: "TS-009", feature: "Budgets", scenario: "Create monthly budget and register expenses up to the limit", result: "The system correctly calculates the accumulated and reflects the percentage", status: "pass" },
-        { id: "TC-010", scenarioId: "TS-010", feature: "Validations", scenario: "Register expense with empty amount field", result: "The system shows validation message indicating the field is required", status: "fail", bug: "BUG-005" }
+        {
+          id: "TC-002", scenarioId: "TS-003",
+          feature: "Register an income and verify balance impact",
+          scenario: "Authenticated user. Active ARS account.",
+          result: "Income registered correctly. Balance goes from $1000 to $4000 and is reflected in all views.",
+          status: "pass", tipo: "Functional",
+          details: {
+            precondition: "Authenticated user. Active ARS account.",
+            steps: [
+              "Go to Transactions → New transaction",
+              "Select type: Income",
+              "Select ARS account",
+              "Enter amount: $3000",
+              "Save",
+              "Verify balance",
+              "Verify dashboard and transactions"
+            ],
+            testData: "Account: ARS, initial balance: $1000 / Income: $3000"
+          }
+        },
+        {
+          id: "TC-003", scenarioId: "TS-002",
+          feature: "Create new account in EUR",
+          scenario: "Authenticated user. No previous EUR account.",
+          result: "Account created correctly with € symbol and no impact on other accounts.",
+          status: "pass", tipo: "Functional / Integration",
+          details: {
+            precondition: "Authenticated user. No previous EUR account.",
+            steps: [
+              "Go to Accounts → New account",
+              "Enter name: \"Europe Account\"",
+              "Select currency: EUR",
+              "Save",
+              "Verify list",
+              "Verify other accounts remain unchanged"
+            ],
+            testData: "Name: Europe Account / Currency: EUR / Initial balance: €0"
+          }
+        },
+        {
+          id: "TC-004", scenarioId: "TS-004",
+          feature: "USD expense does not affect EUR and ARS totals",
+          scenario: "Authenticated user. Active accounts in USD, EUR and ARS with balance.",
+          result: "Only USD total updates. EUR and ARS remain unchanged. No inconsistencies.",
+          status: "pass", tipo: "Integration / Multi-currency",
+          details: {
+            precondition: "Authenticated user. Active accounts in USD, EUR and ARS with balance.",
+            steps: [
+              "Go to Transactions",
+              "Select USD account",
+              "Register $50 expense",
+              "Save",
+              "Check dashboard",
+              "Verify all currency totals"
+            ],
+            testData: "USD: $200 → $150 / EUR: €150 / ARS: $5000"
+          }
+        },
+        {
+          id: "TC-005", scenarioId: "TS-005",
+          feature: "Verify EUR symbol representation in the system",
+          scenario: "Authenticated user. Active EUR account.",
+          result: "System correctly shows € symbol in all components (dashboard, charts and views).",
+          status: "fail", bug: "BUG-004", tipo: "UX / Visual",
+          details: {
+            precondition: "Authenticated user. Active EUR account.",
+            steps: [
+              "Go to Dashboard",
+              "View EUR account",
+              "Verify symbol in charts, list and detail"
+            ],
+            testData: "EUR account: €200"
+          }
+        },
+        {
+          id: "TC-006", scenarioId: "TS-006",
+          feature: "Expense associated with trip and progress update",
+          scenario: "Authenticated user. Active trip with budget and previous expense.",
+          result: "Expense correctly linked. Total updates to €250 (50%) and reflects in all modules.",
+          status: "fail", bug: "BUG-003", tipo: "Functional / Integration",
+          details: {
+            precondition: "Authenticated user. Active trip with budget and previous expense.",
+            steps: [
+              "Go to Trips",
+              "Select trip",
+              "Register €50 expense",
+              "Save",
+              "Verify progress",
+              "Verify account and dashboard"
+            ],
+            testData: "Budget: €500 / Prev. expense: €200"
+          }
+        },
+        {
+          id: "TC-007", scenarioId: "TS-007",
+          feature: "Exceed trip budget and validate feedback",
+          scenario: "Authenticated user. Trip with budget nearly reached.",
+          result: "System shows alert when exceeding budget. Reflected correctly ($1050) and visually indicated.",
+          status: "fail", bug: "BUG-006", tipo: "Functional / UX / Edge",
+          details: {
+            precondition: "Authenticated user. Trip with budget nearly reached.",
+            steps: [
+              "Go to Trips",
+              "Add $100 expense",
+              "Save",
+              "Verify notification",
+              "Verify bar and values"
+            ],
+            testData: "Budget: $1000 / Prev. expense: $950"
+          }
+        },
+        {
+          id: "TC-008", scenarioId: "TS-008",
+          feature: "Register “They Owe Me” debt",
+          scenario: "Authenticated user. No previous debts.",
+          result: "Debt registered correctly in \"They Owe Me\" view and does not appear in \"I Owe\".",
+          status: "pass", tipo: "Functional",
+          details: {
+            precondition: "Authenticated user. No previous debts.",
+            steps: [
+              "Go to Debts",
+              "New debt",
+              "Select \"They Owe Me\"",
+              "Enter data",
+              "Save",
+              "Verify view"
+            ],
+            testData: "Name: Juan / Amount: $300"
+          }
+        },
+        {
+          id: "TC-009", scenarioId: "TS-009",
+          feature: "Monthly budget usage percentage calculation",
+          scenario: "Authenticated user. Active budget with expenses.",
+          result: "System correctly calculates percentage (90%) and shows proximity to limit.",
+          status: "pass", tipo: "Functional / Calculation",
+          details: {
+            precondition: "Authenticated user. Active budget with expenses.",
+            steps: [
+              "Go to Budgets",
+              "Check current expense",
+              "Add expense",
+              "Verify percentage"
+            ],
+            testData: "Budget: $5000 / Expense: $3500 → $4500"
+          }
+        },
+        {
+          id: "TC-010", scenarioId: "TS-010",
+          feature: "Empty amount field validation",
+          scenario: "Authenticated user. Active account.",
+          result: "System blocks action, shows error and does not save data or modify balances.",
+          status: "fail", bug: "BUG-005", tipo: "Validation / Negative",
+          details: {
+            precondition: "Authenticated user. Active account.",
+            steps: [
+              "Go to Transactions",
+              "Leave amount empty",
+              "Attempt to save"
+            ],
+            testData: "Empty amount"
+          }
+        },
+        {
+          id: "TC-011", scenarioId: "TS-001",
+          feature: "Validate authentication with incorrect PIN",
+          scenario: "Registered user with PIN configured",
+          result: "System blocks access and shows clear error message without allowing entry.",
+          status: "fail", bug: "BUG-001", tipo: "Security / Validation",
+          details: {
+            precondition: "Registered user with PIN configured",
+            steps: [
+              "Open app",
+              "Enter incorrect PIN",
+              "Confirm"
+            ],
+            testData: "Incorrect PIN"
+          }
+        }
       ],
       bugsTitle: "BUG REPORTS",
       bugsDescription: "The following critical defects were identified and documented during the testing execution.",
@@ -428,44 +602,66 @@ export const translations = {
           id: "BUG-001",
           title: "Missing feedback when entering incorrect PIN",
           severity: "Medium",
-          type: "Validation / Error handling",
-          description: "When entering an incorrect PIN on the authentication screen, the application correctly blocks access but does not show any message indicating that the PIN is invalid.",
+          type: "Authentication",
+          description: "Precondition: User with configured PIN. [TS-001 / TC-011]",
           steps: ["Open the application", "Enter an incorrect PIN", "Confirm access"],
-          expected: 'The system should show a message indicating that the entered PIN is incorrect: "Incorrect PIN. Try again."',
-          actual: "The application does not show any error message and simply requests to enter the PIN again.",
+          expected: "The system blocks access and shows a clear message indicating that the PIN is incorrect",
+          actual: "Access is blocked but no error message is displayed",
           evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
         },
         {
           id: "BUG-002",
-          title: "Temporal desynchronization in data visualization",
+          title: "Temporal data desynchronization on dashboard",
           severity: "Low",
-          type: "UI / Synchronization",
-          description: "After registering a new transaction, some interface components may take time to reflect the change immediately.",
-          steps: ["Register a new expense", "Return immediately to the dashboard or travel section", "Observe charts or aggregate values"],
-          expected: "All system components should update immediately after registering the transaction.",
-          actual: "In some cases, the interface may take time to reflect changes until the view is refreshed manually.",
+          type: "Dashboard",
+          description: "Precondition: Authenticated user with active accounts. [TS-003 / TC-001]",
+          steps: ["Register a new expense", "Go immediately to the dashboard", "Verify values shown"],
+          expected: "The dashboard immediately reflects the change in balances",
+          actual: "Some values take time to update until the view is manually refreshed",
           evidence: "/img/img-dailyapp/daily-mockup-funciones.jpeg"
         },
         {
           id: "BUG-003",
-          title: "Cannot edit expenses from travel view",
+          title: "Expenses cannot be edited from trip view",
           severity: "High",
-          type: "Functional",
-          description: "Expenses registered within a trip cannot be edited directly from the trips section. To modify an expense, it is necessary to navigate to the bank account from which the transaction was registered.",
-          steps: ["Go to Trips section", "Select an existing trip", "Locate a registered expense", "Attempt to edit the expense"],
-          expected: "The user should be able to edit the expense directly from the trips section.",
-          actual: "Expenses cannot be edited from this view. To modify them, it is necessary to navigate to the corresponding bank account.",
+          type: "Travels",
+          description: "Precondition: User with active trip and registered expenses. [TS-006 / TC-006]",
+          steps: ["Go to Travels", "Select a trip", "Attempt to edit a registered expense"],
+          expected: "The user can edit the expense from the trip view",
+          actual: "It is not possible to edit the expense from that view",
           evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
         },
         {
           id: "BUG-004",
-          title: "Empty expense field without validation message",
+          title: "Incorrect currency symbol on dashboard (EUR)",
           severity: "Medium",
-          type: "Validation / Form validation",
-          description: "When attempting to register an expense without entering an amount, the application prevents saving the transaction but does not show any message indicating that the field is required.",
-          steps: ["Open the application", "Go to Register expense section", "Leave the amount field empty", "Attempt to save the expense"],
-          expected: "The system should show a validation message indicating that the field is required.",
-          actual: "The system does not allow registering the expense, but does not show any error message or indication to the user about the reason.",
+          type: "Visual / Dashboard",
+          description: "Precondition: User with EUR account. [TS-005 / TC-005]",
+          steps: ["Go to dashboard", "View EUR account", "Review symbol shown"],
+          expected: "The system displays the '€' symbol correctly",
+          actual: "The system displays '$' instead of '€' in some components",
+          evidence: "/img/img-dailyapp/daily-mockup-funciones.jpeg"
+        },
+        {
+          id: "BUG-005",
+          title: "Saving transaction with empty amount is allowed",
+          severity: "High",
+          type: "Validation",
+          description: "Precondition: Authenticated user with active account. [TS-010 / TC-010]",
+          steps: ["Go to new transaction", "Leave amount field empty", "Attempt to save"],
+          expected: "The system blocks the action and shows an error message",
+          actual: "The transaction is saved without an amount or generates inconsistent behavior",
+          evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
+        },
+        {
+          id: "BUG-006",
+          title: "Missing clear alert when exceeding trip budget",
+          severity: "Medium",
+          type: "UX / Alerts",
+          description: "Precondition: Active trip with budget close to the limit. [TS-007 / TC-007]",
+          steps: ["Register expense that exceeds the budget", "Confirm operation", "Verify system feedback"],
+          expected: "The system shows a clear alert indicating that the budget has been exceeded",
+          actual: "The system allows the operation but does not show clear or visible feedback",
           evidence: "/img/img-dailyapp/daily-mockup-funciones.jpeg"
         }
       ],
@@ -1026,54 +1222,446 @@ export const translations = {
       testScenariosTable: {
         title: "TEST SCENARIO",
         table: [
-          { id: "TS-001", feature: "Accessibility", scenario: "Keyboard navigation (Tab) through the main menu", objective: "Verify that all elements are reachable and have a visible focus indicator." },
-          { id: "TS-002", feature: "Accessibility", scenario: "Screen reader (NVDA/VoiceOver) on flight results", objective: "Validate that flight information and prices are announced correctly." },
-          { id: "TS-003", feature: "Accessibility", scenario: "Color contrast on critical buttons (CTA)", objective: "Ensure a minimum contrast ratio of 4.5:1 for readability." },
-          { id: "TS-004", feature: "Usability", scenario: "Flight search from the home page", objective: "Evaluate the clarity of the date picker and destination selection." },
-          { id: "TS-005", feature: "Usability", scenario: "Adding extra luggage in checkout", objective: "Identify friction points or dark patterns in the selection of additional services." },
-          { id: "TS-006", feature: "Forms", scenario: "Passenger data entry with invalid characters", objective: "Verify that error messages are clear and help the user correct the data." },
-          { id: "TS-007", feature: "Forms", scenario: "Payment process with an expired card", objective: "Validate the system's response and the clarity of the feedback provided." },
-          { id: "TS-008", feature: "Navigation", scenario: "Returning to the previous step from checkout", objective: "Verify that the selected data is maintained and the navigation is consistent." }
+          { id: "TS-001", feature: "Accessibility", scenario: "Axe DevTools scan on home", objective: "Detect WCAG 2.1 AA issues on main page", precondition: "Updated Chrome. Axe DevTools 4.11.1 installed and active.", priority: "Critical" },
+          { id: "TS-002", feature: "Accessibility", scenario: "Axe DevTools scan on checkout", objective: "Detect WCAG 2.1 AA issues in payment flow", precondition: "Chrome. Axe DevTools installed. flight search done.", priority: "Critical" },
+          { id: "TS-003", feature: "Keyboard", scenario: "Tab navigation on home", objective: "Verify focus visibility and logical tab order on home", precondition: "Chrome. No extensions modifying styles. Home loaded.", priority: "Critical" },
+          { id: "TS-004", feature: "Keyboard", scenario: "Tab navigation on results and checkout", objective: "Verify focus is visible and functional throughout the flow", precondition: "Search executed. Results visible.", priority: "Critical" },
+          { id: "TS-005", feature: "Keyboard", scenario: "Login modal behavior with keyboard", objective: "Verify the modal closes with Escape and focus returns to trigger", precondition: "Chrome. Home loaded. User not logged in.", priority: "Critical" },
+          { id: "TS-006", feature: "Structure", scenario: "Semantic structure: headings and landmarks on home, results and checkout", objective: "Verify logical H1-H6 hierarchy without duplicates, and presence of <main> landmark", precondition: "Chrome. DevTools open. Header analysis extension. Access to 3 pages.", priority: "Critical" },
+          { id: "TS-007", feature: "Localization", scenario: "Special assistance video language", objective: "Verify video is shown in interface language", precondition: "Interface set to Spanish (es-ES). Special assistance section accessible.", priority: "High" },
+          { id: "TS-008", feature: "Localization", scenario: "Navigation menu language", objective: "Verify all menu options are translated to interface language", precondition: "Interface set to Spanish (es-ES). Home loaded.", priority: "High" },
+          { id: "TS-009", feature: "Usability", scenario: "Origin and destination selection flow", objective: "Verify the search engine clearly guides the user on destination selection", precondition: "Home loaded. Search engine visible.", priority: "High" },
+          { id: "TS-010", feature: "Usability", scenario: "Content consistency on home", objective: "Verify no duplicate sections or inconsistent naming", precondition: "Home page fully loaded. No cache.", priority: "Medium" },
+          { id: "TS-011", feature: "Functional", scenario: "Home load and main elements", objective: "Validate logo, search engine and menu load and are interactive", precondition: "Chrome. Active connection. No active session.", priority: "Critical" },
+          { id: "TS-012", feature: "Functional", scenario: "Flight search engine — date selection", objective: "Validate calendar allows selecting outbound and return dates", precondition: "Home loaded. Search engine visible.", priority: "Critical" },
+          { id: "TS-013", feature: "Functional", scenario: "Main menu — expansion and navigation", objective: "Validate 'Plan' menu expands and items are navigable", precondition: "Home loaded. Menu visible in header.", priority: "High" },
+          { id: "TS-014", feature: "Functional", scenario: "Flight search results", objective: "Validate flights with prices are shown and filters respond", precondition: "Origin/destination/date search executed from home.", priority: "Critical" }
         ]
       },
       testCasesTitle: "TEST CASES",
       testCases: [
-        { id: "TC-001", scenarioId: "TS-001", feature: "Accessibility", scenario: "Run Axe DevTools on home under WCAG 2.1 AA", result: "0 critical or serious issues", status: "fail", bug: "BUG-001" },
-        { id: "TC-002", scenarioId: "TS-003", feature: "Accessibility", scenario: "Run Axe DevTools on checkout under WCAG 2.1 AA", result: "0 critical issues", status: "fail", bug: "BUG-002" },
-        { id: "TC-003", scenarioId: "TS-008", feature: "Forms", scenario: "Verify that all checkout fields have associated labels", result: "All fields have visible label or aria-label", status: "fail", bug: "BUG-003" },
-        { id: "TC-004", scenarioId: "TS-005", feature: "Usability", scenario: "Select a country in the destination search engine", result: "The destination field updates with the selected country", status: "fail", bug: "BUG-004" },
-        { id: "TC-005", scenarioId: "TS-006", feature: "Usability", scenario: "Navigate through the booking flow and observe progress indicator", result: "The system clearly shows the current step within the process", status: "fail", bug: "BUG-005" },
-        { id: "TC-006", scenarioId: "TS-007", feature: "Usability", scenario: "Attempt to reject all additional options in checkout", result: "User can continue without selecting any extra", status: "pass" },
-        { id: "TC-007", scenarioId: "TS-002", feature: "Accessibility", scenario: "Verify that all links have descriptive text in results", result: "No link depends only on color to be identified", status: "fail", bug: "BUG-001" },
-        { id: "TC-008", scenarioId: "TS-004", feature: "Usability", scenario: "Complete flight search from home without friction", result: "User completes search in less than 3 interactions", status: "pass" }
+        {
+          id: "TC-001", scenarioId: "TS-001", feature: "Accessibility",
+          scenario: "Run Axe DevTools on home under WCAG 2.1 AA",
+          status: "fail", bug: "BUG-001",
+          result: "0 critical or serious issues under WCAG 2.1 AA.",
+          details: {
+            precondition: "Updated Chrome. Axe DevTools 4.11.1 installed. Home loaded without cache.",
+            steps: [
+              "Open ryanair.com/en/en",
+              "Wait for full load",
+              "Open Axe DevTools → 'Overview'",
+              "Click 'Rerun scan'",
+              "Review results panel — filter by Serious and Moderate"
+            ],
+            testData: "Chrome 120+\nAxe DevTools 4.11.1\nWCAG 2.1 AA enabled\nURL: ryanair.com/en/en"
+          }
+        },
+        {
+          id: "TC-002", scenarioId: "TS-005", feature: "Keyboard",
+          scenario: "Open login modal and close with Escape",
+          status: "fail", bug: "BUG-011",
+          result: "Modal closes on Escape key. Focus automatically returns to trigger button (WCAG 2.1 SC 2.4.3).",
+          details: {
+            precondition: "Chrome. Home loaded. User not logged in.",
+            steps: [
+              "Go to Ryanair home",
+              "Click 'Log in'",
+              "Verify modal opens",
+              "Press Escape",
+              "Verify modal closes",
+              "Verify focus returns to 'Log in' button"
+            ],
+            testData: "Chrome\nSession: not started\nNavigation: keyboard only"
+          }
+        },
+        {
+          id: "TC-003", scenarioId: "TS-001", feature: "Accessibility",
+          scenario: "Validate contrast of text, buttons and links on home",
+          status: "fail", bug: "BUG-002 / BUG-010",
+          result: "All text meets 4.5:1 ratio. Links are distinguishable without color alone.",
+          details: {
+            precondition: "Chrome. Axe DevTools installed. Home loaded.",
+            steps: [
+              "Run Axe DevTools on home",
+              "Filter by 'color-contrast' and 'link-in-text-block'",
+              "Identify elements marked as fail",
+              "Verify 'Search' button: inspect color with DevTools Color Picker",
+              "Verify ratio with WebAIM Contrast Checker"
+            ],
+            testData: "Chrome\nAxe DevTools\nDevTools Color Picker\nURL: ryanair.com/en/en"
+          }
+        },
+        {
+          id: "TC-004", scenarioId: "TS-003", feature: "Keyboard",
+          scenario: "Verify tab order on home",
+          status: "fail", bug: "BUG-012",
+          result: "Focus follows logical and predictable order. Outline visible on all interactive elements.",
+          details: {
+            precondition: "Chrome without extensions modifying CSS. Home loaded.",
+            steps: [
+              "Press Tab from URL bar",
+              "Document focus order element by element",
+              "Verify visible outline at each step",
+              "Verify logical order: header → search → content → footer"
+            ],
+            testData: "Chrome\nCSS: native unmodified\nPage: full home"
+          }
+        },
+        {
+          id: "TC-005", scenarioId: "TS-008", feature: "Localization",
+          scenario: "Verify 'Plan' menu options in Spanish",
+          status: "fail", bug: "BUG-004",
+          result: "All 'Plan' menu options are in Spanish. No English text is shown.",
+          details: {
+            precondition: "Interface in es-ES. Home loaded.",
+            steps: [
+              "Open home in Spanish",
+              "Click 'Planear' in header",
+              "Review every sub-menu option (EXPLORE and TRAVEL EXTRAS sections)",
+              "Identify any text in another language"
+            ],
+            testData: "Language: es-ES\nChrome\nURL: ryanair.com/es/es"
+          }
+        },
+        {
+          id: "TC-006", scenarioId: "TS-009", feature: "Usability",
+          scenario: "Select destination in search engine and verify options hierarchy",
+          status: "fail", bug: "BUG-005",
+          result: "Selector clearly guides the user. Disabled countries have a visible explanation.",
+          details: {
+            precondition: "Home loaded. Search engine visible. Origin: Barcelona-El Prat.",
+            steps: [
+              "Click 'Destination' field",
+              "Observe displayed selector",
+              "Identify greyed out countries (disabled)",
+              "Click a greyed out country (e.g., Cyprus)",
+              "Verify if there is an explanatory message"
+            ],
+            testData: "Chrome\nOrigin: Barcelona-El Prat\nURL: ryanair.com/en/en"
+          }
+        },
+        {
+          id: "TC-007", scenarioId: "TS-006", feature: "Structure",
+          scenario: "Verify heading hierarchy and landmark on home, results and checkout",
+          status: "fail", bug: "BUG-006 / BUG-007 / BUG-009",
+          result: "1 H1 per page. Logical hierarchy without jumps. <main> element present on each page.",
+          details: {
+            precondition: "Chrome. DevTools + header analysis extension. Access to 3 pages.",
+            steps: [
+              "Open home → activate header extension → note H1-H6 count",
+              "Run Axe → filter 'landmark' → verify <main> presence",
+              "Repeat on flight results page",
+              "Repeat on checkout step 1"
+            ],
+            testData: "Chrome\nExtension: SEO Meta in 1 Click\nAxe DevTools\nPages: home + results + checkout"
+          }
+        },
+        {
+          id: "TC-008", scenarioId: "TS-007", feature: "Localization",
+          scenario: "Verify special assistance video language",
+          status: "fail", bug: "BUG-008",
+          result: "Video is shown in Spanish. Overlaid text and subtitles are in Spanish.",
+          details: {
+            precondition: "Interface in es-ES. Special assistance section accessible.",
+            steps: [
+              "Navigate to help.ryanair.com → Special assistance",
+              "Locate 'Booking special assistance' video",
+              "Play video",
+              "Observe language of overlaid text and subtitles"
+            ],
+            testData: "Language: es-ES\nChrome\nURL: help.ryanair.com/hc/en-gb/.../Special-assistance"
+          }
+        },
+        {
+          id: "TC-009", scenarioId: "TS-001", feature: "Accessibility",
+          scenario: "Validate alt text on images and banners of home",
+          status: "fail", bug: "BUG-003",
+          result: "Informatice images with descriptive alt. Banners with relevant info exposed as accessible text.",
+          details: {
+            precondition: "Chrome. Axe DevTools installed. Home loaded.",
+            steps: [
+              "Run Axe DevTools → filter by 'image-alt'",
+              "Inspect main banner with DevTools",
+              "Verify alt attribute on destination images",
+              "Verify banners: is text in DOM or image only?"
+            ],
+            testData: "Chrome\nAxe DevTools\nDevTools Inspector\nURL: ryanair.com/en/en"
+          }
+        },
+        {
+          id: "TC-010", scenarioId: "TS-011", feature: "Functional",
+          scenario: "Verify home load",
+          status: "pass", bug: "-",
+          result: "Logo, search engine and menu visible and functional without blocking errors.",
+          details: {
+            precondition: "Chrome. Active connection. No session.",
+            steps: [
+              "Open ryanair.com/en/en",
+              "Wait for full load",
+              "Verify logo, search engine and menu visible",
+              "Verify menu responds to click"
+            ],
+            testData: "Chrome\nConnection: normal\nSession: not started"
+          }
+        },
+        {
+          id: "TC-011", scenarioId: "TS-012", feature: "Functional",
+          scenario: "Verify flight search engine date selector",
+          status: "pass", bug: "-",
+          result: "Functional calendar. Outbound and return dates selectable and visible in fields.",
+          details: {
+            precondition: "Home loaded. Search engine visible.",
+            steps: [
+              "Click date field",
+              "Verify calendar opens",
+              "Select outbound date",
+              "Select return date",
+              "Verify both dates show in fields"
+            ],
+            testData: "Chrome\nDates: future (>7 days)"
+          }
+        },
+        {
+          id: "TC-012", scenarioId: "TS-014", feature: "Functional",
+          scenario: "Verify flight search results",
+          status: "pass", bug: "-",
+          result: "Flights available with prices. Filters functional.",
+          details: {
+            precondition: "Origin, destination and dates selected.",
+            steps: [
+              "Complete search: London → Madrid",
+              "Click 'Search'",
+              "Verify results load",
+              "Verify flights with visible prices",
+              "Verify filters respond"
+            ],
+            testData: "Chrome\nRoute: STN → MAD\nDate: next 30 days"
+          }
+        },
+        {
+          id: "TC-013", scenarioId: "TS-013", feature: "Functional",
+          scenario: "Verify main menu expansion",
+          status: "pass", bug: "-",
+          result: "'Plan' menu expands. Items navigable and functional.",
+          details: {
+            precondition: "Home loaded. Menu visible in header.",
+            steps: [
+              "Click 'Plan'",
+              "Verify sub-menu expands",
+              "Click an item",
+              "Verify correct navigation"
+            ],
+            testData: "Chrome\nLanguage: en-EN"
+          }
+        }
       ],
       bugsTitle: "BUGS FOUND",
       bugs: [
         {
           id: "BUG-001",
-          testCaseId: "TC-001",
-          title: "34 accessibility incidents on home — 9 serious",
+          testCaseId: "TS-001 / TC-001",
+          title: "34 accessibility issues detected on home",
           severity: "High",
-          type: "Accessibility / WCAG 2.1 AA",
-          description: "Axe DevTools scan on home detected 34 automatic incidents, 9 serious. Includes nested interactive controls, content outside landmarks, and non-distinguishable links without color. Lighthouse reports 83/100 in accessibility.",
-          steps: ["Access ryanair.com/es/es", "Open Axe DevTools", "Run WCAG 2.1 AA scan", "Observe incident summary"],
-          impact: "Users with disabilities may not be able to correctly perceive or operate key elements of the page.",
-          expected: "0 critical or serious incidents",
-          actual: "34 incidents — 9 serious, 24 moderate, 1 minor",
-          evidence: ["/img/img-ryanair/BUG-001-incidencias-home.png", "/img/img-ryanair/BUG-001-lighthouse-accesibilidad.png"]
+          description: "Axe detects 34 issues: 9 serious, 24 moderate, 1 minor. Includes: ARIA commands must have an accessible name (1), Links must be distinguishable without relying on color (1), Links must have discernible text (1), Interactive controls must not be nested (6), Headings should not be empty (1), Document should have one main landmark (1).",
+          precondition: "Chrome. Axe DevTools 4.11.1 installed. Home ryanair.com/en/en loaded.",
+          steps: [
+            "Open ryanair.com/en/en in Chrome",
+            "Open Axe DevTools → Overview",
+            "Click 'Rerun scan'",
+            "Review results panel"
+          ],
+          expected: "0 automatic issues under WCAG 2.1 AA.",
+          actual: "Axe detects 34 issues: 9 serious, 24 moderate, 1 minor.",
+          evidence: "/img/img-ryanair/BUG-001-incidencias-home.png"
         },
         {
           id: "BUG-002",
-          testCaseId: "TC-002",
-          title: "Login modal does not close with ESC key → requires ESC + Enter",
+          testCaseId: "TS-001 / TC-003",
+          title: "Links not distinguishable without color",
           severity: "High",
-          type: "Keyboard / Interaction",
-          description: "The 'Log in' modal does not respond to the standard ESC key behavior. It requires the ESC + Enter combination to close, violating WCAG 2.1 criterion 2.1.2.",
-          steps: ["Click on 'Log in'", "Wait for the modal to open", "Press the ESC key", "Observe if the modal closes"],
-          impact: "Users who depend on the keyboard to navigate cannot close the modal in a standard way, which generates a partial 'keyboard trap'.",
-          expected: "The modal closes by pressing only ESC",
-          actual: "The modal remains open. It only closes with ESC + Enter",
+          description: "Axe reports 1 issue: at least one link on home only differs from surrounding text by color, without underline or any other visual indicator.",
+          precondition: "Chrome. Axe DevTools installed. Home loaded.",
+          steps: [
+            "Run Axe DevTools on home",
+            "Expand 'Links must be distinguishable without relying on color' issue",
+            "Identify affected element",
+            "Visually verify if link has indicator besides color"
+          ],
+          expected: "Links differ from normal text via underline or other indicator besides color (WCAG 2.1 SC 1.4.1).",
+          actual: "Axe reports 1 issue: link only differs by color.",
+          evidence: "/img/img-ryanair/BUG-001-incidencias-home.png"
+        },
+        {
+          id: "BUG-003",
+          testCaseId: "TS-001 / TC-009",
+          title: "Banners with informational text embedded in image without accessible alternative",
+          severity: "High",
+          description: "Banner shows promotional text embedded in image: 'STAYS FOR LESS THAN €99 PER NIGHT', side labels ('CAR HIRE', 'RYANAIR ROOMS', 'IMPORTANT NOTICE', 'PRIVATE TRANSFERS') without equivalent accessible alt text.",
+          precondition: "Chrome. Home ryanair.com/en/en fully loaded.",
+          steps: [
+            "Open ryanair.com/en/en",
+            "View main rotating banner",
+            "Observe visible text inside images",
+            "Inspect with DevTools if text exists in DOM"
+          ],
+          expected: "Relevant banner information is available as text in DOM or in a descriptive alt attribute.",
+          actual: "Banner shows promotional text embedded in image without equivalent accessible alt text.",
           evidence: "/img/img-ryanair/BUG-003-home-banners.png"
+        },
+        {
+          id: "BUG-004",
+          testCaseId: "TS-008 / TC-005",
+          title: "'Try Somewhere New' and 'Travel Agent Direct' in English in Spanish menu",
+          severity: "Medium",
+          description: "Items 'Try Somewhere New' and 'Travel Agent Direct' appear in English within the 'EXPLORE' sub-menu, while all other items are in Spanish.",
+          precondition: "Interface set to es-ES. Home loaded.",
+          steps: [
+            "Open ryanair.com/es/es in Spanish",
+            "Click 'Planear' in header",
+            "Review sub-menu 'EXPLORAR' section",
+            "Locate English items"
+          ],
+          expected: "All 'Plan' menu items translated to Spanish.",
+          actual: "Items 'Try Somewhere New' and 'Travel Agent Direct' appear in English.",
+          evidence: "/img/img-ryanair/BUG-004-home-menu-en.png"
+        },
+        {
+          id: "BUG-005",
+          testCaseId: "TS-009 / TC-006",
+          title: "Greyed out countries in destination selector without visible explanation",
+          severity: "High",
+          description: "10+ countries appear in light grey (Cyprus, Finland, Bosnia & Herzegovina, Montenegro, Norway, Netherlands, Romania, Serbia, Switzerland, Turkey) without any message or indicator why they are disabled.",
+          precondition: "Home loaded. Origin: London-Stansted. Search engine visible.",
+          steps: [
+            "Click 'Destination' field",
+            "Observe country list",
+            "Identify light grey countries",
+            "Try clicking a grey country (e.g., Cyprus)",
+            "Verify if there is an explanatory message"
+          ],
+          expected: "Countries without available flights are clearly marked with a message or tooltip explaining why.",
+          actual: "10+ countries greyed out without any message or indicator.",
+          evidence: "/img/img-ryanair/BUG-005-home-seleccionar-destino.png"
+        },
+        {
+          id: "BUG-006",
+          testCaseId: "TS-006 / TC-007",
+          title: "Document without main landmark defined",
+          severity: "Medium",
+          description: "Axe reports 'Document should have one main landmark' (1 issue). Document does not define a main region, preventing screen reader users from jumping directly to content.",
+          precondition: "Chrome. Axe DevTools installed. Home loaded.",
+          steps: [
+            "Run Axe DevTools on home",
+            "Locate 'Document should have one main landmark' issue",
+            "Inspect HTML with DevTools: search for <main> or role='main'"
+          ],
+          expected: "Document has exactly one <main> element delimiting main content.",
+          actual: "Axe reports 'Document should have one main landmark' (1 issue).",
+          evidence: "/img/img-ryanair/BUG-001-incidencias-home.png"
+        },
+        {
+          id: "BUG-007",
+          testCaseId: "TS-006 / TC-007",
+          title: "Home with 4 H1 elements — incorrect heading hierarchy",
+          severity: "High",
+          description: "Home contains 4 H1 elements (last detected: 'Sign up and save'). Final count: H1:4 · H2:22 · H3:1 · H4:0 · H5:0 · H6:0.",
+          precondition: "Chrome. Home ryanair.com/en/en loaded. SEO Meta in 1 Click extension active.",
+          steps: [
+            "Open ryanair.com/en/en",
+            "Activate header analysis extension",
+            "Go to 'HEADERS' tab",
+            "Review count and heading list"
+          ],
+          expected: "Exactly 1 H1 per page. Logical and continuous hierarchy (H1 → H2 → H3).",
+          actual: "Home contains 4 H1 elements.",
+          evidence: "/img/img-ryanair/BUG-007-home-headers.png"
+        },
+        {
+          id: "BUG-008",
+          testCaseId: "TS-007 / TC-008",
+          title: "Special assistance video in Catalan with Spanish interface",
+          severity: "Medium",
+          description: "Video shown entirely in Catalan: title 'VIATGE ASSISTIT', text '48 HORES ABANS DE LA SORTIDA' and subtitles.",
+          precondition: "Interface in es-ES. URL: help.ryanair.com → Special assistance.",
+          steps: [
+            "Navigate to Special Assistance section of Help Centre",
+            "Locate 'Booking special assistance' video",
+            "Play video",
+            "Observe language of overlaid text and subtitles"
+          ],
+          expected: "Video shown in Spanish when interface is es-ES.",
+          actual: "Video shown entirely in Catalan.",
+          evidence: "/img/img-ryanair/BUG-008-soporte-ryanair-ES.png"
+        },
+        {
+          id: "BUG-009",
+          testCaseId: "TS-006 / TC-007",
+          title: "Checkout without H1 or H2 — hierarchy starts at H3",
+          severity: "High",
+          description: "Checkout without any H1 or H2. Count: H1:0 · H2:0 · H3:4 · H4:5. Hierarchy starts at H3: 'Your selected flights', 'Your selected fare', 'Log in to myRyanair', 'Passengers'.",
+          precondition: "Search executed. Flight selected. Checkout step 'Flights' loaded.",
+          steps: [
+            "Run search and select flight",
+            "Access checkout",
+            "Activate header analysis extension",
+            "Review 'HEADERS' tab"
+          ],
+          expected: "At least 1 H1 on checkout page. Logical hierarchy.",
+          actual: "Checkout without any H1 or H2.",
+          evidence: "/img/img-ryanair/checkout-headers.png"
+        },
+        {
+          id: "BUG-010",
+          testCaseId: "TS-001 / TC-003",
+          title: "'Search' button contrast requires formal verification",
+          severity: "Medium",
+          description: "'Search' button has RGB (217, 181, 46) — yellow #D9B52E. This color requires formal contrast ratio verification with overlaid text to confirm WCAG compliance.",
+          precondition: "Chrome. Home ryanair.com/en in responsive view. DevTools open.",
+          steps: [
+            "Inspect 'Search' button with DevTools",
+            "Open Color Picker in Styles panel",
+            "Record RGB color values",
+            "Verify ratio in WebAIM Contrast Checker"
+          ],
+          expected: "'Search' button meets minimum 4.5:1 ratio between text and background (WCAG 2.1 SC 1.4.3).",
+          actual: "'Search' button has RGB (217, 181, 46) — yellow #D9B52E.",
+          evidence: "/img/img-ryanair/color-ratio.png"
+        },
+        {
+          id: "BUG-011",
+          testCaseId: "TS-005 / TC-002",
+          title: "Login modal does not respond to Escape key",
+          severity: "High",
+          description: "Pressing Escape with login modal open has no effect; modal remains open. User cannot close modal without mouse.",
+          precondition: "Chrome. Home loaded. User not logged in.",
+          steps: [
+            "Go to Ryanair home",
+            "Click 'Log in'",
+            "Verify modal opens",
+            "Press Escape key",
+            "Observe if modal closes"
+          ],
+          expected: "Modal closes on Escape press. Focus returns to 'Log in' button (WCAG 2.1 SC 2.4.3).",
+          actual: "Pressing Escape with login modal open, modal remains open.",
+          evidence: ""
+        },
+        {
+          id: "BUG-012",
+          testCaseId: "TS-003 / TC-004",
+          title: "Home tab order does not follow visual logic",
+          severity: "High",
+          description: "Tab order makes unpredictable jumps. Some interactive elements do not receive focus when navigating with Tab, and outline is not visible on all affected elements.",
+          precondition: "Chrome without CSS modifying extensions. Home loaded in full window.",
+          steps: [
+            "Press Tab from URL bar",
+            "Document order in which each element receives focus",
+            "Compare with page visual order (left→right, top→bottom)",
+            "Identify jumps or skipped elements"
+          ],
+          expected: "Focus cycles through all interactive elements in logical and predictable order: header → search engine → content → footer.",
+          actual: "Tab order makes unpredictable jumps.",
+          evidence: ""
         }
       ],
       uxImprovementsTitle: "UX IMPROVEMENTS",
@@ -1088,13 +1676,14 @@ export const translations = {
   },
   es: {
     home: "Inicio",
-    about: "Sobre mí",
+    about: "Sobre mi",
     projectsQA: "Proyectos QA",
     projectsUX: "Proyectos UX UI",
     skills: "Habilidades",
     contact: "Contáctame!",
+    contactSectionLabel: "Contáctame",
     heroTitle: "Daiana Ciaramella",
-    heroSub: "QA MANUAL TESTER | ORIENTADA A UX",
+    heroSub: "TESTER QA MANUAL | UX UI",
     aboutTitle: "Cerrando la brecha entre el diseño y la calidad del software",
     aboutP1: "Vengo del diseño UX/UI y el desarrollo Frontend, lo que me dio una perspectiva que pocos QA tienen: entiendo cómo se construye lo que después voy a romper. Esa mirada integral me permite detectar no solo bugs funcionales sino inconsistencias de experiencia que impactan directamente al usuario final.",
     aboutP2: "Con más de 3 años en entornos digitales, me especializo en testing funcional, diseño y ejecución de test cases, regression testing y gestión de defectos. Colaboro en equipos ágiles validando que el producto cumpla tanto los requerimientos técnicos como la experiencia esperada por el usuario.",
@@ -1107,7 +1696,7 @@ export const translations = {
     formMessage: "¿En qué puedo ayudarte?",
     formSubmit: "Enviar Mensaje",
     footer: "© 2026 DAIANA CIARAMELLA - QA TESTER | UX UI",
-    visualProjectsTitle: "CASOS DE ESTUDIO UX UI",
+    visualProjectsTitle: "Proyectos UX UI",
     view: "Ver",
     common: {
       caseStudy: "CASO DE ESTUDIO",
@@ -1144,38 +1733,38 @@ export const translations = {
     visualProjects: [
       {
         title: "Onus",
-        desc: "Caso de estudio y proyecto personal de testing manual sobre una aplicación web de gestión de finanzas personales.",
+        desc: "Diseño de identidad visual y experiencia de usuario para Onus Solutions, incluyendo definición de marca, paleta de colores y diseño web enfocado en claridad de contenido y navegación.",
         img: "/img/onus-proyectouxui.png"
       },
-      { title: "Grinplug", desc: "Pruebas de regresión visual y optimización de rendimiento para retail global.", img: "/img/grinplug-proyectouxui.png" },
-      { title: "Uminti", desc: "Pruebas de extremo a extremo de interacciones en tiempo real y visualización de datos.", img: "/img/uminti-proyectouxui.png" },
-      { title: "HAY EQUIPO! - app", desc: "Aplicación diseñada para mujeres apasionadas por el fútbol, que facilita la organización de partidos y fomenta la creación de comunidad entre jugadoras.", img: "/img/app-futfem.png" }
+      { title: "Grinplug", desc: "Diseño integral de una plataforma de carga eléctrica, definiendo flujos y arquitectura del producto.", img: "/img/grinplug-proyectouxui.png" },
+      { title: "Uminti", desc: "Diseño de identidad visual y experiencia web para un servicio especializado, enfocado en claridad de comunicación y optimización de flujos de conversión.", img: "/img/uminti-proyectouxui.png" },
+      { title: "HAY EQUIPO! – App", desc: "Investigación, definición de producto y diseño UX/UI de una app orientada a la organización de partidos de fútbol femenino y generación de comunidad. Research - flujos - wireframes", img: "/img/app-futfem.png" }
     ],
     qaProjects: [
       {
-        title: "Daily - app",
-        description: "Aplicación financiera personal multimoneda que desarrollé para gestionar ARS, USD y EUR en simultáneo — un problema real sin solución en el mercado. Testeada en condiciones de uso diario real.",
+        title: "DAILY – App",
+        description: "QA Testing · Financial Web App (PWA) — Testing funcional de una aplicación financiera multimoneda (ARS, USD, EUR), validando flujos críticos de uso diario, manejo de errores y consistencia de datos.",
         link: "/proyectos-qa/daily_app"
       },
       {
-        title: "Testing de API con Postman",
-        description: "Validación de una API REST de e-commerce mediante Postman, verificando endpoints de productos y carritos, respuestas HTTP y manejo de errores.",
+        title: "UX & Accesibilidad - Ryanair",
+        description: "Accessibility & UX Testing · Web Audit — Evaluación de accesibilidad y usabilidad del sitio de Ryanair utilizando Axe DevTools, identificando barreras WCAG, problemas de navegación y mejoras en la experiencia del usuario.",
+        link: "/ux-testing"
+      },
+      {
+        title: "API Testing - Postman",
+        description: "API Testing · E-commerce — Validación de una API REST de e-commerce utilizando Postman, analizando endpoints de productos y carritos, respuestas HTTP, estructura de datos y manejo de errores.",
         link: "/proyectos-qa/testing-api-postman"
       },
       {
         title: "E-commerce Testing",
         description: "Análisis y testing funcional del flujo de compra de un e-commerce, validando registro de usuario, carrito de compras, proceso de checkout y manejo de errores.",
         link: "/proyectos-qa/ecommerce-testing"
-      },
-      {
-        title: "UX & Accesibilidad",
-        description: "Evaluación de accesibilidad y usabilidad del sitio web de Ryanair mediante Axe DevTools, identificando barreras de accesibilidad, inconsistencias visuales y problemas de navegación que impactan la experiencia del usuario.",
-        link: "/ux-testing"
       }
     ],
     daily_app: {
-      title: "Daily - app",
-      subtitle: "Aplicación personal de gestión financiera diseñada para controlar gastos e ingresos en múltiples cuentas bancarias.",
+      title: "DAILY – App",
+      subtitle: "Aplicación de gestión financiera multimoneda diseñada para centralizar cuentas, registrar transacciones y visualizar balances en tiempo real.",
       description: "DAILY nació de una necesidad real: ninguna app del mercado ofrecía gestión financiera multimoneda adaptada a quienes operan simultáneamente con ARS, USD y EUR en distintos países. La app centraliza múltiples cuentas bancarias y billeteras virtuales, calcula totales consolidados por moneda en tiempo real, y permite vincular gastos a viajes con seguimiento de presupuesto. \n\nTesteé la app en condiciones de uso diario real, lo que me permitió detectar comportamientos que solo emergen con datos reales y flujos de uso genuinos.",
       objective: "Validar el correcto funcionamiento de los flujos principales de la aplicación, asegurando la consistencia de los balances financieros y una experiencia de usuario clara en dispositivos móviles.",
       platform: "PWA (Progressive Web App), publicada en Vercel, optimizada para Android e iOS.",
@@ -1199,47 +1788,220 @@ export const translations = {
       testScenariosTitle: "ESCENARIOS DE PRUEBA",
       testScenariosDesc: "A partir de las funcionalidades principales de la aplicación se definieron diferentes escenarios de prueba para validar los flujos críticos del sistema.",
       testScenariosTable: [
-        { id: "TS-001", feature: "Autenticación", scenario: "Acceso a la aplicación mediante PIN o huella", objective: "Validar que el usuario pueda acceder correctamente a la aplicación" },
-        { id: "TS-002", feature: "Cuentas", scenario: "Creación y gestión de múltiples cuentas", objective: "Verificar que el sistema permita registrar cuentas bancarias y billeteras en distintas monedas" },
-        { id: "TS-003", feature: "Transacciones", scenario: "Registro de gastos e ingresos en una cuenta", objective: "Validar que cada operación actualiza correctamente el balance de la cuenta correspondiente" },
-        { id: "TS-004", feature: "Multimoneda", scenario: "Actualización de totales por moneda en dashboard", objective: "Verificar que los totales de ARS, USD y EUR se actualizan de forma independiente y correcta" },
-        { id: "TS-005", feature: "Dashboard", scenario: "Consistencia visual de datos y símbolos de moneda", objective: "Verificar que los gráficos muestran el símbolo correcto según la moneda de cada cuenta" },
-        { id: "TS-006", feature: "Viajes", scenario: "Registro de gastos dentro de un viaje activo", objective: "Verificar que cada gasto se asocia al viaje y actualiza el total y la barra de progreso" },
-        { id: "TS-007", feature: "Viajes", scenario: "Superación del presupuesto de un viaje", objective: "Verificar el comportamiento del sistema cuando el gasto total supera el límite definido" },
-        { id: "TS-008", feature: "Deudas", scenario: "Registro en vistas Debo / Me deben", objective: "Validar que cada deuda aparece en la vista correcta con monto y nota asociados" },
-        { id: "TS-009", feature: "Presupuestos", scenario: "Creación de presupuesto mensual con límite", objective: "Validar el cálculo del gasto acumulado y el comportamiento al acercarse al límite" },
-        { id: "TS-010", feature: "Validaciones", scenario: "Registro de transacciones con datos incompletos", objective: "Verificar el comportamiento del sistema ante campos vacíos o datos inválidos" }
+        { id: "TS-001", feature: "Autenticación", scenario: "Acceso mediante PIN o biometría", objective: "Validar autenticación correcta y manejo de intentos inválidos con feedback claro", priority: "Crítico" },
+        { id: "TS-002", feature: "Cuentas", scenario: "Gestión de cuentas multimoneda", objective: "Verificar creación de cuentas y consistencia de datos entre monedas", priority: "Crítico" },
+        { id: "TS-003", feature: "Transacciones", scenario: "Registro de transacciones", objective: "Validar impacto de ingresos y gastos en balances y vistas", priority: "Crítico" },
+        { id: "TS-004", feature: "Multimoneda", scenario: "Totales por moneda", objective: "Verificar independencia de cálculos entre monedas", priority: "Crítico" },
+        { id: "TS-005", feature: "Dashboard", scenario: "Representación visual de datos", objective: "Validar símbolos de moneda y consistencia visual", priority: "Grave" },
+        { id: "TS-006", feature: "Viajes", scenario: "Gestión de viajes", objective: "Verificar asociación de gastos y actualización de progreso", priority: "Grave" },
+        { id: "TS-007", feature: "Viajes", scenario: "Presupuesto de viaje", objective: "Validar comportamiento al superar límites y feedback UX", priority: "Crítico" },
+        { id: "TS-008", feature: "Deudas", scenario: "Gestión de deudas", objective: "Validar registro y visualización correcta de deudas", priority: "Grave" },
+        { id: "TS-009", feature: "Presupuestos", scenario: "Presupuesto mensual", objective: "Verificar cálculo de gasto acumulado y porcentaje", priority: "Grave" },
+        { id: "TS-010", feature: "Validaciones", scenario: "Validaciones de inputs", objective: "Validar manejo de datos inválidos sin inconsistencias", priority: "Crítico" }
       ],
       testScenariosFooter: "",
       testCasesDesc: "Cada caso de prueba está vinculado a su escenario correspondiente. Los estados reflejan los resultados obtenidos durante la ejecución.",
       testCasesTable: [
         {
-          id: "TC-001",
-          scenarioId: "TS-003",
-          feature: "Transacciones",
-          scenario: "Registrar un nuevo gasto asociado a una cuenta",
-          result: "El gasto se guarda y el balance se actualiza correctamente",
-          status: "pass",
+          id: "TC-001", scenarioId: "TS-003",
+          feature: "Registrar un nuevo gasto asociado a una cuenta",
+          scenario: "Usuario autenticado. Cuenta en ARS activa con saldo > $0. Al menos una categoría disponible.",
+          result: "El gasto se guarda correctamente. El balance pasa de $2000 a $1500 y se refleja de forma consistente en dashboard y vista de transacciones.",
+          status: "fail", bug: "BUG-002", tipo: "Funcional",
           details: {
-            precondition: "El usuario tiene al menos una cuenta registrada.",
+            precondition: "Usuario autenticado. Cuenta en ARS activa con saldo > $0. Al menos una categoría disponible.",
             steps: [
-              "Abrir la aplicación",
-              "Seleccionar 'Agregar gasto'",
-              "Introducir monto",
-              "Seleccionar cuenta",
-              "Confirmar operación"
-            ]
+              "Ir a Transacciones → Nueva transacción",
+              "Seleccionar tipo: Gasto",
+              "Seleccionar cuenta ARS",
+              "Ingresar monto: $500",
+              "Seleccionar categoría: Comida",
+              "Guardar",
+              "Verificar balance en la cuenta",
+              "Verificar dashboard"
+            ],
+            testData: "Cuenta: ARS, saldo inicial: $2000 / Monto gasto: $500 / Categoría: Comida"
           }
         },
-        { id: "TC-002", scenarioId: "TS-003", feature: "Transacciones", scenario: "Registrar un ingreso en una cuenta existente", result: "El ingreso se refleja correctamente en el balance", status: "pass" },
-        { id: "TC-003", scenarioId: "TS-002", feature: "Cuentas", scenario: "Crear una nueva cuenta bancaria en moneda EUR", result: "La cuenta se crea y aparece en la lista con el símbolo correcto", status: "pass" },
-        { id: "TC-004", scenarioId: "TS-004", feature: "Dashboard", scenario: "Registrar gasto en USD y verificar que los totales EUR y ARS no cambian", result: "Cada total se actualiza solo en su moneda correspondiente", status: "pass" },
-        { id: "TC-005", scenarioId: "TS-005", feature: "Dashboard", scenario: "Verificar símbolo de moneda en gráfico de cuenta EUR", result: "El valor debe mostrar \"€\" y no \"$\"", status: "fail", bug: "BUG-002" },
-        { id: "TC-006", scenarioId: "TS-006", feature: "Viajes", scenario: "Registrar gasto dentro de un viaje activo y verificar vinculación a cuenta", result: "El gasto se asocia al viaje y la barra de progreso se actualiza", status: "pass" },
-        { id: "TC-007", scenarioId: "TS-007", feature: "Viajes", scenario: "Registrar gastos hasta superar el presupuesto del viaje", result: "El sistema notifica activamente que se superó el límite", status: "fail", bug: "BUG-001" },
-        { id: "TC-008", scenarioId: "TS-008", feature: "Deudas", scenario: "Registrar deuda en \"Me deben\" con monto y nota", result: "La deuda aparece en la vista correcta con todos los datos visibles", status: "pass" },
-        { id: "TC-009", scenarioId: "TS-009", feature: "Presupuestos", scenario: "Crear presupuesto mensual y registrar gastos hasta el límite", result: "El sistema calcula correctamente el acumulado y refleja el porcentaje", status: "pass" },
-        { id: "TC-010", scenarioId: "TS-010", feature: "Validaciones", scenario: "Registrar gasto con campo monto vacío", result: "El sistema muestra mensaje de validación indicando que el campo es obligatorio", status: "fail", bug: "BUG-005" }
+        {
+          id: "TC-002", scenarioId: "TS-003",
+          feature: "Registrar un ingreso y verificar impacto en balance",
+          scenario: "Usuario autenticado. Cuenta en ARS activa.",
+          result: "El ingreso se registra correctamente. El balance pasa de $1000 a $4000 y se refleja en todas las vistas.",
+          status: "pass", tipo: "Funcional",
+          details: {
+            precondition: "Usuario autenticado. Cuenta en ARS activa.",
+            steps: [
+              "Ir a Transacciones → Nueva transacción",
+              "Seleccionar tipo: Ingreso",
+              "Seleccionar cuenta ARS",
+              "Ingresar monto: $3000",
+              "Guardar",
+              "Verificar balance",
+              "Verificar dashboard y transacciones"
+            ],
+            testData: "Cuenta: ARS, saldo inicial: $1000 / Monto ingreso: $3000"
+          }
+        },
+        {
+          id: "TC-003", scenarioId: "TS-002",
+          feature: "Crear nueva cuenta en moneda EUR",
+          scenario: "Usuario autenticado. No existe cuenta en EUR previamente.",
+          result: "La cuenta se crea correctamente con símbolo € y no genera cambios en otras cuentas.",
+          status: "pass", tipo: "Funcional / Integración",
+          details: {
+            precondition: "Usuario autenticado. No existe cuenta en EUR previamente.",
+            steps: [
+              "Ir a Cuentas → Nueva cuenta",
+              "Ingresar nombre: \"Cuenta Europa\"",
+              "Seleccionar moneda: EUR",
+              "Guardar",
+              "Verificar listado",
+              "Verificar que no afecta otras cuentas"
+            ],
+            testData: "Nombre: Cuenta Europa / Moneda: EUR / Saldo inicial: €0"
+          }
+        },
+        {
+          id: "TC-004", scenarioId: "TS-004",
+          feature: "Gasto en USD no afecta totales de EUR y ARS",
+          scenario: "Usuario autenticado. Cuentas activas en USD, EUR y ARS con saldo.",
+          result: "Solo USD se actualiza. EUR y ARS permanecen sin cambios. No hay inconsistencias.",
+          status: "pass", tipo: "Integración / Multimoneda",
+          details: {
+            precondition: "Usuario autenticado. Cuentas activas en USD, EUR y ARS con saldo.",
+            steps: [
+              "Ir a Transacciones",
+              "Seleccionar cuenta USD",
+              "Registrar gasto $50",
+              "Guardar",
+              "Ir a Dashboard",
+              "Verificar totales por moneda"
+            ],
+            testData: "USD: $200 → $150 / EUR: €150 / ARS: $5000"
+          }
+        },
+        {
+          id: "TC-005", scenarioId: "TS-005",
+          feature: "Verificar representación del símbolo EUR en el sistema",
+          scenario: "Usuario autenticado. Cuenta EUR activa.",
+          result: "El sistema muestra correctamente el símbolo € en todos los componentes (dashboard, gráficos y vistas).",
+          status: "fail", bug: "BUG-004", tipo: "UX / Visual",
+          details: {
+            precondition: "Usuario autenticado. Cuenta EUR activa.",
+            steps: [
+              "Ir a Dashboard",
+              "Ver cuenta EUR",
+              "Verificar símbolo en gráficos, lista y detalle"
+            ],
+            testData: "Cuenta EUR: €200"
+          }
+        },
+        {
+          id: "TC-006", scenarioId: "TS-006",
+          feature: "Gasto asociado a viaje y actualización de progreso",
+          scenario: "Usuario autenticado. Viaje activo con presupuesto y gasto previo.",
+          result: "El gasto se asocia correctamente. El total pasa a €250 (50%) y se refleja en todos los módulos.",
+          status: "fail", bug: "BUG-003", tipo: "Funcional / Integración",
+          details: {
+            precondition: "Usuario autenticado. Viaje activo con presupuesto y gasto previo.",
+            steps: [
+              "Ir a Viajes",
+              "Seleccionar viaje",
+              "Registrar gasto €50",
+              "Guardar",
+              "Verificar progreso",
+              "Verificar cuenta y dashboard"
+            ],
+            testData: "Presupuesto: €500 / Gasto previo: €200"
+          }
+        },
+        {
+          id: "TC-007", scenarioId: "TS-007",
+          feature: "Superar presupuesto de viaje y validar feedback",
+          scenario: "Usuario autenticado. Viaje con presupuesto casi alcanzado.",
+          result: "El sistema muestra alerta al superar el presupuesto. Se refleja correctamente ($1050) y se indica visualmente.",
+          status: "fail", bug: "BUG-006", tipo: "Funcional / UX / Edge",
+          details: {
+            precondition: "Usuario autenticado. Viaje con presupuesto casi alcanzado.",
+            steps: [
+              "Ir a Viajes",
+              "Agregar gasto $100",
+              "Guardar",
+              "Verificar notificación",
+              "Verificar barra y valores"
+            ],
+            testData: "Presupuesto: $1000 / Gasto previo: $950"
+          }
+        },
+        {
+          id: "TC-008", scenarioId: "TS-008",
+          feature: "Registrar deuda “Me deben”",
+          scenario: "Usuario autenticado. Sin deudas previas.",
+          result: "La deuda se registra correctamente en la vista \"Me deben\" y no aparece en \"Debo\".",
+          status: "pass", tipo: "Funcional",
+          details: {
+            precondition: "Usuario autenticado. Sin deudas previas.",
+            steps: [
+              "Ir a Deudas",
+              "Nueva deuda",
+              "Seleccionar \"Me deben\"",
+              "Ingresar datos",
+              "Guardar",
+              "Verificar vista"
+            ],
+            testData: "Nombre: Juan / Monto: $300"
+          }
+        },
+        {
+          id: "TC-009", scenarioId: "TS-009",
+          feature: "Cálculo de porcentaje de presupuesto mensual",
+          scenario: "Usuario autenticado. Presupuesto activo con gastos.",
+          result: "El sistema calcula correctamente el porcentaje (90%) and muestra proximidad al límite.",
+          status: "pass", tipo: "Funcional / Cálculo",
+          details: {
+            precondition: "Usuario autenticado. Presupuesto activo con gastos.",
+            steps: [
+              "Ir a Presupuestos",
+              "Ver gasto actual",
+              "Agregar gasto",
+              "Verificar porcentaje"
+            ],
+            testData: "Presupuesto: $5000 / Gasto: $3500 → $4500"
+          }
+        },
+        {
+          id: "TC-010", scenarioId: "TS-010",
+          feature: "Validación de campo monto vacío",
+          scenario: "Usuario autenticado. Cuenta activa.",
+          result: "El sistema bloquea la acción, muestra error y no guarda datos ni modifica balances.",
+          status: "fail", bug: "BUG-005", tipo: "Validación / Negativo",
+          details: {
+            precondition: "Usuario autenticado. Cuenta activa.",
+            steps: [
+              "Ir a Transacciones",
+              "Dejar monto vacío",
+              "Intentar guardar"
+            ],
+            testData: "Monto vacío"
+          }
+        },
+        {
+          id: "TC-011", scenarioId: "TS-001",
+          feature: "Validar autenticación con PIN incorrecto",
+          scenario: "Usuario registrado con PIN configurado",
+          result: "El sistema bloquea acceso y muestra mensaje claro de error sin permitir ingreso.",
+          status: "fail", bug: "BUG-001", tipo: "Seguridad / Validación",
+          details: {
+            precondition: "Usuario registrado con PIN configurado",
+            steps: [
+              "Abrir app",
+              "Ingresar PIN incorrecto",
+              "Confirmar"
+            ],
+            testData: "PIN incorrecto"
+          }
+        }
       ],
       bugsTitle: "REPORTES DE BUGS",
       bugsDescription: "Se identificaron y documentaron los siguientes defectos críticos durante la ejecución de las pruebas.",
@@ -1248,44 +2010,66 @@ export const translations = {
           id: "BUG-001",
           title: "Falta de feedback al ingresar PIN incorrecto",
           severity: "Medium",
-          type: "Validación / Error handling",
-          description: "Al ingresar un PIN incorrecto en la pantalla de autenticación, la aplicación bloquea el acceso correctamente pero no muestra ningún mensaje indicando que el PIN es inválido.",
-          steps: ["Abrir la aplicación", "Ingresar un PIN incorrecto", "Confirmar el acceso"],
-          expected: 'El sistema debería mostrar un mensaje indicando que el PIN ingresado es incorrecto: "PIN incorrecto. Inténtalo nuevamente."',
-          actual: "La aplicación no muestra ningún mensaje de error y simplemente solicita ingresar nuevamente el PIN.",
+          type: "Autenticación",
+          description: "Precondición: Usuario con PIN configurado. [TS-001 / TC-011]",
+          steps: ["Abrir la aplicación", "Ingresar un PIN incorrecto", "Confirmar acceso"],
+          expected: "El sistema bloquea el acceso y muestra un mensaje claro indicando que el PIN es incorrecto",
+          actual: "El acceso es bloqueado pero no se muestra ningún mensaje de error",
           evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
         },
         {
           id: "BUG-002",
-          title: "Desincronización temporal en visualización de datos",
+          title: "Desincronización temporal de datos en dashboard",
           severity: "Low",
-          type: "UI / Sincronización",
-          description: "Tras registrar una nueva transacción, algunos componentes de la interfaz pueden tardar en reflejar el cambio inmediatamente.",
-          steps: ["Registrar un nuevo gasto", "Volver inmediatamente al dashboard o sección de viajes", "Observar gráficos o valores agregados"],
-          expected: "Todos los componentes del sistema deberían actualizarse inmediatamente después de registrar la transacción.",
-          actual: "En algunos casos la interfaz puede tardar en reflejar los cambios hasta refrescar la vista manualmente.",
+          type: "Dashboard",
+          description: "Precondición: Usuario autenticado con cuentas activas. [TS-003 / TC-001]",
+          steps: ["Registrar un nuevo gasto", "Ir inmediatamente al dashboard", "Verificar valores mostrados"],
+          expected: "El dashboard refleja inmediatamente el cambio en los balances",
+          actual: "Algunos valores tardan en actualizarse hasta refrescar la vista",
           evidence: "/img/img-dailyapp/daily-mockup-funciones.jpeg"
         },
         {
           id: "BUG-003",
-          title: "No se pueden editar gastos desde la vista de viaje",
+          title: "No se pueden editar gastos desde la vista de viajes",
           severity: "High",
-          type: "Functional",
-          description: "Los gastos registrados dentro de un viaje no pueden editarse directamente desde la sección de viajes. Para modificar un gasto es necesario navegar a la cuenta bancaria desde la que se registró la transacción.",
-          steps: ["Ir a la sección Viajes", "Seleccionar un viaje existente", "Localizar un gasto registrado", "Intentar editar el gasto"],
-          expected: "El usuario debería poder editar el gasto directamente desde la sección de viajes.",
-          actual: "Los gastos no pueden editarse desde esta vista. Para modificarlos es necesario navegar a la cuenta bancaria correspondiente.",
+          type: "Viajes",
+          description: "Precondición: Usuario con viaje activo y gastos registrados. [TS-006 / TC-006]",
+          steps: ["Ir a Viajes", "Seleccionar un viaje", "Intentar editar un gasto registrado"],
+          expected: "El usuario puede editar el gasto desde la vista de viajes",
+          actual: "No es posible editar el gasto desde esa vista",
           evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
         },
         {
           id: "BUG-004",
-          title: "Campo de gasto vacío sin mensaje de validación",
+          title: "Símbolo de moneda incorrecto en dashboard (EUR)",
           severity: "Medium",
-          type: "Validation / Form validation",
-          description: "Al intentar registrar un gasto sin introducir un monto, la aplicación impide guardar la transacción pero no muestra ningún mensaje indicando que el campo es obligatorio.",
-          steps: ["Abrir la aplicación", "Ir a la sección Registrar gasto", "Dejar el campo monto vacío", "Intentar guardar el gasto"],
-          expected: "El sistema debería mostrar un mensaje de validación indicando que el campo es obligatorio.",
-          actual: "El sistema no permite registrar el gasto, pero no muestra ningún mensaje de error ni indicación al usuario sobre el motivo.",
+          type: "Visual / Dashboard",
+          description: "Precondición: Usuario con cuenta en EUR. [TS-005 / TC-005]",
+          steps: ["Ir al dashboard", "Visualizar cuenta en EUR", "Revisar símbolo mostrado"],
+          expected: "El sistema muestra el símbolo \"€\" correctamente",
+          actual: "El sistema muestra \"$\" en lugar de \"€\" en algunos componentes",
+          evidence: "/img/img-dailyapp/daily-mockup-funciones.jpeg"
+        },
+        {
+          id: "BUG-005",
+          title: "Se permite guardar transacción con monto vacío",
+          severity: "High",
+          type: "Validación",
+          description: "Precondición: Usuario autenticado con cuenta activa. [TS-010 / TC-010]",
+          steps: ["Ir a nueva transacción", "Dejar campo monto vacío", "Intentar guardar"],
+          expected: "El sistema bloquea la acción y muestra mensaje de error",
+          actual: "La transacción se guarda sin monto o genera comportamiento inconsistente",
+          evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
+        },
+        {
+          id: "BUG-006",
+          title: "Falta de alerta clara al superar presupuesto de viaje",
+          severity: "Medium",
+          type: "UX / Alertas",
+          description: "Precondición: Viaje activo con presupuesto cercano al límite. [TS-007 / TC-007]",
+          steps: ["Registrar gasto que supere el presupuesto", "Confirmar operación", "Verificar feedback del sistema"],
+          expected: "El sistema muestra una alerta clara indicando que se superó el presupuesto",
+          actual: "El sistema permite la operación pero no muestra un feedback claro o visible",
           evidence: "/img/img-dailyapp/daily-mockup-funciones.jpeg"
         }
       ],
@@ -1843,66 +2627,449 @@ export const translations = {
         { name: "Testing Exploratorio", description: "Navegación libre por el flujo completo de reserva para detectar comportamientos inesperados no cubiertos por los escaneos automáticos." },
         { name: "Testing Funcional", description: "Validación del flujo end-to-end: búsqueda → selección de vuelo → selección de equipaje, verificando consistencia entre pasos." }
       ],
-      testScenariosTitle: "ESCENARIO DE PRUEBA",
       testScenariosTable: {
         title: "ESCENARIO DE PRUEBA",
         table: [
-          { id: "TS-001", feature: "Accesibilidad", scenario: "Escaneo Axe DevTools en home", objective: "Detectar incidencias WCAG 2.1 AA en la página principal" },
-          { id: "TS-002", feature: "Accesibilidad", scenario: "Escaneo Axe DevTools en checkout", objective: "Detectar incidencias WCAG 2.1 AA en el flujo de pago" },
-          { id: "TS-003", feature: "Keyboard", scenario: "Navegación con Tab en home", objective: "Verificar visibilidad del foco y orden lógico de tabulación" },
-          { id: "TS-004", feature: "Keyboard", scenario: "Navegación con Tab en resultados y checkout", objective: "Verificar que el foco es visible y funcional en el flujo de reserva" },
-          { id: "TS-005", feature: "Keyboard", scenario: "Comportamiento del modal de login con teclado", objective: "Verificar que el modal se cierra con una sola tecla (Escape)" },
-          { id: "TS-006", feature: "Estructura", scenario: "Jerarquía de encabezados en las tres páginas", objective: "Verificar que la estructura H1-H6 es lógica y sin duplicados" },
-          { id: "TS-007", feature: "Localización", scenario: "Idioma del video de asistencia especial", objective: "Verificar que el video se muestra en el idioma de la interfaz" },
-          { id: "TS-008", feature: "Localización", scenario: "Idioma del menú de navegación", objective: "Verificar que todas las opciones del menú están traducidas" },
-          { id: "TS-009", feature: "Usabilidad", scenario: "Flujo de selección de origen y destino", objective: "Verificar que el buscador guía al usuario claramente" },
-          { id: "TS-010", feature: "Usabilidad", scenario: "Consistencia de contenido en la home", objective: "Verificar que no existen secciones duplicadas ni nomenclatura inconsistente" },
-          { id: "TS-011", feature: "Funcional", scenario: "Carga y navegación general del sitio", objective: "Validar que los flujos principales funcionan correctamente con el mouse" }
+          { id: "TS-001", feature: "Accesibilidad", scenario: "Escaneo Axe DevTools en home", objective: "Detectar incidencias WCAG 2.1 AA en la página principal", precondition: "Chrome actualizado. Axe DevTools 4.11.1 instalado y activo.", priority: "Crítico" },
+          { id: "TS-002", feature: "Accesibilidad", scenario: "Escaneo Axe DevTools en checkout", objective: "Detectar incidencias WCAG 2.1 AA en el flujo de pago (pasos 1 al 3)", precondition: "Chrome. Axe DevTools instalado. Búsqueda de vuelo realizada previamente.", priority: "Crítico" },
+          { id: "TS-003", feature: "Keyboard", scenario: "Navegación con Tab en home", objective: "Verificar visibilidad del foco y orden lógico de tabulación en home", precondition: "Chrome. Sin extensiones que modifiquen estilos. Home cargada.", priority: "Crítico" },
+          { id: "TS-004", feature: "Keyboard", scenario: "Navegación con Tab en resultados y checkout", objective: "Verificar que el foco es visible y funcional en todo el flujo de reserva", precondition: "Búsqueda ejecutada. Resultados visibles.", priority: "Crítico" },
+          { id: "TS-005", feature: "Keyboard", scenario: "Comportamiento del modal de login con teclado", objective: "Verificar que el modal se cierra con Escape y el foco retorna al elemento disparador", precondition: "Chrome. Home cargada. Usuario sin sesión iniciada.", priority: "Crítico" },
+          { id: "TS-006", feature: "Estructura", scenario: "Estructura semántica: headings y landmarks en home, resultados y checkout", objective: "Verificar jerarquía H1–H6 lógica sin duplicados, y presencia de landmark <main> en todas las páginas", precondition: "Chrome. DevTools abierto. Extensión de análisis de headers. Acceso a las 3 páginas.", priority: "Crítico" },
+          { id: "TS-007", feature: "Localización", scenario: "Idioma del video de asistencia especial", objective: "Verificar que el video se muestra en el idioma de la interfaz", precondition: "Interfaz configurada en español (es-ES). Sección asistencia especial accesible.", priority: "Alto" },
+          { id: "TS-008", feature: "Localización", scenario: "Idioma del menú de navegación", objective: "Verificar que todas las opciones del menú están traducidas al idioma de la interfaz", precondition: "Interfaz configurada en español (es-ES). Home cargada.", priority: "Alto" },
+          { id: "TS-009", feature: "Usabilidad", scenario: "Flujo de selección de origen y destino", objective: "Verificar que el buscador guía al usuario claramente en la selección de destino", precondition: "Home cargada. Buscador de vuelos visible.", priority: "Alto" },
+          { id: "TS-010", feature: "Usabilidad", scenario: "Consistencia de contenido en la home", objective: "Verificar que no existen secciones duplicadas ni nomenclatura inconsistente", precondition: "Home cargada completamente. Sin caché.", priority: "Medio" },
+          { id: "TS-011", feature: "Funcional", scenario: "Carga y elementos principales de la home", objective: "Validar que logo, buscador y menú se cargan y son interactuables", precondition: "Chrome. Conexión activa. Sin sesión iniciada.", priority: "Crítico" },
+          { id: "TS-012", feature: "Funcional", scenario: "Buscador de vuelos — selección de fechas", objective: "Validar que el calendario permite seleccionar fechas de ida y vuelta", precondition: "Home cargada. Buscador visible.", priority: "Crítico" },
+          { id: "TS-013", feature: "Funcional", scenario: "Menú principal — despliegue y navegación", objective: "Validar que el menú 'Planear' se despliega y sus ítems son navegables", precondition: "Home cargada. Menú visible en header.", priority: "Alto" },
+          { id: "TS-014", feature: "Funcional", scenario: "Resultados de búsqueda de vuelos", objective: "Validar que se muestran vuelos con precios y que los filtros responden", precondition: "Búsqueda origen/destino/fecha ejecutada desde home.", priority: "Crítico" }
         ]
       },
       testCasesTitle: "CASOS DE PRUEBA",
       testCases: [
-        { id: "TC-001", scenarioId: "TS-001", feature: "Accesibilidad", scenario: "Ejecutar Axe DevTools en home bajo WCAG 2.1 AA", result: "0 incidencias críticas o graves", status: "fail", bug: "BUG-001" },
-        { id: "TC-002", scenarioId: "TS-005", feature: "Keyboard", scenario: "Abrir modal de login y presionar Escape", result: "El modal se cierra con solo presionar Escape", status: "fail", bug: "BUG-002" },
-        { id: "TC-003", scenarioId: "TS-010", feature: "Usabilidad", scenario: "Verificar contenido único y consistente en la home", result: "Cada categoría aparece una única vez con el mismo nombre", status: "fail", bug: "BUG-003" },
-        { id: "TC-004", scenarioId: "TS-004", feature: "Keyboard", scenario: "Navegar con Tab en resultados y checkout", result: "El foco es visible y funcional en todo el flujo", status: "fail", bug: "BUG-006" },
-        { id: "TC-005", scenarioId: "TS-008", feature: "Localización", scenario: "Verificar opciones del menú \"Planear\" en español", result: "Todas las opciones están traducidas al español", status: "fail", bug: "BUG-004" },
-        { id: "TC-006", scenarioId: "TS-009", feature: "Usabilidad", scenario: "Seleccionar origen en buscador y verificar flujo", result: "El campo guía claramente país → aeropuerto", status: "fail", bug: "BUG-005" },
-        { id: "TC-007", scenarioId: "TS-006", feature: "Estructura", scenario: "Verificar jerarquía de encabezados", result: "Un H1 por página, jerarquía lógica sin saltos", status: "fail", bug: "BUG-007" },
-        { id: "TC-008", scenarioId: "TS-007", feature: "Localización", scenario: "Verificar idioma del video de asistencia especial", result: "El video se muestra en español", status: "fail", bug: "BUG-008" },
-        { id: "TC-009", scenarioId: "TS-003", feature: "Keyboard", scenario: "Verificar orden de tabulación en home", result: "El foco sigue un orden lógico y visible", status: "fail", bug: "BUG-009" },
-        { id: "TC-010", scenarioId: "TS-011", feature: "Funcional", scenario: "Verificar carga de la home", result: "Logo, buscador y menú visibles y funcionales", status: "pass" },
-        { id: "TC-011", scenarioId: "TS-011", feature: "Funcional", scenario: "Verificar selector de fechas", result: "El calendario permite seleccionar fechas correctamente", status: "pass" },
-        { id: "TC-012", scenarioId: "TS-011", feature: "Funcional", scenario: "Verificar resultados de búsqueda", result: "Se muestran vuelos con precios correctamente", status: "pass" },
-        { id: "TC-013", scenarioId: "TS-011", feature: "Funcional", scenario: "Verificar menú principal", result: "El menú \"Planear\" se despliega correctamente", status: "pass" }
+        {
+          id: "TC-001", scenarioId: "TS-001", feature: "Accesibilidad",
+          scenario: "Ejecutar Axe DevTools en home bajo WCAG 2.1 AA",
+          status: "fail", bug: "BUG-001",
+          result: "0 incidencias críticas o graves bajo WCAG 2.1 AA.",
+          details: {
+            precondition: "Chrome actualizado. Axe DevTools 4.11.1 instalado. Home cargada sin caché.",
+            steps: [
+              "Abrir ryanair.com/es/es",
+              "Esperar carga completa",
+              "Abrir Axe DevTools → 'Visión general'",
+              "Clic en 'Volver a ejecutar el escaneo'",
+              "Revisar panel de resultados — filtrar por Grave y Moderado"
+            ],
+            testData: "Chrome 120+\nAxe DevTools 4.11.1\nWCAG 2.1 AA activado\nURL: ryanair.com/es/es"
+          }
+        },
+        {
+          id: "TC-002", scenarioId: "TS-005", feature: "Keyboard",
+          scenario: "Abrir modal de login y cerrar con Escape",
+          status: "fail", bug: "BUG-011",
+          result: "El modal se cierra al presionar Escape. El foco retorna automáticamente al botón disparador (WCAG 2.1 SC 2.4.3).",
+          details: {
+            precondition: "Chrome. Home cargada. Sin sesión iniciada.",
+            steps: [
+              "Ir a home de Ryanair",
+              "Clic en 'Iniciar sesión'",
+              "Verificar que el modal se abre",
+              "Presionar Escape",
+              "Verificar cierre del modal",
+              "Verificar que el foco retorna al botón 'Iniciar sesión'"
+            ],
+            testData: "Chrome\nSesión: no iniciada\nNavegación: solo teclado"
+          }
+        },
+        {
+          id: "TC-003", scenarioId: "TS-001", feature: "Accesibilidad",
+          scenario: "Validar contraste de textos, botones y enlaces en home",
+          status: "fail", bug: "BUG-002 / BUG-010",
+          result: "Todos los textos cumplen ratio mínimo 4.5:1. Los enlaces se distinguen sin depender solo del color.",
+          details: {
+            precondition: "Chrome. Axe DevTools instalado. Home cargada.",
+            steps: [
+              "Ejecutar Axe DevTools en home",
+              "Filtrar por 'color-contrast' y 'link-in-text-block'",
+              "Identificar elementos marcados como fallo",
+              "Verificar botón 'Buscar': inspeccionar color con DevTools Color Picker",
+              "Verificar ratio con WebAIM Contrast Checker"
+            ],
+            testData: "Chrome\nAxe DevTools\nDevTools Color Picker\nURL: ryanair.com/es/es"
+          }
+        },
+        {
+          id: "TC-004", scenarioId: "TS-003", feature: "Keyboard",
+          scenario: "Verificar orden de tabulación en home",
+          status: "fail", bug: "BUG-012",
+          result: "El foco sigue orden lógico y predecible. Outline visible en todos los elementos interactivos.",
+          details: {
+            precondition: "Chrome sin extensiones que modifiquen CSS. Home cargada.",
+            steps: [
+              "Presionar Tab desde la barra de URL",
+              "Documentar el orden de foco elemento a elemento",
+              "Verificar outline visible en cada paso",
+              "Verificar orden lógico: header → buscador → contenido → footer"
+            ],
+            testData: "Chrome\nCSS: nativo sin modificar\nPágina: home completa"
+          }
+        },
+        {
+          id: "TC-005", scenarioId: "TS-008", feature: "Localización",
+          scenario: "Verificar opciones del menú 'Planear' en español",
+          status: "fail", bug: "BUG-004",
+          result: "Todas las opciones del menú 'Planear' están en español. No se muestra texto en inglés.",
+          details: {
+            precondition: "Interfaz en es-ES. Home cargada.",
+            steps: [
+              "Abrir home en español",
+              "Clic en 'Planear' en el header",
+              "Revisar cada opción del submenú (sección EXPLORAR y EXTRAS DE VIAJE)",
+              "Identificar cualquier texto en otro idioma"
+            ],
+            testData: "Idioma: es-ES\nChrome\nURL: ryanair.com/es/es"
+          }
+        },
+        {
+          id: "TC-006", scenarioId: "TS-009", feature: "Usabilidad",
+          scenario: "Seleccionar destino en buscador y verificar jerarquía de opciones",
+          status: "fail", bug: "BUG-005",
+          result: "El selector guía claramente al usuario. Los países deshabilitados tienen una explicación visible.",
+          details: {
+            precondition: "Home cargada. Buscador visible. Origen: Barcelona-El Prat.",
+            steps: [
+              "Clic en campo 'Destino'",
+              "Observar el selector desplegado",
+              "Identificar países en gris (deshabilitados)",
+              "Intentar clic en un país gris (ej: Chipre)",
+              "Verificar si hay mensaje explicativo"
+            ],
+            testData: "Chrome\nOrigen: Barcelona-El Prat\nURL: ryanair.com/es/es"
+          }
+        },
+        {
+          id: "TC-007", scenarioId: "TS-006", feature: "Estructura",
+          scenario: "Verificar jerarquía de headings y landmark en home, resultados y checkout",
+          status: "fail", bug: "BUG-006 / BUG-007 / BUG-009",
+          result: "1 H1 por página. Jerarquía lógica sin saltos. Elemento <main> presente en cada página.",
+          details: {
+            precondition: "Chrome. DevTools + extensión de análisis de headers. Acceso a las 3 páginas.",
+            steps: [
+              "Abrir home → activar extensión headers → anotar conteo H1-H6",
+              "Ejecutar Axe → filtrar 'landmark' → verificar presencia de <main>",
+              "Repetir en página de resultados",
+              "Repetir en checkout paso 1"
+            ],
+            testData: "Chrome\nExtensión: SEO Meta in 1 Click\nAxe DevTools\nPáginas: home + resultados + checkout"
+          }
+        },
+        {
+          id: "TC-008", scenarioId: "TS-007", feature: "Localización",
+          scenario: "Verificar idioma del video de asistencia especial",
+          status: "fail", bug: "BUG-008",
+          result: "El video se muestra en español. El texto superpuesto y subtítulos están en español.",
+          details: {
+            precondition: "Interfaz en es-ES. Sección asistencia especial accesible.",
+            steps: [
+              "Navegar a help.ryanair.com → Asistencia especial",
+              "Localizar el video 'Reservar asistencia especial'",
+              "Reproducir el video",
+              "Observar idioma del texto superpuesto y subtítulos"
+            ],
+            testData: "Idioma: es-ES\nChrome\nURL: help.ryanair.com/hc/es-es/.../Asistencia-especial"
+          }
+        },
+        {
+          id: "TC-009", scenarioId: "TS-001", feature: "Accesibilidad",
+          scenario: "Validar texto alternativo en imágenes y banners de home",
+          status: "fail", bug: "BUG-003",
+          result: "Imágenes informativas con alt descriptivo. Banners con información relevante expuesta como texto accesible.",
+          details: {
+            precondition: "Chrome. Axe DevTools instalado. Home cargada.",
+            steps: [
+              "Ejecutar Axe DevTools → filtrar por 'image-alt'",
+              "Inspeccionar banner principal con DevTools",
+              "Verificar atributo alt en imágenes de destinos",
+              "Verificar banners: ¿el texto está en el DOM o solo en la imagen?"
+            ],
+            testData: "Chrome\nAxe DevTools\nDevTools Inspector\nURL: ryanair.com/es/es"
+          }
+        },
+        {
+          id: "TC-010", scenarioId: "TS-011", feature: "Funcional",
+          scenario: "Verificar carga de la home",
+          status: "pass", bug: "-",
+          result: "Logo, buscador y menú visibles y funcionales sin errores bloqueantes.",
+          details: {
+            precondition: "Chrome. Conexión activa. Sin sesión.",
+            steps: [
+              "Abrir ryanair.com/es/es",
+              "Esperar carga completa",
+              "Verificar logo, buscador y menú visibles",
+              "Verificar que el menú responde al clic"
+            ],
+            testData: "Chrome\nConexión: normal\nSesión: no iniciada"
+          }
+        },
+        {
+          id: "TC-011", scenarioId: "TS-012", feature: "Funcional",
+          scenario: "Verificar selector de fechas del buscador",
+          status: "pass", bug: "-",
+          result: "Calendario funcional. Fechas de ida y vuelta seleccionables y visibles en campos.",
+          details: {
+            precondition: "Home cargada. Buscador visible.",
+            steps: [
+              "Clic en campo de fecha",
+              "Verificar apertura del calendario",
+              "Seleccionar fecha de ida",
+              "Seleccionar fecha de vuelta",
+              "Verificar que ambas fechas se muestran en los campos"
+            ],
+            testData: "Chrome\nFechas: futuras (>7 días)"
+          }
+        },
+        {
+          id: "TC-012", scenarioId: "TS-014", feature: "Funcional",
+          scenario: "Verificar resultados de búsqueda de vuelos",
+          status: "pass", bug: "-",
+          result: "Vuelos disponibles con precios. Filtros funcionales.",
+          details: {
+            precondition: "Origen, destino y fechas seleccionados.",
+            steps: [
+              "Completar buscador: Madrid → Londres",
+              "Clic en 'Buscar'",
+              "Verificar carga de resultados",
+              "Verificar vuelos con precios visibles",
+              "Verificar que los filtros responden"
+            ],
+            testData: "Chrome\nRuta: MAD → LGW\nFecha: próximos 30 días"
+          }
+        },
+        {
+          id: "TC-013", scenarioId: "TS-013", feature: "Funcional",
+          scenario: "Verificar despliegue del menú principal",
+          status: "pass", bug: "-",
+          result: "Menú 'Planear' se despliega. Ítems navegables y funcionales.",
+          details: {
+            precondition: "Home cargada. Menú visible en header.",
+            steps: [
+              "Clic en 'Planear'",
+              "Verificar que el submenú se despliega",
+              "Clic en un ítem",
+              "Verificar navegación correcta"
+            ],
+            testData: "Chrome\nIdioma: es-ES"
+          }
+        }
       ],
-      bugsTitle: "BUGS ENCONTRADOS",
+      bugsTitle: "REPORTE DE BUGS",
       bugs: [
         {
           id: "BUG-001",
-          testCaseId: "TC-001",
-          title: "34 incidencias de accesibilidad en la home — 9 graves",
+          testCaseId: "TS-001 / TC-001",
+          title: "34 incidencias de accesibilidad detectadas en home",
           severity: "High",
-          type: "Accesibilidad / WCAG 2.1 AA",
-          description: "El escaneo con Axe DevTools en la home detectó 34 incidencias automáticas, 9 graves. Incluye controles interactivos anidados, contenido fuera de landmarks y links no distinguibles sin color. Lighthouse reporta 83/100 en accesibilidad.",
-          steps: ["Acceder a ryanair.com/es/es", "Abrir Axe DevTools", "Ejecutar escaneo WCAG 2.1 AA", "Observar resumen de incidencias"],
-          impact: "Usuarios con discapacidad pueden no poder percibir ni operar correctamente elementos clave de la página.",
-          expected: "0 incidencias críticas o graves",
-          actual: "34 incidencias — 9 graves, 24 moderadas, 1 leve",
-          evidence: ["/img/img-ryanair/BUG-001-incidencias-home.png", "/img/img-ryanair/BUG-001-lighthouse-accesibilidad.png"]
+          description: "Axe detecta 34 incidencias: 9 graves, 24 moderadas, 1 leve. Incluye: ARIA commands must have an accessible name (1), Links must be distinguishable without relying on color (1), Links must have discernible text (1), Interactive controls must not be nested (6), Headings should not be empty (1), Document should have one main landmark (1).",
+          precondition: "Chrome. Axe DevTools 4.11.1 instalado. Home ryanair.com/es/es cargada.",
+          steps: [
+            "Abrir ryanair.com/es/es en Chrome",
+            "Abrir Axe DevTools → Visión general",
+            "Clic en 'Volver a ejecutar el escaneo'",
+            "Revisar panel de resultados"
+          ],
+          expected: "0 incidencias automáticas bajo WCAG 2.1 AA.",
+          actual: "Axe detecta 34 incidencias: 9 graves, 24 moderadas, 1 leve.",
+          evidence: "/img/img-ryanair/BUG-001-incidencias-home.png"
         },
         {
           id: "BUG-002",
-          testCaseId: "TC-002",
-          title: "Modal de login no se cierra con tecla ESC → requiere ESC + Enter",
+          testCaseId: "TS-001 / TC-003",
+          title: "Links no distinguibles sin depender del color",
           severity: "High",
-          type: "Keyboard / Interacción",
-          description: "El modal de \"Iniciar sesión\" no responde al comportamiento estándar de la tecla ESC. Requiere la combinación ESC + Enter para cerrarse, incumpliendo WCAG 2.1 criterio 2.1.2.",
-          steps: ["Hacer clic en \"Iniciar sesión\"", "Esperar que el modal se abra", "Presionar la tecla ESC", "Observar si el modal se cierra"],
-          impact: "Usuarios que dependen del teclado para navegar no pueden cerrar el modal de forma estándar, lo que genera una \"trampa de teclado\" parcial.",
-          expected: "El modal se cierra al presionar únicamente ESC",
-          actual: "El modal permanece abierto. Solo se cierra con ESC + Enter",
+          description: "Axe reporta 1 incidencia: al menos un enlace de la home solo se diferencia del texto circundante por el color, sin subrayado ni ningún otro indicador visual.",
+          precondition: "Chrome. Axe DevTools instalado. Home cargada.",
+          steps: [
+            "Ejecutar Axe DevTools en home",
+            "Expandir incidencia 'Links must be distinguishable without relying on color'",
+            "Identificar el elemento afectado",
+            "Verificar visualmente si el enlace tiene indicador distinto al color"
+          ],
+          expected: "Los enlaces se diferencian del texto normal mediante subrayado u otro indicador visual además del color (WCAG 2.1 SC 1.4.1).",
+          actual: "Axe reporta 1 incidencia: al menos un enlace de la home solo se diferencia del texto circundante por el color.",
+          evidence: "/img/img-ryanair/BUG-001-incidencias-home.png"
+        },
+        {
+          id: "BUG-003",
+          testCaseId: "TS-001 / TC-009",
+          title: "Banners con texto informativo embebido en imagen sin alternativa accesible",
+          severity: "High",
+          description: "El banner muestra texto promocional embebido en imagen: 'ESTANCIAS POR MENOS DE 99 € POR NOCHE', etiquetas laterales ('ALQUILER DE COCHES', 'RYANAIR ROOMS', 'AVISO IMPORTANTE', 'TRASLADOS PRIVADOS') sin texto alternativo equivalente accesible.",
+          precondition: "Chrome. Home ryanair.com/es/es cargada completamente.",
+          steps: [
+            "Abrir ryanair.com/es/es",
+            "Visualizar el banner principal rotativo",
+            "Observar el texto visible dentro de las imágenes",
+            "Inspeccionar con DevTools si ese texto existe en el del DOM"
+          ],
+          expected: "La información relevante del banner está disponible como texto en el DOM o en un atributo alt descriptivo.",
+          actual: "El banner muestra texto promocional embebido en imagen sin texto alternativo equivalente accessible.",
           evidence: "/img/img-ryanair/BUG-003-home-banners.png"
+        },
+        {
+          id: "BUG-004",
+          testCaseId: "TS-008 / TC-005",
+          title: "'Try Somewhere New' y 'Travel Agent Direct' en inglés en menú en español",
+          severity: "Medium",
+          description: "Los ítems 'Try Somewhere New' y 'Travel Agent Direct' aparecen en inglés dentro del submenú 'EXPLORAR', mientras que todos los demás ítems están en español.",
+          precondition: "Interfaz configurada en es-ES. Home cargada.",
+          steps: [
+            "Abrir ryanair.com/es/es en español",
+            "Clic en 'Planear' en el header",
+            "Revisar submenú sección 'EXPLORAR'",
+            "Localizar ítems en inglés"
+          ],
+          expected: "Todos los ítems del menú 'Planear' están traducidos al español.",
+          actual: "Los ítems 'Try Somewhere New' y 'Travel Agent Direct' aparecen en inglés.",
+          evidence: "/img/img-ryanair/BUG-004-home-menu-en.png"
+        },
+        {
+          id: "BUG-005",
+          testCaseId: "TS-009 / TC-006",
+          title: "Países deshabilitados en selector de destino sin explicación visible",
+          severity: "High",
+          description: "10+ países aparecen en gris claro (Chipre, Finlandia, Bosnia & Herzegovina, Montenegro, Noruega, Países Bajos, Rumanía, Serbia, Suiza, Turquía) sin ningún mensaje ni indicación de por qué están deshabilitados.",
+          precondition: "Home cargada. Origen: Barcelona-El Prat. Buscador de vuelos visible.",
+          steps: [
+            "Clic en campo 'Destino'",
+            "Observar la lista de países",
+            "Identificar países en gris claro",
+            "Intentar clic en un país gris (ej: Chipre, Finlandia)",
+            "Verificar si hay mensaje explicativo"
+          ],
+          expected: "Los países sin vuelos disponibles están claramente señalizados con un mensaje o tooltip que explica el motivo.",
+          actual: "10+ países deshabilitados sin ningún mensaje ni indicación.",
+          evidence: "/img/img-ryanair/BUG-005-home-seleccionar-destino.png"
+        },
+        {
+          id: "BUG-006",
+          testCaseId: "TS-006 / TC-007",
+          title: "Documento sin landmark principal <main> definido",
+          severity: "Medium",
+          description: "Axe reporta 'Document should have one main landmark' (1 incidencia). El documento no define una región principal, impidiendo que usuarios de screen reader salten al contenido directo.",
+          precondition: "Chrome. Axe DevTools instalado. Home cargada.",
+          steps: [
+            "Ejecutar Axe DevTools en home",
+            "Localizar incidencia 'Document should have one main landmark'",
+            "Inspeccionar HTML con DevTools: buscar <main> o role='main'"
+          ],
+          expected: "El documento tiene exactamente un elemento <main> que delimita el contenido principal.",
+          actual: "Axe reporta 'Document should have one main landmark' (1 incidencia).",
+          evidence: "/img/img-ryanair/BUG-001-incidencias-home.png"
+        },
+        {
+          id: "BUG-007",
+          testCaseId: "TS-006 / TC-007",
+          title: "Home con 4 elementos H1 — jerarquía de headings incorrecta",
+          severity: "High",
+          description: "La home contiene 4 elementos H1 (último detectado: 'Regístrate y ahorra'). Conteo completo: H1:4 · H2:22 · H3:1 · H4:0 · H5:0 · H6:0.",
+          precondition: "Chrome. Home ryanair.com/es/es cargada. Extensión SEO Meta in 1 Click activa.",
+          steps: [
+            "Abrir ryanair.com/es/es",
+            "Activar extensión de análisis de headers",
+            "Ir a pestaña 'HEADERS'",
+            "Revisar conteo y lista de headings"
+          ],
+          expected: "Exactamente 1 H1 por página. Jerarquía lógica y continua (H1 → H2 → H3).",
+          actual: "La home contiene 4 elementos H1.",
+          evidence: "/img/img-ryanair/BUG-007-home-headers.png"
+        },
+        {
+          id: "BUG-008",
+          testCaseId: "TS-007 / TC-008",
+          title: "Video de asistencia especial en catalán con interfaz en español",
+          severity: "Medium",
+          description: "El video se muestra íntegramente en catalán: título 'VIATGE ASSISTIT', texto '48 HORES ABANS DE LA SORTIDA' y subtítulos 'Pots pre-reservar-la al nostre web fins a quaranta-vuit hores abans del vol.'",
+          precondition: "Interfaz en es-ES. URL: help.ryanair.com → Asistencia especial.",
+          steps: [
+            "Navegar a la sección Asistencia especial del Centro de ayuda",
+            "Localizar el video 'Reservar asistencia especial'",
+            "Reproducir el video",
+            "Observar el idioma del texto superpuesto y subtítulos"
+          ],
+          expected: "El video se muestra en español al tener la interfaz configurada en es-ES.",
+          actual: "El video se muestra íntegramente en catalán.",
+          evidence: "/img/img-ryanair/BUG-008-soporte-ryanair-ES.png"
+        },
+        {
+          id: "BUG-009",
+          testCaseId: "TS-006 / TC-007",
+          title: "Checkout sin H1 ni H2 — jerarquía comienza en H3",
+          severity: "High",
+          description: "Checkout sin ningún H1 ni H2. Conteo: H1:0 · H2:0 · H3:4 · H4:5. La jerarquía comienza en H3: 'Tus vuelos seleccionados', 'Tu tarifa seleccionada', 'Inicia sesión en myRyanair', 'Pasajeros'.",
+          precondition: "Búsqueda ejecutada. Vuelo seleccionado. Checkout paso 'Vuelos' cargado.",
+          steps: [
+            "Ejecutar búsqueda y seleccionar vuelo",
+            "Acceder al checkout",
+            "Activar extensión de análisis de headers",
+            "Revisar pestaña 'HEADERS'"
+          ],
+          expected: "Al menos 1 H1 en la página de checkout. Jerarquía lógica.",
+          actual: "Checkout sin ningún H1 ni H2.",
+          evidence: "/img/img-ryanair/checkout-headers.png"
+        },
+        {
+          id: "BUG-010",
+          testCaseId: "TS-001 / TC-003",
+          title: "Contraste del botón 'Buscar' requiere verificación formal",
+          severity: "Medium",
+          description: "El botón 'Buscar' tiene color RGB (217, 181, 46) — amarillo #D9B52E. Este color requiere verificación formal del ratio de contraste con el texto superpuesto para confirmar cumplimiento WCAG.",
+          precondition: "Chrome. Home ryanair.com/es en vista responsive. DevTools abierto.",
+          steps: [
+            "Inspeccionar botón 'Buscar' con DevTools",
+            "Abrir Color Picker en panel Estilos",
+            "Registrar valores RGB del color",
+            "Verificar ratio en WebAIM Contrast Checker"
+          ],
+          expected: "El botón 'Buscar' cumple ratio mínimo de 4.5:1 entre texto y fondo (WCAG 2.1 SC 1.4.3).",
+          actual: "El botón 'Buscar' tiene color RGB (217, 181, 46) — amarillo #D9B52E.",
+          evidence: "/img/img-ryanair/color-ratio.png"
+        },
+        {
+          id: "BUG-011",
+          testCaseId: "TS-005 / TC-002",
+          title: "Modal de login no responde a la tecla Escape",
+          severity: "High",
+          description: "Al presionar Escape con el modal de login abierto, el modal permanece abierto. La tecla Escape no tiene ningún efecto. El usuario no puede cerrar el modal sin usar el ratón.",
+          precondition: "Chrome. Home cargada. Usuario sin sesión iniciada.",
+          steps: [
+            "1. Ir a home de Ryanair",
+            "2. Clic en 'Iniciar sesión'",
+            "3. Verificar que el modal se abre",
+            "4. Presionar la tecla Escape",
+            "5. Observar si el modal se cierra"
+          ],
+          expected: "El modal se cierra al presionar Escape. El foco retorna al botón 'Iniciar sesión' (WCAG 2.1 SC 2.4.3).",
+          actual: "Al presionar Escape con el modal de login abierto, el modal permanece abierto.",
+          evidence: ""
+        },
+        {
+          id: "BUG-012",
+          testCaseId: "TS-003 / TC-004",
+          title: "Orden de tabulación en home no sigue lógica visual",
+          severity: "High",
+          description: "El orden de tabulación realiza saltos no predecibles. Algunos elementos interactivos no reciben foco al navegar con Tab, y el outline no es visible en todos los elementos afectados.",
+          precondition: "Chrome sin extensiones que modifiquen CSS. Home cargada en ventana completa.",
+          steps: [
+            "Presionar Tab desde la barra de URL",
+            "Documentar el orden en que cada elemento recibe el foco",
+            "Comparar con el orden visual de la página (izq→der, arriba→abajo)",
+            "Identificar saltos o elementos omitidos"
+          ],
+          expected: "El foco recorre todos los elementos interactivos en orden lógico y predecible: header → buscador → contenido → footer.",
+          actual: "El orden de tabulación realiza saltos no predecibles.",
+          evidence: ""
         }
       ],
       uxImprovementsTitle: "MEJORAS DE UX",

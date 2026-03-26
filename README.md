@@ -1,4 +1,4 @@
-# 🚀 QA & UX Portfolio – Daiana Ciaramella
+npm run dev# 🚀 QA & UX Portfolio – Daiana Ciaramella
 
 Portfolio profesional enfocado en **QA Manual Testing con orientación a UX**, donde combino testing funcional, análisis de experiencia de usuario y validación de calidad en productos digitales.
 

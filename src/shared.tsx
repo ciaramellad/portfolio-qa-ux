@@ -2011,11 +2011,11 @@ export const translations = {
           title: "Falta de feedback al ingresar PIN incorrecto",
           severity: "Medium",
           type: "Autenticación",
-          description: "Precondición: Usuario con PIN configurado. [TS-001 / TC-011]",
-          steps: ["Abrir la aplicación", "Ingresar un PIN incorrecto", "Confirmar acceso"],
+          description: "Precondición: Usuario con PIN incorrecto: 1234. [TS-001 / TC-011]",
+          steps: ["Abrir la aplicación", "Ingresar un PIN incorrecto (1234)"],
           expected: "El sistema bloquea el acceso y muestra un mensaje claro indicando que el PIN es incorrecto",
           actual: "El acceso es bloqueado pero no se muestra ningún mensaje de error",
-          evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
+          evidence: "/img/img-dailyapp/BUG-001-PIN-incorrecto.mp4"
         },
         {
           id: "BUG-002",
@@ -2037,7 +2037,7 @@ export const translations = {
           steps: ["Ir a Viajes", "Seleccionar un viaje", "Intentar editar un gasto registrado"],
           expected: "El usuario puede editar el gasto desde la vista de viajes",
           actual: "No es posible editar el gasto desde esa vista",
-          evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
+          evidence: "/img/img-dailyapp/BUG-003 - Viajes-Editar gatsos.jpeg"
         },
         {
           id: "BUG-004",
@@ -2048,18 +2048,18 @@ export const translations = {
           steps: ["Ir al dashboard", "Visualizar cuenta en EUR", "Revisar símbolo mostrado"],
           expected: "El sistema muestra el símbolo \"€\" correctamente",
           actual: "El sistema muestra \"$\" en lugar de \"€\" en algunos componentes",
-          evidence: "/img/img-dailyapp/daily-mockup-funciones.jpeg"
+          evidence: "/img/img-dailyapp/BUG-004-Error moneda.jpeg"
         },
         {
           id: "BUG-005",
-          title: "Se permite guardar transacción con monto vacío",
+          title: "Se permite guardar transacción con monto de"0"",
           severity: "High",
           type: "Validación",
           description: "Precondición: Usuario autenticado con cuenta activa. [TS-010 / TC-010]",
-          steps: ["Ir a nueva transacción", "Dejar campo monto vacío", "Intentar guardar"],
+          steps: ["Ir a nueva transacción", "Ingresar monto "0"", "Guardar"],
           expected: "El sistema bloquea la acción y muestra mensaje de error",
-          actual: "La transacción se guarda sin monto o genera comportamiento inconsistente",
-          evidence: "/img/img-dailyapp/daily-edit-dash.jpg"
+          actual: "La transacción se guarda con monto "0" generando un comportamiento inconsistente",
+          evidence: "/img/img-dailyapp/BUG-005-gasto-monto-0.jpeg"
         },
         {
           id: "BUG-006",
@@ -2069,8 +2069,8 @@ export const translations = {
           description: "Precondición: Viaje activo con presupuesto cercano al límite. [TS-007 / TC-007]",
           steps: ["Registrar gasto que supere el presupuesto", "Confirmar operación", "Verificar feedback del sistema"],
           expected: "El sistema muestra una alerta clara indicando que se superó el presupuesto",
-          actual: "El sistema permite la operación pero no muestra un feedback claro o visible",
-          evidence: "/img/img-dailyapp/daily-mockup-funciones.jpeg"
+          actual: "El sistema permite la operación pero no muestra un feedback claro o visible, su barra de progreso carga pero no alerta al usuario",
+          evidence: "/img/img-dailyapp/BUG-006-Viajes-presupuesto-alerta.jpeg"
         }
       ],
       uxImprovements: [

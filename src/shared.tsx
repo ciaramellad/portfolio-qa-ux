@@ -2052,7 +2052,7 @@ export const translations = {
         },
         {
           id: "BUG-005",
-          title: "Se permite guardar transacción con monto de"0"",
+          title: "Se permite guardar transacción con monto de 0",
           severity: "High",
           type: "Validación",
           description: "Precondición: Usuario autenticado con cuenta activa. [TS-010 / TC-010]",

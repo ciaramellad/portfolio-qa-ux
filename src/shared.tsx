@@ -192,7 +192,7 @@ export const Header = ({ theme, toggleTheme, lang, toggleLang, t }: { theme: 'da
         ))}
         <div className="mt-4 border-t border-current/10 pt-8 w-full">
           <a
-            href="/cv.pdf"
+            href="/public/CV Daiana Ciaramella - QA.pdf"
             download
             className={`flex items-center gap-3 text-xl md:text-2xl lg:text-3xl hover:opacity-50 transition-opacity font-light tracking-tighter`}
           >

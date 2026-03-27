@@ -2056,9 +2056,9 @@ export const translations = {
           severity: "High",
           type: "Validación",
           description: "Precondición: Usuario autenticado con cuenta activa. [TS-010 / TC-010]",
-          steps: ["Ir a nueva transacción", "Ingresar monto "0"", "Guardar"],
+          steps: ["Ir a nueva transacción", "Ingresar monto 0", "Guardar"],
           expected: "El sistema bloquea la acción y muestra mensaje de error",
-          actual: "La transacción se guarda con monto "0" generando un comportamiento inconsistente",
+          actual: "La transacción se guarda con monto 0 generando un comportamiento inconsistente",
           evidence: "/img/img-dailyapp/BUG-005-gasto-monto-0.jpeg"
         },
         {

@@ -670,7 +670,8 @@ export const translations = {
         "User profiles: The app currently does not differentiate between users. Incorporating a basic profile would allow personalizing preferences (default currency, frequent categories) and would open the door to multi-user functionalities in the future.",
         "Custom account creation: Allowing the user to create accounts or virtual wallets with their own name, currency, and icon would make the app adaptable to different financial contexts (payroll account, savings, crypto, etc.).",
         "Transfers between accounts: Today, moving funds between accounts requires manually registering an expense in one and an income in another. A direct transfer functionality would reduce errors and simplify the management of multiple accounts.",
-        "Smart filtering by currency: When registering a transaction, showing only the accounts that match the selected currency would avoid assignment errors and make the registration flow faster and less prone to mistakes."
+        "Smart filtering by currency: When registering a transaction, showing only the accounts that match the selected currency would avoid assignment errors and make the flow faster and less prone to mistakes.",
+        "Improved authentication: Incorporating Google login and biometric authentication (fingerprint / Face ID) would simplify new user onboarding and reinforce access security."
       ]
     },
     api_testing: {
@@ -2078,7 +2079,8 @@ export const translations = {
         "Perfiles de usuario: La app actualmente no diferencia usuarios. Incorporar un perfil básico permitiría personalizar preferencias (moneda por defecto, categorías frecuentes) y abriría la puerta a funcionalidades multiusuario en el futuro.",
         "Creación de cuentas personalizadas: Permitir al usuario crear cuentas o billeteras virtuales con nombre, moneda e ícono propios haría la app adaptable a distintos contextos financieros (cuenta nómina, ahorro, cripto, etc.).",
         "Transferencias entre cuentas: Hoy mover fondos entre cuentas requiere registrar un egreso en una y un ingreso en otra manualmente. Una funcionalidad de transferencia directa reduciría errores y simplificaría la gestión de múltiples cuentas.",
-        "Filtrado inteligente por moneda: Al registrar una transacción, mostrar solo las cuentas que coinciden con la moneda seleccionada evitaría errores de asignación y haría el flujo de registro más rápido y menos propenso a equivocaciones."
+        "Filtrado inteligente por moneda: Al registrar una transacción, mostrar solo las cuentas que coinciden con la moneda seleccionada evitaría errores de asignación y haría el flujo más rápido y menos propenso a equivocaciones.",
+        "Autenticación mejorada: Incorporar inicio de sesión con Google y autenticación biométrica (huella / Face ID) simplificaría el onboarding de nuevos usuarios y reforzaría la seguridad del acceso."
       ]
     },
     api_testing: {

@@ -724,13 +724,14 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
               </div>
  
               {/* MOBILE ONLY: BOTTOM 3 FUNCTIONS */}
-              <div className="flex flex-col gap-6 md:hidden w-full">
+              <div className="flex flex-col gap-4 md:hidden w-full mt-6 px-4">
                 {features.slice(2).map((feature, i) => (
-                  <div key={i} className="text-center">
+                  <div key={i} className="flex items-center gap-4">
                       <div className={`w-8 h-8 rounded-full flex items-center justify-center shrink-0 
-                        ${isDark ? 'bg-white/10' : 'bg-white/10 text-white'}`}>
-                        <span className="text-[12px] font-bold">{i + 1}</span>
+                        ${isDark ? 'bg-white/10 text-white' : 'bg-[#121212] text-white'}`}>
+                        <span className="text-[12px] font-bold">{i + 3}</span>
                       </div>
+                      <p className="text-sm font-bold text-left">{feature}</p>
                   </div>
                 ))}
               </div>

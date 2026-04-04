@@ -748,22 +748,22 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
               </p>
             )}
             <div className={`border rounded-2xl overflow-hidden backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/5' : 'border-transparent bg-[#121212] text-white'}`}>
-              <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+              <div className="overflow-x-auto -webkit-overflow-scrolling-touch scrollbar-thin">
+                <table className="w-full min-w-[480px] text-left border-collapse">
                   <thead>
                     <tr className={`border-b ${isDark ? 'border-white/10' : 'border-white/10'}`}>
                       {statsTable.headers.map((header, i) => (
-                        <th key={i} className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
+                        <th key={i} className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
                           {header}
                         </th>
                       ))}
                     </tr>
                   </thead>
-                  <tbody className="text-[14px] md:text-sm">
+                  <tbody className="text-[13px] md:text-sm">
                     {statsTable.rows.map((row, i) => (
                       <tr key={i} className={`border-b last:border-0 transition-colors ${isDark ? 'border-white/5 hover:bg-white/[0.02]' : 'border-white/5 hover:bg-white/[0.02]'}`}>
                         {row.map((cell, j) => (
-                          <td key={j} className={`py-3 px-4 md:px-6 ${j === 0 ? 'font-bold' : 'font-light opacity-70'}`}>
+                          <td key={j} className={`py-3 px-3 md:px-6 ${j === 0 ? 'font-bold' : 'font-light opacity-70'}`}>
                             {cell}
                           </td>
                         ))}
@@ -809,28 +809,28 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
             )}
             <div className={`border rounded-2xl overflow-hidden backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/5' : 'border-transparent bg-[#121212] text-white'}`}>
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+                <table className="w-full min-w-[540px] text-left border-collapse">
                   <thead>
                     <tr className={`border-b ${isDark ? 'border-white/10' : 'border-white/10'}`}>
-                      <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
+                      <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
                         {testScenarios.idHeader || (lang === 'es' ? 'Escenario ID' : 'Scenario ID')}
                       </th>
                       {testScenarios.table[0].feature && (
-                        <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
+                        <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
                           {testScenarios.featureHeader || (lang === 'es' ? 'Función' : 'Feature')}
                         </th>
                       )}
-                      <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
+                      <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
                         {testScenarios.scenarioHeader || (lang === 'es' ? 'Escenario de Prueba' : 'Test Scenario')}
                       </th>
-                      {testScenarios.table[0].objective && <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Objetivo' : 'Objective'}</th>}
-                      {testScenarios.table[0].priority && <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Prioridad' : 'Priority'}</th>}
+                      {testScenarios.table[0].objective && <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Objetivo' : 'Objective'}</th>}
+                      {testScenarios.table[0].priority && <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Prioridad' : 'Priority'}</th>}
                     </tr>
                   </thead>
-                  <tbody className="text-[14px] md:text-sm">
+                  <tbody className="text-[13px] md:text-sm">
                     {testScenarios.table.map((row, i) => (
                       <tr key={i} className={`border-b last:border-0 transition-colors ${isDark ? 'border-white/5 hover:bg-white/[0.02]' : 'border-white/5 hover:bg-white/[0.02]'}`}>
-                        <td className="py-3 px-4 md:px-6 font-mono text-[14px]">
+                        <td className="py-3 px-3 md:px-6 font-mono text-[13px] md:text-[14px]">
                           {(() => {
                             let colorClass = '';
                             switch (row.id.toUpperCase()) {
@@ -843,11 +843,11 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                             return <span className={colorClass || (isDark ? 'opacity-50' : 'opacity-70')}>{row.id}</span>;
                           })()}
                         </td>
-                        {row.feature && <td className="py-3 px-4 md:px-6 font-bold tracking-tight text-[14px] md:text-sm">{row.feature}</td>}
-                        <td className="py-3 px-4 md:px-6 font-light opacity-70 text-[14px] md:text-sm">{row.scenario}</td>
-                        {row.objective && <td className="py-3 px-4 md:px-6 font-medium text-[14px] md:text-sm">{row.objective}</td>}
+                        {row.feature && <td className="py-3 px-3 md:px-6 font-bold tracking-tight text-[13px] md:text-sm">{row.feature}</td>}
+                        <td className="py-3 px-3 md:px-6 font-light opacity-70 text-[13px] md:text-sm">{row.scenario}</td>
+                        {row.objective && <td className="py-3 px-3 md:px-6 font-medium text-[13px] md:text-sm">{row.objective}</td>}
                         {row.priority && (
-                          <td className="py-3 px-4 md:px-6 font-bold text-[11px] uppercase tracking-widest">
+                          <td className="py-3 px-3 md:px-6 font-bold text-[11px] uppercase tracking-widest">
                             <span className={`px-2.5 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase
                               ${
                                 row.priority.toUpperCase() === 'CRÍTICO' || row.priority.toUpperCase() === 'CRITICAL' || row.priority.toUpperCase() === 'CRITICO'
@@ -887,27 +887,27 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
             )}
             <div className={`border rounded-2xl overflow-hidden backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/5' : 'border-transparent bg-[#121212] text-white'}`}>
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+                <table className="w-full min-w-[540px] text-left border-collapse">
                   <thead>
                     <tr className={`border-b ${isDark ? 'border-white/10' : 'border-white/10'}`}>
-                      <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
+                      <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
                         {testScenarios2.idHeader || (lang === 'es' ? 'Escenario ID' : 'Scenario ID')}
                       </th>
                       {testScenarios2.table[0].feature && (
-                        <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
+                        <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
                           {testScenarios2.featureHeader || (lang === 'es' ? 'Función' : 'Feature')}
                         </th>
                       )}
-                      <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
+                      <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
                         {testScenarios2.scenarioHeader || (lang === 'es' ? 'Escenario de Prueba' : 'Test Scenario')}
                       </th>
-                      {testScenarios2.table[0].objective && <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Objetivo' : 'Objective'}</th>}
+                      {testScenarios2.table[0].objective && <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'Objetivo' : 'Objective'}</th>}
                     </tr>
                   </thead>
-                  <tbody className="text-[14px] md:text-sm">
+                  <tbody className="text-[13px] md:text-sm">
                     {testScenarios2.table.map((row, i) => (
                       <tr key={i} className={`border-b last:border-0 transition-colors ${isDark ? 'border-white/5 hover:bg-white/[0.02]' : 'border-white/5 hover:bg-white/[0.02]'}`}>
-                        <td className="py-3 px-4 md:px-6 font-mono text-[14px]">
+                        <td className="py-3 px-3 md:px-6 font-mono text-[13px] md:text-[14px]">
                           {(() => {
                             let colorClass = '';
                             switch (row.id.toUpperCase()) {
@@ -920,9 +920,9 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                             return <span className={colorClass || (isDark ? 'opacity-50' : 'opacity-70')}>{row.id}</span>;
                           })()}
                         </td>
-                        {row.feature && <td className="py-3 px-4 md:px-6 font-bold tracking-tight text-[14px] md:text-sm">{row.feature}</td>}
-                        <td className="py-3 px-4 md:px-6 font-light opacity-70 text-[14px] md:text-sm">{row.scenario}</td>
-                        {row.objective && <td className="py-3 px-4 md:px-6 font-medium text-[14px] md:text-sm">{row.objective}</td>}
+                        {row.feature && <td className="py-3 px-3 md:px-6 font-bold tracking-tight text-[13px] md:text-sm">{row.feature}</td>}
+                        <td className="py-3 px-3 md:px-6 font-light opacity-70 text-[13px] md:text-sm">{row.scenario}</td>
+                        {row.objective && <td className="py-3 px-3 md:px-6 font-medium text-[13px] md:text-sm">{row.objective}</td>}
                       </tr>
                     ))}
                   </tbody>
@@ -941,22 +941,22 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
             <span className={`section-subheading ${isDark ? 'opacity-50' : 'opacity-60'}`}>{getSectionNumber()} / {testScenariosTable.title}</span>
             <div className={`border rounded-2xl overflow-hidden backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/5' : 'border-transparent bg-[#121212] text-white'}`}>
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+                <table className="w-full min-w-[560px] text-left border-collapse">
                   <thead>
                     <tr className={`border-b ${isDark ? 'border-white/10' : 'border-white/10'}`}>
-                      <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>ID</th>
-                      <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'FUNCIÓN' : 'FEATURE'}</th>
-                      <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'ESCENARIO' : 'SCENARIO'}</th>
-                      <th className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'OBJETIVO' : 'OBJECTIVE'}</th>
+                      <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>ID</th>
+                      <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'FUNCIÓN' : 'FEATURE'}</th>
+                      <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'ESCENARIO' : 'SCENARIO'}</th>
+                      <th className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>{lang === 'es' ? 'OBJETIVO' : 'OBJECTIVE'}</th>
                     </tr>
                   </thead>
-                  <tbody className="text-[14px] md:text-sm">
+                  <tbody className="text-[13px] md:text-sm">
                     {testScenariosTable.table.map((row, i) => (
                       <tr key={i} className={`border-b last:border-0 transition-colors ${isDark ? 'border-white/5 hover:bg-white/[0.02]' : 'border-white/5 hover:bg-white/[0.02]'}`}>
-                        <td className="py-3 px-4 md:px-6 font-mono text-[14px] opacity-50">{row.id}</td>
-                        <td className="py-3 px-4 md:px-6 font-bold tracking-tight text-[14px] md:text-sm">{row.feature}</td>
-                        <td className="py-3 px-4 md:px-6 font-light opacity-70 text-[14px] md:text-sm">{row.scenario}</td>
-                        <td className="py-3 px-4 md:px-6 font-medium text-[14px] md:text-sm">{row.objective}</td>
+                        <td className="py-3 px-3 md:px-6 font-mono text-[13px] md:text-[14px] opacity-50">{row.id}</td>
+                        <td className="py-3 px-3 md:px-6 font-bold tracking-tight text-[13px] md:text-sm">{row.feature}</td>
+                        <td className="py-3 px-3 md:px-6 font-light opacity-70 text-[13px] md:text-sm">{row.scenario}</td>
+                        <td className="py-3 px-3 md:px-6 font-medium text-[13px] md:text-sm">{row.objective}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -977,23 +977,23 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
             )}
             <div className={`border rounded-2xl overflow-hidden backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/5' : 'border-transparent bg-[#121212] text-white'}`}>
               <div className="overflow-x-auto">
-                <table className="w-full text-left border-collapse">
+                <table className="w-full min-w-[560px] text-left border-collapse">
                   <thead>
                     <tr className={`border-b ${isDark ? 'border-white/10' : 'border-white/10'}`}>
                       {testCasesSummary.headers.map((header, i) => (
-                        <th key={i} className={`py-4 px-4 md:px-6 text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
+                        <th key={i} className={`py-3 px-3 md:px-6 text-[9px] md:text-[10px] uppercase tracking-widest font-bold ${isDark ? 'opacity-40' : 'opacity-60'}`}>
                           {header}
                         </th>
                       ))}
                     </tr>
                   </thead>
-                  <tbody className="text-[14px] md:text-sm">
+                  <tbody className="text-[13px] md:text-sm">
                     {testCasesSummary.table.map((row, i) => (
                       <tr key={i} className={`border-b last:border-0 transition-colors ${isDark ? 'border-white/5 hover:bg-white/[0.02]' : 'border-white/5 hover:bg-white/[0.02]'}`}>
-                        <td className="py-3 px-4 md:px-6 font-mono text-[14px] opacity-50">{row.scenario}</td>
-                        <td className="py-3 px-4 md:px-6 font-mono text-[14px] opacity-50">{row.testCase}</td>
-                        <td className="py-3 px-4 md:px-6 font-bold tracking-tight text-[14px] md:text-sm">{row.functionality}</td>
-                        <td className="py-3 px-4 md:px-6">
+                        <td className="py-3 px-3 md:px-6 font-mono text-[13px] md:text-[14px] opacity-50">{row.scenario}</td>
+                        <td className="py-3 px-3 md:px-6 font-mono text-[13px] md:text-[14px] opacity-50">{row.testCase}</td>
+                        <td className="py-3 px-3 md:px-6 font-bold tracking-tight text-[13px] md:text-sm">{row.functionality}</td>
+                        <td className="py-3 px-3 md:px-6">
                           <span className={`text-[10px] uppercase tracking-widest px-2.5 py-1 rounded-full font-bold ${
                             row.status.toLowerCase() === 'paso' || row.status.toLowerCase() === 'pass'
                               ? (isDark ? 'bg-emerald-500/10 text-emerald-500' : 'bg-emerald-500 text-white')
@@ -1002,7 +1002,7 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
                             {row.status}
                           </span>
                         </td>
-                        <td className="py-3 px-4 md:px-6 font-mono text-[14px] text-red-500">{row.bug}</td>
+                        <td className="py-3 px-3 md:px-6 font-mono text-[13px] md:text-[14px] text-red-500">{row.bug}</td>
                       </tr>
                     ))}
                   </tbody>
@@ -1032,7 +1032,59 @@ const QAProjectTemplate: React.FC<QAProjectProps> = ({
               {testCasesDesc}
             </p>
           )}
-          <div className={`border rounded-2xl overflow-hidden backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'}`}>
+          {/* MOBILE: card view for test cases */}
+          <div className="md:hidden space-y-3">
+            {testCases.map((row, i) => (
+              <div
+                key={i}
+                className={`rounded-xl border p-4 transition-colors ${isDark ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'} ${row.details ? 'cursor-pointer' : ''}`}
+                onClick={() => row.details && setExpandedCase(expandedCase === row.id ? null : row.id)}
+              >
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <div className="flex items-center gap-2 flex-wrap">
+                    <span className={`font-mono text-[11px] ${isDark ? 'opacity-50' : 'opacity-70'}`}>{row.id}</span>
+                    {row.scenarioId && <span className={`font-mono text-[11px] ${isDark ? 'opacity-40' : 'opacity-60'}`}>· {row.scenarioId}</span>}
+                    {row.tipo && (
+                      <span className={`text-[9px] font-bold uppercase tracking-widest px-2 py-0.5 rounded-md ${isDark ? 'bg-white/6 text-white/40' : 'bg-black/10 text-black/50'}`}>{row.tipo}</span>
+                    )}
+                  </div>
+                  <div className="flex items-center gap-2 shrink-0">
+                    {row.status === 'pass' ? (
+                      <span className="flex items-center gap-1 text-emerald-500 font-bold text-[10px] uppercase tracking-widest"><Check className="w-3 h-3" />{lang === 'es' ? 'OK' : 'OK'}</span>
+                    ) : row.status === 'fail' ? (
+                      <span className="flex items-center gap-1 text-red-500 font-bold text-[10px] uppercase tracking-widest"><X className="w-3 h-3" />{lang === 'es' ? 'Fallo' : 'Fail'}</span>
+                    ) : null}
+                    {row.details && (expandedCase === row.id ? <ChevronUp className="w-4 h-4 opacity-40" /> : <ChevronDown className="w-4 h-4 opacity-40" />)}
+                  </div>
+                </div>
+                <p className="font-bold text-[13px] leading-snug mb-1">{row.feature}</p>
+                <p className={`text-[12px] font-light leading-relaxed ${isDark ? 'opacity-60' : 'opacity-70'}`}>{row.scenario}</p>
+                {row.bug && (
+                  <div className="mt-2">
+                    <span className={`text-[9px] font-bold uppercase tracking-widest px-2 py-1 rounded-md ${isDark ? 'bg-red-500/10 text-red-400' : 'bg-red-100 text-red-600'}`}>{row.bug}</span>
+                  </div>
+                )}
+                {row.details && expandedCase === row.id && (
+                  <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} className="mt-4 space-y-4 border-t pt-4 border-white/10">
+                    {row.details.precondition && row.details.precondition !== '-' && (
+                      <div><span className="text-[10px] uppercase tracking-widest opacity-40 font-bold block mb-1">{lang === 'es' ? 'Precondición' : 'Precondition'}</span><p className="font-light text-[12px] leading-relaxed">{row.details.precondition}</p></div>
+                    )}
+                    <div><span className="text-[10px] uppercase tracking-widest opacity-40 font-bold block mb-1">{lang === 'es' ? 'Pasos' : 'Steps'}</span><ul className="list-decimal list-inside space-y-1 font-light text-[12px] opacity-70">{row.details.steps.map((step, si) => <li key={si}>{step}</li>)}</ul></div>
+                    {row.result && (<div><span className="text-[10px] uppercase tracking-widest opacity-40 font-bold block mb-1">{lang === 'es' ? 'Resultado Esperado' : 'Expected Result'}</span><p className={`font-light text-[12px] leading-relaxed ${isDark ? 'opacity-70' : 'opacity-80'}`}>{row.result}</p></div>)}
+                    {row.details.evidence && (
+                      <button onClick={(e) => { e.stopPropagation(); setSelectedImage(row.details?.evidence?.response || row.details?.evidence?.request || null); }} className="flex items-center gap-2 text-[13px] font-bold text-orange-500">
+                        <div className="w-6 h-6 rounded-lg bg-orange-500/10 flex items-center justify-center"><ExternalLink className="w-3 h-3" /></div>
+                        {lang === 'es' ? 'VER EVIDENCIA' : 'VIEW EVIDENCE'}
+                      </button>
+                    )}
+                  </motion.div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          {/* DESKTOP: table view */}
+          <div className={`hidden md:block border rounded-2xl overflow-hidden backdrop-blur-sm ${isDark ? 'border-white/10 bg-white/5' : 'border-black/10 bg-black/5'}`}>
             <div className="overflow-x-auto">
               <table className="w-full text-left border-collapse table-fixed">
                 <thead>

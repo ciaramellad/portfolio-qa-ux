@@ -212,11 +212,11 @@ const AppleVisualSlider: React.FC<{ projects: any[], theme: 'dark' | 'light', t:
  
           {/* IMAGE */}
  
-          <div className="w-full md:w-3/5 h-[220px] md:h-[360px] relative overflow-hidden rounded-l-xl">
+          <div className="w-full md:w-3/5 min-h-[240px] md:min-h-[360px] relative overflow-hidden">
             <img
               src={project.img}
               alt={project.title}
-              className="w-full h-full object-cover object-center"
+              className="absolute inset-0 w-full h-full object-cover object-center"
             />
           </div>
  
@@ -308,7 +308,7 @@ export default function App() {
                 </p>
                 {/* Skills: single line with bullet separators */}
                 <p className={`text-[14px] md:text-sm font-medium tracking-[0.15em] uppercase whitespace-nowrap overflow-hidden text-ellipsis max-w-full px-4 ${theme === 'dark' ? 'opacity-35' : 'opacity-70'}`}>
-                  Manual Testing&nbsp;&nbsp;•&nbsp;&nbsp;Bug Reporting&nbsp;&nbsp;•&nbsp;&nbsp;UX-Oriented QA&nbsp;&nbsp;•&nbsp;&nbsp;Web App Testing
+                  Manual Testing&nbsp;&nbsp;•&nbsp;&nbsp;Regression Testing&nbsp;&nbsp;•&nbsp;&nbsp;Bug Reporting&nbsp;&nbsp;•&nbsp;&nbsp;UX-Oriented QA&nbsp;&nbsp;•&nbsp;&nbsp;Web App Testing
                 </p>
               </div>
 

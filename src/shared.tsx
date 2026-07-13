@@ -357,7 +357,7 @@ export const translations = {
     daily_app: {
       title: "DAILY – App",
       subtitle: "Multi-currency financial management application designed to centralize accounts, record transactions, and visualize balances in real time.",
-      description: "DAILY was born from a real need: no app on the market offered multi-currency financial management adapted to those who operate simultaneously with ARS, USD, and EUR in different countries. The app centralizes multiple bank accounts and virtual wallets, calculates consolidated totals by currency in real-time, and allows linking expenses to trips with budget tracking. \n\nI tested the app under real daily use conditions, which allowed me to detect behaviors that only emerge with real data and genuine usage flows.",
+      description: "DAILY is a personal application I developed to solve my own need for multi-currency financial management. I actively use it to track my own expenses, and I applied a full manual testing process to it — test case design, functional, exploratory, and edge-case testing — to ensure its quality before and during daily use.",
       objective: "Validate the correct functioning of the application's main flows, ensuring financial balance consistency and a clear user experience on mobile devices.",
       platform: "PWA (Progressive Web App), published on Vercel, optimized for Android and iOS.",
       featuresTitle: "TESTING SCOPE",
@@ -1766,7 +1766,7 @@ export const translations = {
     daily_app: {
       title: "DAILY – App",
       subtitle: "Aplicación de gestión financiera multimoneda diseñada para centralizar cuentas, registrar transacciones y visualizar balances en tiempo real.",
-      description: "DAILY nació de una necesidad real: ninguna app del mercado ofrecía gestión financiera multimoneda adaptada a quienes operan simultáneamente con ARS, USD y EUR en distintos países. La app centraliza múltiples cuentas bancarias y billeteras virtuales, calcula totales consolidados por moneda en tiempo real, y permite vincular gastos a viajes con seguimiento de presupuesto. \n\nTesteé la app en condiciones de uso diario real, lo que me permitió detectar comportamientos que solo emergen con datos reales y flujos de uso genuinos.",
+      description: "DAILY es una aplicación personal que desarrollé para resolver mi propia necesidad de gestión financiera multimoneda. La uso activamente para mi control de gastos, y apliqué sobre ella un proceso completo de testing manual — diseño de casos de prueba, testing funcional, exploratorio y de casos límite — para asegurar su calidad antes y durante el uso diario.",
       objective: "Validar el correcto funcionamiento de los flujos principales de la aplicación, asegurando la consistencia de los balances financieros y una experiencia de usuario clara en dispositivos móviles.",
       platform: "PWA (Progressive Web App), publicada en Vercel, optimizada para Android e iOS.",
       featuresTitle: "ALCANCE DEL TESTING",

@@ -12,20 +12,24 @@
 </head>
 <body>
 
+<div class="page-curtain" id="pageCurtain"></div>
+
 <!-- ===== NAV ===== -->
 <nav class="nav" id="nav">
-  <a href="mailto:daiana.ciaramella@gmail.com" class="nav__mail">daiana.ciaramella@gmail.com</a>
-  <div class="nav__links" id="navLinks">
-    <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
-    <a href="#proyectos-qa" data-i18n="nav.qa">Proyectos QA</a>
-    <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
-    <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
-  </div>
-  <div class="nav__right">
-    <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
-    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-      <span></span><span></span>
-    </button>
+  <a href="#inicio" class="nav__brand">DC</a>
+  <div class="nav__group">
+    <div class="nav__links" id="navLinks">
+      <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+      <a href="#proyectos-qa" data-i18n="nav.qa">Proyectos QA</a>
+      <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+      <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+    </div>
+    <div class="nav__right">
+      <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
   </div>
 </nav>
 
@@ -38,7 +42,7 @@
       <h1 class="hero__name reveal">Daiana<br>Ciaramella</h1>
       <ul class="socials reveal">
         <li><a href="mailto:daiana.ciaramella@gmail.com" data-i18n="hero.email">Email</a></li>
-        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="https://www.linkedin.com/in/ciaramellad/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="#" target="_blank" rel="noopener" id="cvLink" data-i18n="hero.cv">Descargar CV</a></li>
       </ul>
     </div>
@@ -76,29 +80,29 @@
       <p data-i18n="qa.subtitle">Testing funcional, exploratorio y de API aplicado a productos reales.</p>
     </div>
     <div class="works__grid">
-      <a href="daily-app.html" class="work-card reveal">
+      <a href="proyectos-qa/daily_app/" class="work-card reveal" data-transition>
         <div class="work-card__img"><img src="img/daily/daily-dashboard-hero.jpeg" alt="DAILY App"></div>
         <div class="work-card__info">
           <h3>DAILY — App</h3>
           <div class="work-card__tags"><span data-i18n="qa.card1.tag1">Financial App</span><span>PWA</span></div>
         </div>
       </a>
-      <a href="#" class="work-card reveal">
-        <div class="work-card__img"><div class="ph ph--2"></div></div>
+      <a href="ux-testing/" class="work-card reveal" data-transition>
+        <div class="work-card__img"><img src="img/ryanair/ryanair-web-home.png" alt="Ryanair UX Audit"></div>
         <div class="work-card__info">
           <h3>UX &amp; Accesibilidad — Ryanair</h3>
           <div class="work-card__tags"><span data-i18n="qa.card2.tag1">Accesibilidad</span><span data-i18n="qa.card2.tag2">Web Audit</span></div>
         </div>
       </a>
-      <a href="#" class="work-card reveal">
-        <div class="work-card__img"><div class="ph ph--3"></div></div>
+      <a href="proyectos-qa/testing-api-postman/" class="work-card reveal" data-transition>
+        <div class="work-card__img"><img src="img/postman/bg-postman.png" alt="API Testing con Postman"></div>
         <div class="work-card__info">
           <h3>API Testing — Postman</h3>
           <div class="work-card__tags"><span>API Testing</span><span>E-commerce</span></div>
         </div>
       </a>
-      <a href="#" class="work-card reveal">
-        <div class="work-card__img"><div class="ph ph--4"></div></div>
+      <a href="proyectos-qa/ecommerce-testing/" class="work-card reveal" data-transition>
+        <div class="work-card__img"><img src="img/saucedemo/sauce-home.png" alt="E-commerce Testing"></div>
         <div class="work-card__info">
           <h3 data-i18n="qa.card4.title">E-commerce Testing</h3>
           <div class="work-card__tags"><span data-i18n="qa.card4.tag1">Manual Testing</span><span>E-commerce</span></div>
@@ -365,6 +369,19 @@
     });
   }, { threshold: 0.15 });
   revealEls.forEach(el => revealObserver.observe(el));
+
+  // Transición de página en pantalla completa al navegar a un proyecto
+  const curtain = document.getElementById('pageCurtain');
+  requestAnimationFrame(() => curtain.classList.add('is-hidden'));
+  document.querySelectorAll('a[data-transition]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const href = link.getAttribute('href');
+      if (!href) return;
+      e.preventDefault();
+      curtain.classList.remove('is-hidden');
+      setTimeout(() => { window.location.href = href; }, 380);
+    });
+  });
 </script>
 
 </body>

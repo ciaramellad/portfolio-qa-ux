@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="pageTitle">UX & Accesibilidad — Ryanair · Daiana Ciaramella</title>
+<meta name="description" id="pageDesc" content="Auditoría de UX y accesibilidad sobre el sitio de Ryanair, con Axe DevTools y evaluación heurística bajo WCAG 2.1 AA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../project.css">
+</head>
+<body class="project-page">
+
+<div class="page-curtain" id="pageCurtain"></div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav is-scrolled" id="nav">
+  <a href="../index.html" class="nav__brand" data-transition>DC</a>
+  <div class="nav__group">
+    <div class="nav__links" id="navLinks">
+      <a href="../index.html#sobre-mi" data-i18n="nav.about" data-transition>Sobre mí</a>
+      <a href="../index.html#proyectos-qa" data-i18n="nav.qa" data-transition>Proyectos QA</a>
+      <a href="../index.html#proyectos" data-i18n="nav.projects" data-transition>Proyectos</a>
+      <a href="../index.html#habilidades" data-i18n="nav.skills" data-transition>Habilidades</a>
+    </div>
+    <div class="nav__right">
+      <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
+      <a href="../index.html" class="nav__back" aria-label="Volver" title="Volver" data-transition>←</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<main class="project">
+
+  <!-- ===== HERO ===== -->
+  <section class="project-hero section--dark reveal">
+    <div class="project-hero__media ph ph--2">
+      <img src="../img/ryanair/Ryanair-mobile-home.png" alt="Ryanair">
+    </div>
+    <div class="project-hero__info">
+      <h1 id="heroTitle">UX & Accesibilidad — Ryanair</h1>
+      <p id="heroSubtitle"></p>
+    </div>
+  </section>
+
+  <!-- ===== DESCRIPCIÓN / OBJETIVO / PLATAFORMA ===== -->
+  <section class="project-section section--light reveal">
+    <span class="section-label"><span>01</span> <span>/</span> <span id="labelDesc">DESCRIPCIÓN</span></span>
+    <div class="project-grid">
+      <p id="descText" class="project-desc"></p>
+      <div class="project-facts">
+        <div>
+          <span class="fact-label" id="labelObjective">OBJETIVO</span>
+          <p id="objectiveText"></p>
+        </div>
+        <div>
+          <span class="fact-label" id="labelPlatform">PLATAFORMA</span>
+          <p id="platformText"></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INCIDENCIAS DETECTADAS ===== -->
+  <section class="project-section section--white reveal">
+    <span class="section-label"><span>02</span> <span>/</span> <span id="labelStats">INCIDENCIAS DETECTADAS</span></span>
+    <div class="stats-layout">
+      <div class="table-wrap">
+        <table class="data-table" id="statsTable">
+          <thead><tr id="statsHead"></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div class="scope-media ph ph--1">
+        <img src="../img/ryanair/ryanair-web-home.png" alt="Ryanair home">
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ESTRATEGIA DE TESTING ===== -->
+  <section class="project-section section--offwhite reveal">
+    <span class="section-label"><span>03</span> <span>/</span> <span id="labelStrategy">ESTRATEGIA DE TESTING</span></span>
+    <div class="strategy-card">
+      <div class="strategy-grid" id="strategyGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===== ESCENARIOS DE PRUEBA ===== -->
+  <section class="project-section section--light reveal">
+    <span class="section-label"><span>04</span> <span>/</span> <span id="labelScenarios">ESCENARIOS DE PRUEBA</span></span>
+    <p class="section-intro" id="scenariosDesc"></p>
+    <div class="table-wrap">
+      <table class="data-table" id="scenariosTable">
+        <thead>
+          <tr>
+            <th id="thScenId">ID</th>
+            <th id="thScenFeature">Funcionalidad</th>
+            <th id="thScenScenario">Escenario</th>
+            <th id="thScenObjective">Objetivo</th>
+            <th id="thScenPriority">Prioridad</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== CASOS DE PRUEBA ===== -->
+  <section class="project-section section--white reveal">
+    <span class="section-label"><span>05</span> <span>/</span> <span id="labelCases">CASOS DE PRUEBA</span></span>
+    <p class="section-intro" id="casesDesc"></p>
+    <div class="table-wrap">
+      <table class="data-table data-table--expand" id="casesTable">
+        <thead>
+          <tr>
+            <th id="thCaseId">ID</th>
+            <th id="thCaseFeature">Funcionalidad</th>
+            <th id="thCaseResult">Resultado</th>
+            <th id="thCaseStatus">Estado</th>
+            <th id="thCaseBug">Bug</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ===== BUGS ENCONTRADOS ===== -->
+  <section class="project-section section--offwhite reveal">
+    <span class="section-label"><span>06</span> <span>/</span> <span id="labelBugs">BUGS ENCONTRADOS</span></span>
+    <p class="section-intro" id="bugsDesc"></p>
+    <div class="bugs-grid" id="bugsGrid"></div>
+  </section>
+
+  <!-- ===== MEJORAS DE UX ===== -->
+  <section class="project-section section--dark reveal">
+    <span class="section-label"><span>07</span> <span>/</span> <span id="labelUx">MEJORAS DE UX</span></span>
+    <ul class="ux-list" id="uxList"></ul>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="footer__top">
+    <h2 class="footer__title reveal"><span class="footer__arrow">→</span> <span id="footerLine1">Contáctame</span></h2>
+    <div class="footer__cta reveal">
+      <a href="mailto:daiana.ciaramella@gmail.com" class="footer__btn footer__btn--accent">Email <span>↗</span></a>
+      <a href="https://www.linkedin.com/in/ciaramellad/" target="_blank" rel="noopener" class="footer__btn footer__btn--dark">LinkedIn <span>↗</span></a>
+      <a href="https://github.com/ciaramellad" target="_blank" rel="noopener" class="footer__btn footer__btn--dark">GitHub <span>↗</span></a>
+    </div>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script src="../project.js"></script>
+<script>
+  function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
+  function stepsList(steps) { return steps.map(s => `<li>${esc(s)}</li>`).join(''); }
+
+  function render(lang) {
+    const d = RYANAIR[lang];
+    document.documentElement.lang = lang;
+    document.getElementById('pageTitle').textContent = d.title + ' · Daiana Ciaramella';
+    document.getElementById('pageDesc').setAttribute('content', d.subtitle);
+    document.getElementById('heroTitle').textContent = d.title;
+    document.getElementById('heroSubtitle').textContent = d.subtitle;
+
+    document.getElementById('labelDesc').textContent = d.labels.description;
+    document.getElementById('descText').textContent = d.description;
+    document.getElementById('labelObjective').textContent = d.labels.objective;
+    document.getElementById('objectiveText').textContent = d.objective;
+    document.getElementById('labelPlatform').textContent = d.labels.platform;
+    document.getElementById('platformText').textContent = d.platform;
+
+    document.getElementById('labelStats').textContent = d.labels.stats;
+    document.getElementById('statsHead').innerHTML = d.stats.headers.map(h => `<th>${esc(h)}</th>`).join('');
+    document.querySelector('#statsTable tbody').innerHTML = d.stats.rows.map(row => `<tr>${row.map((c,i) => `<td class="${i===0 ? 'mono' : ''}">${esc(c)}</td>`).join('')}</tr>`).join('');
+
+    document.getElementById('labelStrategy').textContent = d.labels.strategy;
+    document.getElementById('strategyGrid').innerHTML = d.strategy.map(s => `
+      <div class="strategy-item"><h3>${esc(s.name)}</h3><p>${esc(s.description)}</p></div>`).join('');
+
+    document.getElementById('labelScenarios').textContent = d.labels.scenarios;
+    document.getElementById('scenariosDesc').textContent = d.scenariosDesc;
+    document.getElementById('thScenId').textContent = d.labels.thId;
+    document.getElementById('thScenFeature').textContent = d.labels.thFeature;
+    document.getElementById('thScenScenario').textContent = d.labels.thScenario;
+    document.getElementById('thScenObjective').textContent = d.labels.thObjective;
+    document.getElementById('thScenPriority').textContent = d.labels.thPriority;
+    document.querySelector('#scenariosTable tbody').innerHTML = d.scenarios.map(r => `
+      <tr>
+        <td class="mono">${esc(r.id)}</td>
+        <td>${esc(r.feature)}</td>
+        <td>${esc(r.scenario)}</td>
+        <td>${esc(r.objective)}</td>
+        <td><span class="pill pill--${r.priority === d.labels.critical ? 'critical' : 'serious'}">${esc(r.priority)}</span></td>
+      </tr>`).join('');
+
+    document.getElementById('labelCases').textContent = d.labels.cases;
+    document.getElementById('casesDesc').textContent = d.casesDesc;
+    document.getElementById('thCaseId').textContent = d.labels.thId;
+    document.getElementById('thCaseFeature').textContent = d.labels.thFeature;
+    document.getElementById('thCaseResult').textContent = d.labels.thResult;
+    document.getElementById('thCaseStatus').textContent = d.labels.thStatus;
+    document.getElementById('thCaseBug').textContent = 'Bug';
+    document.querySelector('#casesTable tbody').innerHTML = d.cases.map((r, i) => `
+      <tr class="case-row" data-target="case-${i}">
+        <td class="mono">${esc(r.id)}</td>
+        <td>${esc(r.feature)}</td>
+        <td>${esc(r.result)}</td>
+        <td><span class="pill pill--${r.status === 'pass' ? 'pass' : 'fail'}">${r.status === 'pass' ? d.labels.pass : d.labels.fail}</span></td>
+        <td class="mono">${r.bug ? esc(r.bug) : '—'}</td>
+        <td><span class="row-caret">⌄</span></td>
+      </tr>
+      <tr class="case-detail" id="case-${i}">
+        <td colspan="6">
+          <div class="case-detail__inner">
+            <div><span class="fact-label">${d.labels.precondition}</span><p>${esc(r.precondition)}</p></div>
+            <div><span class="fact-label">${d.labels.steps}</span><ol>${stepsList(r.steps)}</ol></div>
+            <div><span class="fact-label">${d.labels.testData}</span><p class="mono-block">${esc(r.testData)}</p></div>
+          </div>
+        </td>
+      </tr>`).join('');
+    bindExpandRows();
+
+    document.getElementById('labelBugs').textContent = d.labels.bugs;
+    document.getElementById('bugsDesc').textContent = d.bugsDescription;
+    document.getElementById('bugsGrid').innerHTML = d.bugs.map((b, i) => `
+      <div class="bug-card">
+        <div class="bug-card__head">
+          <span class="pill pill--sev-${b.severity.toLowerCase()}">${esc(b.severity)}</span>
+          <span class="bug-card__type">${esc(b.type)} · ${esc(b.testCaseId)}</span>
+        </div>
+        <h3>${esc(b.title)}</h3>
+        <div class="bug-card__ee">
+          <div><span>${d.labels.expected}</span><p>${esc(b.expected)}</p></div>
+          <div><span>${d.labels.actual}</span><p>${esc(b.actual)}</p></div>
+        </div>
+        <button class="bug-card__toggle" data-target="bug-steps-${i}">${d.labels.steps} <span>+</span></button>
+        <ol class="bug-card__steps" id="bug-steps-${i}">${stepsList(b.steps)}</ol>
+        ${b.evidence ? `<a href="${b.evidence}" target="_blank" rel="noopener" class="bug-card__link">${d.labels.evidence} ↗</a>` : ''}
+      </div>`).join('');
+    bindBugToggles();
+
+    document.getElementById('labelUx').textContent = d.labels.ux;
+    document.getElementById('uxList').innerHTML = d.uxImprovements.map(i => `<li>${esc(i)}</li>`).join('');
+
+    document.getElementById('footerLine1').textContent = d.labels.contact;
+    document.getElementById('langToggle').textContent = lang === 'es' ? 'EN' : 'ES';
+
+    const navLabels = {
+      es: { about: 'Sobre mí', qa: 'Proyectos QA', projects: 'Proyectos', skills: 'Habilidades' },
+      en: { about: 'About', qa: 'QA Projects', projects: 'Projects', skills: 'Skills' }
+    }[lang];
+    document.querySelectorAll('#navLinks [data-i18n]').forEach(a => {
+      const key = a.dataset.i18n.split('.')[1];
+      if (navLabels[key]) a.textContent = navLabels[key];
+    });
+
+    localStorage.setItem('lang', lang);
+  }
+
+  function bindExpandRows() {
+    document.querySelectorAll('.case-row').forEach(row => {
+      row.addEventListener('click', () => {
+        const detail = document.getElementById(row.dataset.target);
+        const isOpen = detail.classList.toggle('is-open');
+        row.classList.toggle('is-open', isOpen);
+      });
+    });
+  }
+  function bindBugToggles() {
+    document.querySelectorAll('.bug-card__toggle').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const list = document.getElementById(btn.dataset.target);
+        const isOpen = list.classList.toggle('is-open');
+        btn.classList.toggle('is-open', isOpen);
+      });
+    });
+  }
+
+  const langToggle = document.getElementById('langToggle');
+  let currentLang = localStorage.getItem('lang') || 'es';
+  render(currentLang);
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    render(currentLang);
+    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
+  });
+
+  initProjectPage();
+</script>
+
+</body>
+</html>

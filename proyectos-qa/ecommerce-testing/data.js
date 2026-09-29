@@ -1,0 +1,185 @@
+// Datos completos del caso de estudio E-commerce Testing, extraídos íntegramente de portfolio-qa-ux.
+const ECOMMERCE = {
+  es: {
+    title: "E-commerce Testing",
+    subtitle: "Pruebas manuales de una plataforma de e-commerce para validar interacciones clave de compra.",
+    description: "Proyecto de pruebas manuales aplicado a una plataforma de e-commerce. Se diseñaron escenarios y casos de prueba para validar funcionalidades claves como login, navegación de productos, gestión del carrito y checkout. Durante el proceso de testing se identificaron defectos funcionales y posibles mejoras en la experiencia de usuario.",
+    objective: "El objetivo principal de estas pruebas fue identificar problemas potenciales y asegurar que el flujo de compra funcione correctamente desde el inicio de sesión hasta la confirmación del pedido.",
+    platformLabel: "ENTORNO",
+    platform: "Dispositivo: Laptop HP\nSistema operativo: Windows 11 Home\nNavegador: Chrome\nWeb: https://www.saucedemo.com/\nTipo de pruebas: Manual Testing\nConectividad: Wi-Fi",
+    strategy: [
+      { name: "Functional Testing", description: "Validación de las funcionalidades principales del e-commerce." },
+      { name: "Exploratory Testing", description: "Exploración del sistema para detectar comportamientos inesperados." },
+      { name: "UI Testing", description: "Verificación de la correcta visualización y funcionamiento de la interfaz." },
+      { name: "Validation Testing", description: "Pruebas con datos inválidos o incompletos para validar los mensajes de error." }
+    ],
+    scenariosDesc: "Para garantizar la calidad de la plataforma se definieron escenarios que cubren los flujos más críticos, desde el descubrimiento de productos hasta el checkout final.",
+    scenarios: [
+      { id: "TS-001", feature: "Login", scenario: "login válido / login inválido" },
+      { id: "TS-002", feature: "Productos", scenario: "ver catálogo / ver detalle" },
+      { id: "TS-003", feature: "Carrito", scenario: "agregar producto / eliminar producto" },
+      { id: "TS-004", feature: "Carrito", scenario: "persistencia del carrito" },
+      { id: "TS-005", feature: "Checkout", scenario: "checkout válido / checkout con errores" }
+    ],
+    summaryTitle: "RESUMEN DE CASOS DE PRUEBA",
+    summaryHeaders: ["Escenario", "Test Case", "Funcionalidad", "Estado", "Bug Detectado"],
+    summary: [
+      { scenario: "TS-001", testCase: "TC-001", functionality: "Login válido", status: "Pasa", bug: "-" },
+      { scenario: "TS-001", testCase: "TC-002", functionality: "Login inválido", status: "Pasa", bug: "-" },
+      { scenario: "TS-002", testCase: "TC-003", functionality: "Ver catálogo", status: "Falla", bug: "BUG-002, BUG-004" },
+      { scenario: "TS-002", testCase: "TC-004", functionality: "Ver detalle", status: "Pasa", bug: "-" },
+      { scenario: "TS-003", testCase: "TC-005", functionality: "Agregar producto", status: "Falla", bug: "BUG-003" },
+      { scenario: "TS-003", testCase: "TC-006", functionality: "Agregar múltiples", status: "Pasa", bug: "-" },
+      { scenario: "TS-003", testCase: "TC-007", functionality: "Eliminar producto", status: "Pasa", bug: "-" },
+      { scenario: "TS-004", testCase: "TC-008", functionality: "Carrito vacío", status: "Falla", bug: "BUG-001" },
+      { scenario: "TS-005", testCase: "TC-009", functionality: "Checkout válido", status: "Pasa", bug: "-" },
+      { scenario: "TS-005", testCase: "TC-010", functionality: "Checkout inválido", status: "Pasa", bug: "-" }
+    ],
+    casesDesc: "A partir de los escenarios definidos se diseñaron los siguientes casos de prueba. Hacé clic en una fila para ver el detalle completo.",
+    cases: [
+      { id: "TC-001", feature: "Login con credenciales válidas", precondition: "El usuario se encuentra en la página de login.\nuser: standard_user\npass: secret_sauce", result: "El usuario accede correctamente al catálogo de productos", status: "pass", bug: null,
+        steps: ["Ingresar el nombre de usuario válido", "Ingresar la contraseña válida", "Presionar el botón Login"], evidence: "../../img/saucedemo/TC-001-login.png" },
+      { id: "TC-002", feature: "Login con contraseña incorrecta", precondition: "El usuario se encuentra en la página de login.\nuser: standard_user\npass: user_12345", result: "El sistema muestra un mensaje de error indicando que las credenciales son incorrectas", status: "pass", bug: null,
+        steps: ["Ingresar un nombre de usuario válido", "Ingresar una contraseña incorrecta", "Presionar el botón Login"], evidence: "../../img/saucedemo/TC-002-pass-incorrecta.png" },
+      { id: "TC-003", feature: "Visualizar lista de productos", precondition: "El usuario ha iniciado sesión correctamente.", result: "El sistema muestra la lista de productos disponibles", status: "fail", bug: "BUG-002, BUG-004",
+        steps: ["Iniciar sesión en la aplicación", "Acceder a la página de productos"], evidence: "../../img/saucedemo/TC-003-catalogo.png" },
+      { id: "TC-004", feature: "Visualizar detalle de producto", precondition: "El usuario ha iniciado sesión.", result: "El sistema muestra la información detallada del producto seleccionado", status: "pass", bug: null,
+        steps: ["Acceder al catálogo de productos", "Seleccionar un producto de la lista"], evidence: "" },
+      { id: "TC-005", feature: "Agregar producto al carrito", precondition: "El usuario ha iniciado sesión.", result: "El producto se agrega correctamente al carrito de compras", status: "fail", bug: "BUG-003",
+        steps: ["Acceder al catálogo de productos", "Seleccionar un producto", "Presionar el botón Add to cart"], evidence: "" },
+      { id: "TC-006", feature: "Agregar múltiples productos al carrito", precondition: "El usuario ha iniciado sesión.", result: "El carrito muestra todos los productos agregados", status: "pass", bug: null,
+        steps: ["Acceder al catálogo de productos", "Agregar un producto al carrito", "Agregar un segundo producto al carrito", "Acceder al carrito de compras"], evidence: "" },
+      { id: "TC-007", feature: "Eliminar producto del carrito", precondition: "El usuario tiene al menos un producto en el carrito.", result: "El producto se elimina correctamente del carrito", status: "pass", bug: null,
+        steps: ["Acceder al carrito de compras", "Localizar el producto agregado", "Presionar el botón Remove"], evidence: "" },
+      { id: "TC-008", feature: "Verificar carrito vacío después de eliminar productos", precondition: "El usuario tiene productos en el carrito.", result: "El carrito aparece vacío", status: "fail", bug: "BUG-001",
+        steps: ["Acceder al carrito de compras", "Eliminar todos los productos", "Verificar el estado del carrito"], evidence: "../../img/saucedemo/TC-008-carrito-vacio.png" },
+      { id: "TC-009", feature: "Checkout con datos válidos", precondition: "El usuario tiene al menos un producto en el carrito.", result: "El sistema muestra una confirmación de compra exitosa", status: "pass", bug: null,
+        steps: ["Acceder al carrito de compras", "Presionar el botón Checkout", "Ingresar nombre, apellido y código postal", "Presionar Continue", "Confirmar la compra"], evidence: "" },
+      { id: "TC-010", feature: "Checkout con campos obligatorios vacíos", precondition: "El usuario tiene productos en el carrito.", result: "El sistema muestra un mensaje de error indicando que los campos obligatorios deben completarse", status: "pass", bug: null,
+        steps: ["Acceder al carrito", "Presionar Checkout", "Dejar uno o más campos obligatorios vacíos", "Presionar Continue"], evidence: "" }
+    ],
+    bugsDescription: "Se identificaron 4 defectos durante la ejecución de las pruebas.",
+    bugs: [
+      { id: "BUG-001", title: "El carrito no muestra mensaje cuando queda vacío", severity: "Medium", type: "UI / Feedback", testCaseId: "TC-008",
+        steps: ["Iniciar sesión en la aplicación", "Agregar uno o más productos al carrito", "Acceder al carrito de compras", "Eliminar todos los productos del carrito"],
+        expected: "El sistema debería mostrar un mensaje indicando que el carrito está vacío (ej: 'Your cart is empty').", actual: "El carrito queda vacío sin mostrar ningún mensaje o indicación visual del estado.", evidence: "../../img/saucedemo/TC-008-carrito-vacio.png" },
+      { id: "BUG-002", title: "Distorsión de imágenes de producto en vista móvil", severity: "Medium", type: "UI / Responsive", testCaseId: "TC-003",
+        steps: ["Acceder al sitio en vista móvil o modo responsive", "Iniciar sesión en la aplicación", "Navegar al catálogo de productos", "Observar las imágenes de los productos"],
+        expected: "Las imágenes deberían mantener su proporción original y adaptarse correctamente al contenedor.", actual: "Las imágenes aparecen aplastadas verticalmente, perdiendo su proporción original.", evidence: "../../img/saucedemo/TC-003-catalogo.png" },
+      { id: "BUG-003", title: "Espacio vacío excesivo en la vista del carrito", severity: "Low", type: "UI / Layout", testCaseId: "Exploratory testing",
+        steps: ["Iniciar sesión en la aplicación", "Agregar uno o más productos al carrito", "Acceder a la página del carrito", "Observar la separación entre descripción y botones"],
+        expected: "La interfaz debería mantener una distribución equilibrada, con una separación adecuada.", actual: "Existe un espacio vacío excesivo entre la descripción del producto y los botones.", evidence: "../../img/saucedemo/TC-008-carrito-vacio.png" },
+      { id: "BUG-004", title: "Navegación inconsistente hacia el catálogo de productos", severity: "Medium", type: "Navegación / UX", testCaseId: "TC-003",
+        steps: ["Iniciar sesión en la aplicación", "Agregar productos al carrito", "Acceder al carrito de compras", "Abrir el menú lateral", "Seleccionar 'All Items'"],
+        expected: "El sistema debería redirigir al usuario nuevamente al catálogo completo de productos.", actual: "La navegación no devuelve correctamente al listado de productos.", evidence: "../../img/saucedemo/TC-003-catalogo.png" }
+    ],
+    uxImprovements: [
+      "Implementar una función de “Recordarme” en la página de inicio de sesión para facilitar el acceso a usuarios frecuentes.",
+      "Agregar un botón para mostrar/ocultar la contraseña y ayudar a verificar la entrada durante el login.",
+      "Agregar una barra de búsqueda en el catálogo de productos para encontrar artículos específicos rápidamente.",
+      "Permitir agregar múltiples unidades del mismo producto al carrito, actualizando la cantidad seleccionada.",
+      "Incluir reseñas y calificaciones de productos para ayudar a los usuarios a tomar decisiones de compra.",
+      "Implementar validación en tiempo real en el formulario de checkout para detectar errores antes de enviar.",
+      "Agregar una nueva sección en el menú lateral llamada 'Mis pedidos' o 'Historial de compras'.",
+      "Agregar la imagen del producto junto al nombre y la descripción dentro del carrito de compras."
+    ],
+    labels: {
+      description: "DESCRIPCIÓN", objective: "OBJETIVO", strategy: "ESTRATEGIA DE TESTING",
+      scenarios: "ESCENARIOS DE PRUEBA", cases: "CASOS DE PRUEBA", bugs: "REPORTE DE BUGS", ux: "MEJORAS DE UX",
+      thId: "ID", thFeature: "Funcionalidad", thScenario: "Casos de Prueba", thResult: "Resultado", thStatus: "Estado",
+      pass: "Pasa", fail: "Falla", expected: "Esperado", actual: "Obtenido", evidence: "Ver evidencia", contact: "Contáctame",
+      precondition: "Precondición", steps: "Pasos para reproducir"
+    }
+  },
+  en: {
+    title: "E-commerce Testing",
+    subtitle: "Manual testing of an e-commerce platform to validate key purchase interactions.",
+    description: "Manual testing project applied to an e-commerce platform. Test scenarios and cases were designed to validate key functionalities such as login, product navigation, cart management, and checkout. During the testing process, functional defects and possible improvements in the user experience were identified.",
+    objective: "The main objective of these tests was to identify potential problems and ensure that the purchase flow works correctly from login to order confirmation.",
+    platformLabel: "ENVIRONMENT",
+    platform: "Device: Laptop HP\nOperating System: Windows 11 Home\nBrowser: Chrome\nWeb: https://www.saucedemo.com/\nTest Type: Manual Testing\nConnectivity: Wi-Fi",
+    strategy: [
+      { name: "Functional Testing", description: "Validation of the main e-commerce functionalities." },
+      { name: "Exploratory Testing", description: "System exploration to detect unexpected behaviors." },
+      { name: "UI Testing", description: "Verification of the correct visualization and functioning of the interface." },
+      { name: "Validation Testing", description: "Tests with invalid or incomplete data to validate error messages." }
+    ],
+    scenariosDesc: "To ensure the quality of the e-commerce platform, several test scenarios were defined covering the most critical user flows, from product discovery to the final checkout process.",
+    scenarios: [
+      { id: "TS-001", feature: "Login", scenario: "valid login / invalid login" },
+      { id: "TS-002", feature: "Products", scenario: "view catalog / view detail" },
+      { id: "TS-003", feature: "Cart", scenario: "add product / remove product" },
+      { id: "TS-004", feature: "Cart", scenario: "cart persistence" },
+      { id: "TS-005", feature: "Checkout", scenario: "valid checkout / checkout with errors" }
+    ],
+    summaryTitle: "TEST CASES SUMMARY",
+    summaryHeaders: ["Scenario", "Test Case", "Functionality", "Status", "Detected Bug"],
+    summary: [
+      { scenario: "TS-001", testCase: "TC-001", functionality: "Valid Login", status: "Pass", bug: "-" },
+      { scenario: "TS-001", testCase: "TC-002", functionality: "Invalid Login", status: "Pass", bug: "-" },
+      { scenario: "TS-002", testCase: "TC-003", functionality: "View Catalog", status: "Fail", bug: "BUG-002, BUG-004" },
+      { scenario: "TS-002", testCase: "TC-004", functionality: "View Detail", status: "Pass", bug: "-" },
+      { scenario: "TS-003", testCase: "TC-005", functionality: "Add Product", status: "Fail", bug: "BUG-003" },
+      { scenario: "TS-003", testCase: "TC-006", functionality: "Add Multiple", status: "Pass", bug: "-" },
+      { scenario: "TS-003", testCase: "TC-007", functionality: "Remove Product", status: "Pass", bug: "-" },
+      { scenario: "TS-004", testCase: "TC-008", functionality: "Empty Cart", status: "Fail", bug: "BUG-001" },
+      { scenario: "TS-005", testCase: "TC-009", functionality: "Valid Checkout", status: "Pass", bug: "-" },
+      { scenario: "TS-005", testCase: "TC-010", functionality: "Invalid Checkout", status: "Pass", bug: "-" }
+    ],
+    casesDesc: "Based on the previously defined test scenarios, the following test cases were designed. Click a row to see the full detail.",
+    cases: [
+      { id: "TC-001", feature: "Login with valid credentials", precondition: "The user is on the login page.\nuser: standard_user\npass: secret_sauce", result: "User successfully accesses the product catalog", status: "pass", bug: null,
+        steps: ["Enter valid username", "Enter valid password", "Press the 'Login' button"], evidence: "../../img/saucedemo/TC-001-login.png" },
+      { id: "TC-002", feature: "Login with incorrect password", precondition: "The user is on the login page.\nuser: standard_user\npass: user_12345", result: "System shows an error message indicating incorrect credentials", status: "pass", bug: null,
+        steps: ["Enter valid username", "Enter incorrect password", "Press the 'Login' button"], evidence: "../../img/saucedemo/TC-002-pass-incorrecta.png" },
+      { id: "TC-003", feature: "View product list", precondition: "The user has logged in correctly.", result: "System correctly displays the list of available products", status: "fail", bug: "BUG-002, BUG-004",
+        steps: ["Log in to the application", "Access the products page"], evidence: "../../img/saucedemo/TC-003-catalogo.png" },
+      { id: "TC-004", feature: "View product detail", precondition: "The user has logged in.", result: "System shows detailed information of the selected product", status: "pass", bug: null,
+        steps: ["Access the product catalog", "Select a product from the list"], evidence: "" },
+      { id: "TC-005", feature: "Add product to cart", precondition: "The user has logged in.", result: "Product is correctly added to the shopping cart", status: "fail", bug: "BUG-003",
+        steps: ["Access the product catalog", "Select a product", "Press the 'Add to cart' button"], evidence: "" },
+      { id: "TC-006", feature: "Add multiple products to cart", precondition: "The user has logged in.", result: "Cart shows all added products", status: "pass", bug: null,
+        steps: ["Access the product catalog", "Add a product to the cart", "Add a second product to the cart", "Access the shopping cart"], evidence: "" },
+      { id: "TC-007", feature: "Remove product from cart", precondition: "The user has at least one product in the cart.", result: "Product is correctly removed from the cart", status: "pass", bug: null,
+        steps: ["Access the shopping cart", "Locate the added product", "Press the 'Remove' button"], evidence: "" },
+      { id: "TC-008", feature: "Verify empty cart after removing products", precondition: "The user has products in the cart.", result: "The cart appears empty", status: "fail", bug: "BUG-001",
+        steps: ["Access the shopping cart", "Remove all products", "Verify cart status"], evidence: "../../img/saucedemo/TC-008-carrito-vacio.png" },
+      { id: "TC-009", feature: "Checkout with valid data", precondition: "The user has at least one product in the cart.", result: "System shows a successful purchase confirmation", status: "pass", bug: null,
+        steps: ["Access the shopping cart", "Press the 'Checkout' button", "Enter first name, last name, and zip code", "Press 'Continue'", "Confirm the purchase"], evidence: "" },
+      { id: "TC-010", feature: "Checkout with empty required fields", precondition: "The user has products in the cart.", result: "System shows an error message indicating required fields must be completed", status: "pass", bug: null,
+        steps: ["Access the cart", "Press 'Checkout'", "Leave one or more required fields empty", "Press 'Continue'"], evidence: "" }
+    ],
+    bugsDescription: "4 defects were identified during test execution.",
+    bugs: [
+      { id: "BUG-001", title: "The cart does not show a message when it is empty", severity: "Medium", type: "UI / Feedback", testCaseId: "TC-008",
+        steps: ["Log in to the application", "Add one or more products to the cart", "Access the shopping cart", "Remove all products from the cart"],
+        expected: "The system should display a message indicating that the cart is empty (e.g., 'Your cart is empty').", actual: "The cart remains empty without showing any message or visual indication of the status.", evidence: "../../img/saucedemo/TC-008-carrito-vacio.png" },
+      { id: "BUG-002", title: "Product image distortion in mobile view", severity: "Medium", type: "UI / Responsive", testCaseId: "TC-003",
+        steps: ["Access the site in mobile view or responsive mode", "Log in to the application", "Navigate to the product catalog", "Observe the product images"],
+        expected: "Images should maintain their original aspect ratio and adapt correctly to the container.", actual: "Images appear vertically squashed, losing their original proportion.", evidence: "../../img/saucedemo/TC-003-catalogo.png" },
+      { id: "BUG-003", title: "Excessive empty space in the cart view", severity: "Low", type: "UI / Layout", testCaseId: "Exploratory testing",
+        steps: ["Log in to the application", "Add one or more products to the cart", "Access the cart page", "Observe the separation between description and buttons"],
+        expected: "The interface should maintain a balanced distribution with proper separation.", actual: "There is excessive empty space between the description and buttons.", evidence: "../../img/saucedemo/TC-008-carrito-vacio.png" },
+      { id: "BUG-004", title: "Inconsistent navigation to the product catalog", severity: "Medium", type: "Navigation / UX", testCaseId: "TC-003",
+        steps: ["Log in to the application", "Add products to the cart", "Access the shopping cart", "Open the side menu", "Select 'All Items'"],
+        expected: "The system should redirect the user back to the full product catalog.", actual: "Navigation does not correctly return to the product listing.", evidence: "../../img/saucedemo/TC-003-catalogo.png" }
+    ],
+    uxImprovements: [
+      "Implement a 'Remember Me' function on the login page to facilitate access for frequent users.",
+      "Add a show/hide password toggle to verify correct input during login.",
+      "Add a search bar in the product catalog to allow users to find specific items quickly.",
+      "Allow adding multiple units of the same product to the cart, updating the quantity selected.",
+      "Include product reviews and ratings to help users make informed purchase decisions.",
+      "Implement real-time validation in the checkout form to detect errors before submission.",
+      "Add a new section in the side menu called 'My Orders' or 'Purchase History'.",
+      "Add the product image next to the name and description in the shopping cart."
+    ],
+    labels: {
+      description: "DESCRIPTION", objective: "OBJECTIVE", strategy: "TESTING STRATEGY",
+      scenarios: "TEST SCENARIOS", cases: "TEST CASES", bugs: "BUGS REPORT", ux: "UX IMPROVEMENTS",
+      thId: "ID", thFeature: "Feature", thScenario: "Test Cases", thResult: "Result", thStatus: "Status",
+      pass: "Pass", fail: "Fail", expected: "Expected", actual: "Actual", evidence: "View evidence", contact: "Contact me",
+      precondition: "Precondition", steps: "Steps to reproduce"
+    }
+  }
+};

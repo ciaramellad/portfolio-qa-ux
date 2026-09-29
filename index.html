@@ -1,56 +1,371 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Daiana Ciaramella | QA Portfolio</title>
-  <script>
-    // Robust fix for "Cannot set property fetch of #<Window> which has only a getter"
-    (function () {
-      // Try to define a setter that ignores assignments to prevent the TypeError
-      try {
-        const originalFetch = window.fetch;
-        Object.defineProperty(window, 'fetch', {
-          configurable: true,
-          enumerable: true,
-          get: function () { return originalFetch; },
-          set: function (v) {
-            console.warn('Attempted to overwrite window.fetch ignored');
-            return originalFetch;
-          }
-        });
-      } catch (e) {
-        // If it's already non-configurable, we can't do much here,
-        // but the global error handler below will catch the TypeError.
-      }
-
-      // Catch the error globally as a fallback
-      window.addEventListener('error', function (e) {
-        const msg = e.message || (e.error && e.error.message) || '';
-        if (msg.includes('Cannot set property fetch') || msg.includes('fetch of #<Window>')) {
-          e.preventDefault();
-          e.stopPropagation();
-          console.warn('Suppressed fetch property error');
-        }
-      }, true);
-
-      // Handle unhandled rejections just in case
-      window.addEventListener('unhandledrejection', function (e) {
-        const msg = (e.reason && e.reason.message) || '';
-        if (msg.includes('Cannot set property fetch') || msg.includes('fetch of #<Window>')) {
-          e.preventDefault();
-          e.stopPropagation();
-          console.warn('Suppressed fetch property rejection');
-        }
-      });
-    })();
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="meta.title">Daiana Ciaramella — QA Tester | UX UI</title>
+<meta name="description" data-i18n="meta.desc" content="Cerrando la brecha entre el diseño y la calidad del software. Testing QA manual, UX/UI y accesibilidad.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <div id="root"></div>
-  <script type="module" src="/src/main.tsx"></script>
-</body>
 
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <a href="mailto:daiana.ciaramella@gmail.com" class="nav__mail">daiana.ciaramella@gmail.com</a>
+  <div class="nav__links" id="navLinks">
+    <a href="#sobre-mi" data-i18n="nav.about">Sobre mí</a>
+    <a href="#proyectos-qa" data-i18n="nav.qa">Proyectos QA</a>
+    <a href="#proyectos" data-i18n="nav.projects">Proyectos</a>
+    <a href="#habilidades" data-i18n="nav.skills">Habilidades</a>
+  </div>
+  <div class="nav__right">
+    <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
+    <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<main>
+
+  <!-- ===== 00. HERO ===== -->
+  <section class="hero" id="inicio">
+    <span class="num num--accent reveal">00.</span>
+    <div class="hero__row">
+      <h1 class="hero__name reveal">Daiana<br>Ciaramella</h1>
+      <ul class="socials reveal">
+        <li><a href="mailto:daiana.ciaramella@gmail.com" data-i18n="hero.email">Email</a></li>
+        <li><a href="#" target="_blank" rel="noopener">LinkedIn</a></li>
+        <li><a href="#" target="_blank" rel="noopener" id="cvLink" data-i18n="hero.cv">Descargar CV</a></li>
+      </ul>
+    </div>
+    <div class="hero__foot reveal">
+      <p class="hero__role">Tester QA Manual | UX UI</p>
+      <ul class="hero__skills">
+        <li>Manual Testing</li>
+        <li>Regression Testing</li>
+        <li>Bug Reporting</li>
+        <li>UX-Oriented QA</li>
+        <li>Web App Testing</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ===== 01. SOBRE MÍ ===== -->
+  <section class="section section--light" id="sobre-mi">
+    <div class="about-grid reveal">
+      <div class="about-grid__head">
+        <span class="section-label">01 <span>/</span> <span data-i18n="about.label">Sobre mí</span></span>
+        <h2 class="about-grid__title" data-i18n="about.title">Cerrando la brecha entre el diseño y la calidad del software</h2>
+      </div>
+      <div class="about-grid__text">
+        <p data-i18n="about.p1">Vengo del diseño UX/UI y el desarrollo Frontend, lo que me dio una perspectiva que pocos QA tienen: entiendo cómo se construye lo que después voy a romper. Esa mirada integral me permite detectar no solo bugs funcionales sino inconsistencias de experiencia que impactan directamente al usuario final.</p>
+        <p data-i18n="about.p2">Con más de 3 años en entornos digitales, me especializo en testing funcional, diseño y ejecución de test cases, regression testing y gestión de defectos. Colaboro en equipos ágiles validando que el producto cumpla tanto los requerimientos técnicos como la experiencia esperada por el usuario.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 02. PROYECTOS QA ===== -->
+  <section class="section section--white" id="proyectos-qa">
+    <div class="section__head reveal">
+      <span class="num">02.</span>
+      <h2 data-i18n="qa.heading">Proyectos QA</h2>
+      <p data-i18n="qa.subtitle">Testing funcional, exploratorio y de API aplicado a productos reales.</p>
+    </div>
+    <div class="works__grid">
+      <a href="daily-app.html" class="work-card reveal">
+        <div class="work-card__img"><img src="img/daily/daily-dashboard-hero.jpeg" alt="DAILY App"></div>
+        <div class="work-card__info">
+          <h3>DAILY — App</h3>
+          <div class="work-card__tags"><span data-i18n="qa.card1.tag1">Financial App</span><span>PWA</span></div>
+        </div>
+      </a>
+      <a href="#" class="work-card reveal">
+        <div class="work-card__img"><div class="ph ph--2"></div></div>
+        <div class="work-card__info">
+          <h3>UX &amp; Accesibilidad — Ryanair</h3>
+          <div class="work-card__tags"><span data-i18n="qa.card2.tag1">Accesibilidad</span><span data-i18n="qa.card2.tag2">Web Audit</span></div>
+        </div>
+      </a>
+      <a href="#" class="work-card reveal">
+        <div class="work-card__img"><div class="ph ph--3"></div></div>
+        <div class="work-card__info">
+          <h3>API Testing — Postman</h3>
+          <div class="work-card__tags"><span>API Testing</span><span>E-commerce</span></div>
+        </div>
+      </a>
+      <a href="#" class="work-card reveal">
+        <div class="work-card__img"><div class="ph ph--4"></div></div>
+        <div class="work-card__info">
+          <h3 data-i18n="qa.card4.title">E-commerce Testing</h3>
+          <div class="work-card__tags"><span data-i18n="qa.card4.tag1">Manual Testing</span><span>E-commerce</span></div>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <!-- ===== 03. PROYECTOS UX/UI (acordeón) ===== -->
+  <section class="section section--offwhite" id="proyectos">
+    <div class="section__head reveal">
+      <span class="num">03.</span>
+      <h2 data-i18n="ux.heading">Proyectos</h2>
+      <p data-i18n="ux.subtitle">Diseño UX/UI: de la investigación al flujo final.</p>
+    </div>
+    <div class="accordion reveal">
+      <div class="accordion__item is-open">
+        <button class="accordion__head">
+          <span class="num">01.</span>
+          <span class="accordion__title">Onus</span>
+          <span class="accordion__icon"></span>
+        </button>
+        <div class="accordion__panel">
+          <div class="accordion__panel-inner">
+            <div class="accordion__thumb"><img src="img/onus-proyectouxui.png" alt="Onus"></div>
+            <div class="accordion__body">
+              <p data-i18n="ux.item1.desc">Diseño de identidad visual y experiencia de usuario para Onus Solutions, incluyendo definición de marca, paleta de colores y diseño web enfocado en claridad de contenido y navegación.</p>
+              <div class="accordion__tags"><span data-i18n="ux.item1.tag1">Identidad Visual</span><span data-i18n="ux.item1.tag2">Diseño Web</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__head">
+          <span class="num">02.</span>
+          <span class="accordion__title">Grinplug</span>
+          <span class="accordion__icon"></span>
+        </button>
+        <div class="accordion__panel">
+          <div class="accordion__panel-inner">
+            <div class="accordion__thumb"><img src="img/grinplug-proyectouxui.png" alt="Grinplug"></div>
+            <div class="accordion__body">
+              <p data-i18n="ux.item2.desc">Diseño integral de una plataforma de carga eléctrica, definiendo flujos y arquitectura del producto para perfiles de usuario complejos.</p>
+              <div class="accordion__tags"><span data-i18n="ux.item2.tag1">Producto</span><span data-i18n="ux.item2.tag2">Arquitectura de Flujos</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__head">
+          <span class="num">03.</span>
+          <span class="accordion__title">Uminti</span>
+          <span class="accordion__icon"></span>
+        </button>
+        <div class="accordion__panel">
+          <div class="accordion__panel-inner">
+            <div class="accordion__thumb"><img src="img/uminti-proyectouxui.png" alt="Uminti"></div>
+            <div class="accordion__body">
+              <p data-i18n="ux.item3.desc">Diseño de identidad visual y experiencia web para un servicio especializado, enfocado en claridad de comunicación y optimización de flujos de conversión.</p>
+              <div class="accordion__tags"><span data-i18n="ux.item3.tag1">Identidad Visual</span><span data-i18n="ux.item3.tag2">Experiencia Web</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="accordion__item">
+        <button class="accordion__head">
+          <span class="num">04.</span>
+          <span class="accordion__title">HAY EQUIPO! — App</span>
+          <span class="accordion__icon"></span>
+        </button>
+        <div class="accordion__panel">
+          <div class="accordion__panel-inner">
+            <div class="accordion__thumb"><img src="img/app-futfem.png" alt="HAY EQUIPO! App"></div>
+            <div class="accordion__body">
+              <p data-i18n="ux.item4.desc">Investigación, definición de producto y diseño UX/UI de una app orientada a la organización de partidos de fútbol femenino y generación de comunidad.</p>
+              <div class="accordion__tags"><span>Research</span><span>UX/UI</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 04. HABILIDADES ===== -->
+  <section class="section section--light" id="habilidades">
+    <div class="section__head reveal">
+      <span class="num">04.</span>
+      <h2 data-i18n="skills.heading">Habilidades</h2>
+      <p data-i18n="skills.subtitle">Herramientas y prácticas que uso todos los días entre QA y UX/UI.</p>
+    </div>
+    <div class="skills-card reveal">
+      <div class="skills-card__col">
+        <h3>QA Manual</h3>
+        <ul>
+          <li>Test Case Design</li>
+          <li>Defect Reporting</li>
+          <li>Regression Testing</li>
+          <li>Exploratory Testing</li>
+          <li data-i18n="skills.agile">Metodologías Ágiles</li>
+        </ul>
+      </div>
+      <div class="skills-card__col">
+        <h3 data-i18n="skills.technical">Técnico</h3>
+        <ul>
+          <li>Postman / API Testing</li>
+          <li data-i18n="skills.sql">SQL Básico</li>
+          <li>Git / GitHub</li>
+          <li>Vercel / Deployment</li>
+          <li>Chrome DevTools</li>
+        </ul>
+      </div>
+      <div class="skills-card__col">
+        <h3 data-i18n="skills.uxa11y">UX &amp; Accesibilidad</h3>
+        <ul>
+          <li data-i18n="skills.figma">Figma / Diseño UX UI</li>
+          <li data-i18n="skills.wcag">Pautas WCAG 2.1</li>
+          <li>Axe DevTools</li>
+          <li>Usability Testing</li>
+          <li data-i18n="skills.heuristic">Evaluación Heurística</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== FOOTER (05. Trabajemos juntos) ===== -->
+<footer class="footer">
+  <div class="footer__top">
+    <h2 class="footer__title reveal"><span class="footer__arrow">→</span> <span data-i18n="footer.line1">Trabajemos</span><br><em data-i18n="footer.line2">juntos</em></h2>
+    <div class="footer__cta reveal">
+      <a href="#" target="_blank" rel="noopener" id="cvLink2" class="footer__btn footer__btn--accent"><span data-i18n="footer.cv">Descargar CV</span> <span>↗</span></a>
+      <a href="mailto:daiana.ciaramella@gmail.com" class="footer__btn footer__btn--dark">daiana.ciaramella@gmail.com <span>↗</span></a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ---------- Traducciones ----------
+  const translations = {
+    es: {
+      'meta.title': 'Daiana Ciaramella — QA Tester | UX UI',
+      'meta.desc': 'Cerrando la brecha entre el diseño y la calidad del software. Testing QA manual, UX/UI y accesibilidad.',
+      'nav.about': 'Sobre mí', 'nav.qa': 'Proyectos QA', 'nav.projects': 'Proyectos', 'nav.skills': 'Habilidades',
+      'hero.email': 'Email', 'hero.cv': 'Descargar CV',
+      'about.label': 'Sobre mí',
+      'about.title': 'Cerrando la brecha entre el diseño y la calidad del software',
+      'about.p1': 'Vengo del diseño UX/UI y el desarrollo Frontend, lo que me dio una perspectiva que pocos QA tienen: entiendo cómo se construye lo que después voy a romper. Esa mirada integral me permite detectar no solo bugs funcionales sino inconsistencias de experiencia que impactan directamente al usuario final.',
+      'about.p2': 'Con más de 3 años en entornos digitales, me especializo en testing funcional, diseño y ejecución de test cases, regression testing y gestión de defectos. Colaboro en equipos ágiles validando que el producto cumpla tanto los requerimientos técnicos como la experiencia esperada por el usuario.',
+      'qa.heading': 'Proyectos QA',
+      'qa.subtitle': 'Testing funcional, exploratorio y de API aplicado a productos reales.',
+      'qa.card1.tag1': 'App Financiera',
+      'qa.card2.tag1': 'Accesibilidad', 'qa.card2.tag2': 'Auditoría Web',
+      'qa.card4.title': 'Testing de E-commerce', 'qa.card4.tag1': 'Testing Manual',
+      'ux.heading': 'Proyectos',
+      'ux.subtitle': 'Diseño UX/UI: de la investigación al flujo final.',
+      'ux.item1.desc': 'Diseño de identidad visual y experiencia de usuario para Onus Solutions, incluyendo definición de marca, paleta de colores y diseño web enfocado en claridad de contenido y navegación.',
+      'ux.item1.tag1': 'Identidad Visual', 'ux.item1.tag2': 'Diseño Web',
+      'ux.item2.desc': 'Diseño integral de una plataforma de carga eléctrica, definiendo flujos y arquitectura del producto para perfiles de usuario complejos.',
+      'ux.item2.tag1': 'Producto', 'ux.item2.tag2': 'Arquitectura de Flujos',
+      'ux.item3.desc': 'Diseño de identidad visual y experiencia web para un servicio especializado, enfocado en claridad de comunicación y optimización de flujos de conversión.',
+      'ux.item3.tag1': 'Identidad Visual', 'ux.item3.tag2': 'Experiencia Web',
+      'ux.item4.desc': 'Investigación, definición de producto y diseño UX/UI de una app orientada a la organización de partidos de fútbol femenino y generación de comunidad.',
+      'skills.heading': 'Habilidades',
+      'skills.subtitle': 'Herramientas y prácticas que uso todos los días entre QA y UX/UI.',
+      'skills.agile': 'Metodologías Ágiles', 'skills.technical': 'Técnico', 'skills.sql': 'SQL Básico',
+      'skills.uxa11y': 'UX & Accesibilidad', 'skills.figma': 'Figma / Diseño UX UI', 'skills.wcag': 'Pautas WCAG 2.1',
+      'skills.heuristic': 'Evaluación Heurística',
+      'footer.line1': 'Trabajemos', 'footer.line2': 'juntos', 'footer.cv': 'Descargar CV',
+      cv: 'img/CV Daiana Ciaramella - QA UX UI - ES.pdf'
+    },
+    en: {
+      'meta.title': 'Daiana Ciaramella — QA Tester | UX UI',
+      'meta.desc': 'Bridging the gap between design and software quality. Manual QA, UX/UI and accessibility testing.',
+      'nav.about': 'About', 'nav.qa': 'QA Projects', 'nav.projects': 'Projects', 'nav.skills': 'Skills',
+      'hero.email': 'Email', 'hero.cv': 'Download CV',
+      'about.label': 'About me',
+      'about.title': 'Bridging the gap between design and software quality',
+      'about.p1': 'I come from UX/UI design and Frontend development, which gave me a perspective few QA testers have: I understand how what I later break gets built. That holistic view lets me spot not only functional bugs but also experience inconsistencies that directly impact the end user.',
+      'about.p2': 'With over 3 years in digital product environments, I specialize in functional testing, test case design and execution, regression testing, and defect management. I collaborate in agile teams, validating that the product meets both technical requirements and user expectations.',
+      'qa.heading': 'QA Projects',
+      'qa.subtitle': 'Functional, exploratory and API testing applied to real products.',
+      'qa.card1.tag1': 'Financial App',
+      'qa.card2.tag1': 'Accessibility', 'qa.card2.tag2': 'Web Audit',
+      'qa.card4.title': 'E-commerce Testing', 'qa.card4.tag1': 'Manual Testing',
+      'ux.heading': 'Projects',
+      'ux.subtitle': 'UX/UI design: from research to final flow.',
+      'ux.item1.desc': 'Visual identity and user experience design for Onus Solutions, including brand definition, color palette, and web design focused on content clarity and navigation.',
+      'ux.item1.tag1': 'Visual Identity', 'ux.item1.tag2': 'Web Design',
+      'ux.item2.desc': 'Comprehensive design of an electric charging platform, defining product flows and architecture for complex user profiles.',
+      'ux.item2.tag1': 'Product', 'ux.item2.tag2': 'Flow Architecture',
+      'ux.item3.desc': 'Visual identity and web experience design for a specialized service, focused on communication clarity and conversion flow optimization.',
+      'ux.item3.tag1': 'Visual Identity', 'ux.item3.tag2': 'Web Experience',
+      'ux.item4.desc': 'Research, product definition, and UX/UI design of an app for organizing women’s football matches and community building.',
+      'skills.heading': 'Skills',
+      'skills.subtitle': 'Tools and practices I use every day between QA and UX/UI.',
+      'skills.agile': 'Agile Methodologies', 'skills.technical': 'Technical', 'skills.sql': 'SQL Basics',
+      'skills.uxa11y': 'UX & Accessibility', 'skills.figma': 'Figma / UX UI Design', 'skills.wcag': 'WCAG 2.1 Guidelines',
+      'skills.heuristic': 'Heuristic Evaluation',
+      'footer.line1': "Let's work", 'footer.line2': 'together', 'footer.cv': 'Download CV',
+      cv: 'img/CV Daiana Ciaramella - QA UX UI - ES.pdf'
+    }
+  };
+
+  function applyLang(lang) {
+    const dict = translations[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    const metaDesc = document.querySelector('meta[name="description"]');
+    if (metaDesc) metaDesc.setAttribute('content', dict['meta.desc']);
+    document.getElementById('langToggle').textContent = lang === 'es' ? 'EN' : 'ES';
+    document.querySelectorAll('#cvLink, #cvLink2').forEach(a => a.setAttribute('href', dict.cv));
+    localStorage.setItem('lang', lang);
+  }
+
+  const langToggle = document.getElementById('langToggle');
+  let currentLang = localStorage.getItem('lang') || 'es';
+  applyLang(currentLang);
+  langToggle.addEventListener('click', () => {
+    currentLang = currentLang === 'es' ? 'en' : 'es';
+    applyLang(currentLang);
+  });
+
+  // Menú móvil
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('is-open');
+    navToggle.classList.toggle('is-active', isOpen);
+    navToggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('is-open');
+    navToggle.classList.remove('is-active');
+  }));
+
+  // Nav con fondo al hacer scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('is-scrolled', window.scrollY > 20);
+  }, { passive: true });
+
+  // Acordeón de proyectos UX/UI
+  document.querySelectorAll('.accordion__item').forEach(item => {
+    const head = item.querySelector('.accordion__head');
+    head.addEventListener('click', () => {
+      const alreadyOpen = item.classList.contains('is-open');
+      document.querySelectorAll('.accordion__item').forEach(i => i.classList.remove('is-open'));
+      if (!alreadyOpen) item.classList.add('is-open');
+    });
+  });
+
+  // Revelado en scroll
+  const revealEls = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  revealEls.forEach(el => revealObserver.observe(el));
+</script>
+
+</body>
 </html>

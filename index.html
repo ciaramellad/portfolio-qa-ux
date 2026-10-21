@@ -37,16 +37,15 @@
 
   <!-- ===== 00. HERO ===== -->
   <section class="hero" id="inicio">
-    <span class="num num--accent reveal">00.</span>
     <div class="hero__row">
-      <h1 class="hero__name reveal">Daiana<br>Ciaramella</h1>
-      <ul class="socials reveal">
+      <h1 class="hero__name"><span class="hero__line"><span>Daiana</span></span><span class="hero__line"><span>Ciaramella</span></span></h1>
+      <ul class="socials hero__fade">
         <li><a href="mailto:daiana.ciaramella@gmail.com" data-i18n="hero.email">Email</a></li>
         <li><a href="https://www.linkedin.com/in/ciaramellad/" target="_blank" rel="noopener">LinkedIn</a></li>
         <li><a href="#" target="_blank" rel="noopener" id="cvLink" data-i18n="hero.cv">Descargar CV</a></li>
       </ul>
     </div>
-    <div class="hero__foot reveal">
+    <div class="hero__foot hero__fade">
       <p class="hero__role">Tester QA Manual | UX UI</p>
       <ul class="hero__skills">
         <li>Manual Testing</li>
@@ -80,32 +79,40 @@
       <p data-i18n="qa.subtitle">Testing funcional, exploratorio y de API aplicado a productos reales.</p>
     </div>
     <div class="works__grid">
-      <a href="proyectos-qa/daily_app/" class="work-card reveal" data-transition>
-        <div class="work-card__img"><img src="img/daily/daily-dashboard-hero.jpeg" alt="DAILY App"></div>
-        <div class="work-card__info">
-          <h3>DAILY — App</h3>
-          <div class="work-card__tags"><span data-i18n="qa.card1.tag1">Financial App</span><span>PWA</span></div>
+      <a href="proyectos-qa/daily_app/" class="work-card reveal" style="--i:0" data-transition>
+        <div class="work-card__cover">
+          <div class="work-card__center">
+            <h3>DAILY — App</h3>
+            <div class="work-card__tags"><span data-i18n="qa.card1.tag1">Financial App</span><span>PWA</span></div>
+          </div>
+          <span class="work-card__cta" aria-hidden="true"><span data-i18n="qa.cta">Ver proyecto</span> ↗</span>
         </div>
       </a>
-      <a href="ux-testing/" class="work-card reveal" data-transition>
-        <div class="work-card__img"><img src="img/ryanair/ryanair-web-home.png" alt="Ryanair UX Audit"></div>
-        <div class="work-card__info">
-          <h3>UX &amp; Accesibilidad — Ryanair</h3>
-          <div class="work-card__tags"><span data-i18n="qa.card2.tag1">Accesibilidad</span><span data-i18n="qa.card2.tag2">Web Audit</span></div>
+      <a href="ux-testing/" class="work-card reveal" style="--i:1" data-transition>
+        <div class="work-card__cover">
+          <div class="work-card__center">
+            <h3>UX &amp; Accesibilidad — Ryanair</h3>
+            <div class="work-card__tags"><span data-i18n="qa.card2.tag1">Accesibilidad</span><span data-i18n="qa.card2.tag2">Web Audit</span></div>
+          </div>
+          <span class="work-card__cta" aria-hidden="true"><span data-i18n="qa.cta">Ver proyecto</span> ↗</span>
         </div>
       </a>
-      <a href="proyectos-qa/testing-api-postman/" class="work-card reveal" data-transition>
-        <div class="work-card__img"><img src="img/postman/bg-postman.png" alt="API Testing con Postman"></div>
-        <div class="work-card__info">
-          <h3>API Testing — Postman</h3>
-          <div class="work-card__tags"><span>API Testing</span><span>E-commerce</span></div>
+      <a href="proyectos-qa/testing-api-postman/" class="work-card reveal" style="--i:0" data-transition>
+        <div class="work-card__cover">
+          <div class="work-card__center">
+            <h3>API Testing — Postman</h3>
+            <div class="work-card__tags"><span>API Testing</span><span>E-commerce</span></div>
+          </div>
+          <span class="work-card__cta" aria-hidden="true"><span data-i18n="qa.cta">Ver proyecto</span> ↗</span>
         </div>
       </a>
-      <a href="proyectos-qa/ecommerce-testing/" class="work-card reveal" data-transition>
-        <div class="work-card__img"><img src="img/saucedemo/sauce-home.png" alt="E-commerce Testing"></div>
-        <div class="work-card__info">
-          <h3 data-i18n="qa.card4.title">E-commerce Testing</h3>
-          <div class="work-card__tags"><span data-i18n="qa.card4.tag1">Manual Testing</span><span>E-commerce</span></div>
+      <a href="proyectos-qa/ecommerce-testing/" class="work-card reveal" style="--i:1" data-transition>
+        <div class="work-card__cover">
+          <div class="work-card__center">
+            <h3 data-i18n="qa.card4.title">E-commerce Testing</h3>
+            <div class="work-card__tags"><span data-i18n="qa.card4.tag1">Manual Testing</span><span>E-commerce</span></div>
+          </div>
+          <span class="work-card__cta" aria-hidden="true"><span data-i18n="qa.cta">Ver proyecto</span> ↗</span>
         </div>
       </a>
     </div>
@@ -254,7 +261,7 @@
       'about.p2': 'Con más de 3 años en entornos digitales, me especializo en testing funcional, diseño y ejecución de test cases, regression testing y gestión de defectos. Colaboro en equipos ágiles validando que el producto cumpla tanto los requerimientos técnicos como la experiencia esperada por el usuario.',
       'qa.heading': 'Proyectos QA',
       'qa.subtitle': 'Testing funcional, exploratorio y de API aplicado a productos reales.',
-      'qa.card1.tag1': 'App Financiera',
+      'qa.card1.tag1': 'App Financiera', 'qa.cta': 'Ver proyecto',
       'qa.card2.tag1': 'Accesibilidad', 'qa.card2.tag2': 'Auditoría Web',
       'qa.card4.title': 'Testing de E-commerce', 'qa.card4.tag1': 'Testing Manual',
       'ux.heading': 'Proyectos',
@@ -285,7 +292,7 @@
       'about.p2': 'With over 3 years in digital product environments, I specialize in functional testing, test case design and execution, regression testing, and defect management. I collaborate in agile teams, validating that the product meets both technical requirements and user expectations.',
       'qa.heading': 'QA Projects',
       'qa.subtitle': 'Functional, exploratory and API testing applied to real products.',
-      'qa.card1.tag1': 'Financial App',
+      'qa.card1.tag1': 'Financial App', 'qa.cta': 'View project',
       'qa.card2.tag1': 'Accessibility', 'qa.card2.tag2': 'Web Audit',
       'qa.card4.title': 'E-commerce Testing', 'qa.card4.tag1': 'Manual Testing',
       'ux.heading': 'Projects',
@@ -372,7 +379,7 @@
 
   // Transición de página en pantalla completa al navegar a un proyecto
   const curtain = document.getElementById('pageCurtain');
-  requestAnimationFrame(() => curtain.classList.add('is-hidden'));
+  requestAnimationFrame(() => { curtain.classList.add('is-hidden'); document.body.classList.add('is-loaded'); });
   document.querySelectorAll('a[data-transition]').forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');

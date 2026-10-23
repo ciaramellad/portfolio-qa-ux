@@ -3,243 +3,84 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="pageTitle">API Testing con Postman · Daiana Ciaramella</title>
-<meta name="description" id="pageDesc" content="Validación de una API REST de e-commerce con Postman: endpoints, escenarios, casos de prueba y automatizaciones.">
+<title>API Testing con Postman: caso de estudio QA · Daiana Ciaramella</title>
+<meta name="description" content="Pruebas de API REST con Postman sobre DummyJSON: 7 casos con aserciones automáticas de estado, estructura y tiempo, un caso negativo y una limitación del entorno documentada.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css">
-<link rel="stylesheet" href="../../project.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/case.css">
 </head>
-<body class="project-page">
-
+<body>
 <div class="page-curtain" id="pageCurtain"></div>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<!-- ===== NAV ===== -->
-<nav class="nav is-scrolled" id="nav">
+<nav class="nav" id="nav">
   <a href="../../index.html" class="nav__brand" data-transition>DC</a>
   <div class="nav__group">
     <div class="nav__links" id="navLinks">
-      <a href="../../index.html#sobre-mi" data-i18n="nav.about" data-transition>Sobre mí</a>
-      <a href="../../index.html#proyectos-qa" data-i18n="nav.qa" data-transition>Proyectos QA</a>
-      <a href="../../index.html#proyectos" data-i18n="nav.projects" data-transition>Proyectos</a>
-      <a href="../../index.html#habilidades" data-i18n="nav.skills" data-transition>Habilidades</a>
+      <a href="../../index.html#sobre-mi" data-transition>Sobre mí</a>
+      <a href="../../index.html#proyectos-qa" data-transition>Proyectos QA</a>
+      <a href="../../index.html#proyectos" data-transition>Proyectos</a>
+      <a href="../../index.html#habilidades" data-transition>Habilidades</a>
     </div>
     <div class="nav__right">
-      <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
-      <a href="../../index.html" class="nav__back" aria-label="Volver" title="Volver" data-transition>←</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <a href="../../index.html#proyectos-qa" class="nav__back" data-transition><span aria-hidden="true">←</span> Proyectos</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
 
-<main class="project">
-
-  <!-- ===== HERO ===== -->
-  <section class="project-hero section--dark reveal">
-    <div class="project-hero__media ph ph--3">
-      <img src="../../img/postman/bg-postman.png" alt="API Testing con Postman">
+<main class="cs" id="contenido">
+<section class="cs-hero">
+  <div class="cs-wrap cs-hero__grid cs-hero__grid--wide">
+    <div>
+      <p class="cs-kicker">Proyecto QA · Entorno de práctica</p>
+      <h1>API Testing con Postman</h1>
+      <p class="cs-lead">Pruebas de una API REST de e-commerce de práctica (DummyJSON): códigos de estado, estructura del JSON, tiempos de respuesta y casos negativos, con aserciones automáticas en Postman.</p>
+      <dl class="cs-facts"><div class=""><dt>Mi rol</dt><dd>QA, trabajo individual</dd></div><div class=""><dt>API</dt><dd>DummyJSON, API pública de práctica</dd></div><div class=""><dt>Métodos</dt><dd>GET, POST, PUT y DELETE</dd></div><div class="span-2"><dt>Herramientas</dt><dd>Postman: colección, variables de entorno y scripts de test</dd></div><div class=""><dt>Certificación</dt><dd>Postman API Fundamentals Student Expert, febrero de 2026</dd></div></dl>
     </div>
-    <div class="project-hero__info">
-      <h1 id="heroTitle">API Testing con Postman</h1>
-      <p id="heroSubtitle"></p>
-      <div class="cert-badge">
-        <img src="../../img/postman/Postman - Postman API Fundamentals Student Expert - 2026-02-21 (2).png" alt="Postman Student Expert Certification">
-        <span id="certTitle">Certificación Postman Student Expert</span>
-      </div>
-    </div>
-  </section>
+    <div><div class="browser"><div class="browser__bar" aria-hidden="true"><span></span><span></span><span></span><em>DELETE {{base_url}}/carts/9999</em></div><img src="../../assets/img/postman/tc-007-delete-cart-negative.jpg" alt="Postman: DELETE de un carrito inexistente devuelve 404 Not Found con el mensaje Cart with id 9999 not found" width="1097" height="665"></div></div>
+  </div>
+</section>
+<section class="cs-stats" aria-label="Resultados"><div class="cs-wrap"><div class="cs-stats__grid"><div class="cs-stat"><b class="">7 / 7</b><span>casos ejecutados que pasan</span></div><div class="cs-stat"><b class="">5</b><span>endpoints de productos y carritos</span></div><div class="cs-stat"><b class="">3</b><span>tipos de aserción automática: estado, estructura y tiempo</span></div><div class="cs-stat"><b class="is-accent">1</b><span>limitación del entorno documentada</span></div></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Contexto y alcance</h2></div><div class="cs-body"><p class="cs-p">Proyecto para practicar pruebas de API antes de aplicarlas a mis apps. DummyJSON simula una tienda online con productos y carritos. Es un entorno de práctica, no un producto real, y así lo presento.</p><div class="cs-cols"><div class="cs-box"><h3>Dentro del alcance</h3><ul class="cs-list"><li>Productos: listar, obtener por ID y actualizar</li><li>Carritos: crear y eliminar</li><li>Códigos de estado y estructura JSON</li><li>Tiempo de respuesta</li><li>Un caso negativo</li></ul></div><div class="cs-box"><h3>Fuera del alcance</h3><ul class="cs-list"><li>Autenticación con token</li><li>Carga y rendimiento</li><li>Validación formal de esquema (siguiente paso)</li></ul></div></div></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Endpoints</h2></div><div class="cs-body"><div class="table-wrap" role="region" aria-label="Endpoints analizados" tabindex="0"><table class="cs-table"><thead><tr><th scope="col">Método</th><th scope="col">Endpoint</th><th scope="col">Qué hace</th></tr></thead><tbody><tr><td><span class="mono">GET</span></td><td><span class="mono">/products</span></td><td>Lista de productos</td></tr><tr><td><span class="mono">GET</span></td><td><span class="mono">/products/{id}</span></td><td>Un producto por ID</td></tr><tr><td><span class="mono">PUT</span></td><td><span class="mono">/products/{id}</span></td><td>Actualizar un producto</td></tr><tr><td><span class="mono">POST</span></td><td><span class="mono">/carts/add</span></td><td>Crear un carrito con productos</td></tr><tr><td><span class="mono">DELETE</span></td><td><span class="mono">/carts/{id}</span></td><td>Eliminar un carrito</td></tr></tbody></table></div></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Escenarios</h2></div><div class="cs-body"><div class="table-wrap" role="region" aria-label="Escenarios" tabindex="0"><table class="cs-table"><thead><tr><th scope="col">ID</th><th scope="col">Escenario</th><th scope="col">Casos</th></tr></thead><tbody><tr><td><span class="mono">TS-001</span></td><td>La API devuelve la lista de productos</td><td>TC-001, TC-004</td></tr><tr><td><span class="mono">TS-002</span></td><td>La API devuelve un producto por ID</td><td>TC-002</td></tr><tr><td><span class="mono">TS-003</span></td><td>La API permite actualizar un producto</td><td>TC-003</td></tr><tr><td><span class="mono">TS-004</span></td><td>Se puede crear un carrito con productos</td><td>TC-005</td></tr><tr><td><span class="mono">TS-005</span></td><td>La API devuelve la lista de carritos</td><td><span class="tag tag--warn">No ejecutado</span></td></tr><tr><td><span class="mono">TS-006</span></td><td>Se puede eliminar un carrito existente</td><td>TC-006</td></tr><tr><td><span class="mono">TS-007</span></td><td>Eliminar un carrito inexistente devuelve un error controlado</td><td>TC-007</td></tr></tbody></table></div></div></div></section>
+<section class="cs-sec"><div class="cs-wrap"><div class="cs-head"><div><h2 class="cs-h2">Casos de prueba</h2><p class="cs-intro">Despliega cada caso para ver la petición, el resultado y la captura de Postman.</p></div></div><div class="tc-list"><details class="tc"><summary><span class="mono">TC-001</span><span class="tc__title">GET /products devuelve la lista</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">GET</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Petición</dt><dd><span class="mono">GET {{base_url}}/products</span></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>200 OK y un JSON con el array <span class="mono">products</span>.</dd></dl><dl class="kv full"><dt>Resultado obtenido</dt><dd>Como se esperaba (ver captura).</dd></dl><figure class="tc__ev full"><a href="../../assets/img/postman/tc-001-get-products.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/tc-001-get-products.jpg" alt="Postman: respuesta de GET /products" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-002</span><span class="tc__title">GET /products/1 devuelve ese producto</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">GET</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Petición</dt><dd><span class="mono">GET {{base_url}}/products/1</span></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>200 OK y el campo <span class="mono">id</span> vale 1.</dd></dl><dl class="kv full"><dt>Resultado obtenido</dt><dd>Como se esperaba (ver captura).</dd></dl><figure class="tc__ev full"><a href="../../assets/img/postman/tc-002-get-products-1.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/tc-002-get-products-1.jpg" alt="Postman: respuesta de GET /products/1" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-003</span><span class="tc__title">PUT /products/1 actualiza el título</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">PUT</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Petición</dt><dd><span class="mono">PUT {{base_url}}/products/1</span></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>200 OK y el producto devuelto trae el título nuevo.</dd></dl><dl class="kv full"><dt>Resultado obtenido</dt><dd>Como se esperaba (ver captura).</dd></dl><figure class="tc__ev full"><a href="../../assets/img/postman/tc-003-put-update1.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/tc-003-put-update1.jpg" alt="Postman: respuesta de PUT /products/1" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-004</span><span class="tc__title">GET /products responde a tiempo</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">GET</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Petición</dt><dd><span class="mono">GET {{base_url}}/products</span></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>200 OK en menos de 1000 ms.</dd></dl><dl class="kv full"><dt>Resultado obtenido</dt><dd>Como se esperaba (ver captura).</dd></dl><figure class="tc__ev full"><a href="../../assets/img/postman/tc-004-response-time-products.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/tc-004-response-time-products.jpg" alt="Postman: respuesta de GET /products" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-005</span><span class="tc__title">POST /carts/add crea un carrito</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">POST</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Petición</dt><dd><span class="mono">POST {{base_url}}/carts/add</span></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>200 OK y un JSON con el <span class="mono">id</span> del carrito.</dd></dl><dl class="kv full"><dt>Resultado obtenido</dt><dd>Como se esperaba (ver captura).</dd></dl><figure class="tc__ev full"><a href="../../assets/img/postman/tc-005-post-create-cart.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/tc-005-post-create-cart.jpg" alt="Postman: respuesta de POST /carts/add" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-006</span><span class="tc__title">DELETE /carts/1 elimina un carrito</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">DELETE</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Petición</dt><dd><span class="mono">DELETE {{base_url}}/carts/1</span></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>200 OK y confirmación de borrado en el JSON.</dd></dl><dl class="kv full"><dt>Resultado obtenido</dt><dd>Como se esperaba (ver captura).</dd></dl><figure class="tc__ev full"><a href="../../assets/img/postman/tc-006-delete-cart.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/tc-006-delete-cart.jpg" alt="Postman: respuesta de DELETE /carts/1" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-007</span><span class="tc__title">DELETE /carts/9999: carrito inexistente</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">DELETE</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Petición</dt><dd><span class="mono">DELETE {{base_url}}/carts/9999</span></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>404 Not Found y un mensaje que diga que el carrito no existe.</dd></dl><dl class="kv full"><dt>Resultado obtenido</dt><dd>404 Not Found en 337 ms con <span class="mono">{"message": "Cart with id '9999' not found"}</span>.</dd></dl><dl class="kv full"><dt>Nota</dt><dd>Caso negativo: pasa porque la API falla como debe. En la versión anterior estaba marcado como fallo por error.</dd></dl><figure class="tc__ev full"><a href="../../assets/img/postman/tc-007-delete-cart-negative.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/tc-007-delete-cart-negative.jpg" alt="Postman: 404 Not Found al borrar el carrito 9999" loading="lazy"></a></figure></div></details></div></div></section>
+<section class="cs-sec"><div class="cs-wrap"><div class="cs-head"><div><h2 class="cs-h2">Aserciones automáticas</h2></div></div><p class="cs-p">Cada petición lleva scripts de test en Postman que comprueban el resultado sin mirarlo a mano.</p><pre class="code"><code>// Código de estado
+pm.test(&quot;Status code is 200&quot;, function () {
+    pm.response.to.have.status(200);
+});
 
-  <!-- ===== DESCRIPCIÓN / OBJETIVO / PLATAFORMA ===== -->
-  <section class="project-section section--light reveal">
-    <span class="section-label"><span>01</span> <span>/</span> <span id="labelDesc">DESCRIPCIÓN</span></span>
-    <div class="project-grid">
-      <p id="descText" class="project-desc"></p>
-      <div class="project-facts">
-        <div>
-          <span class="fact-label" id="labelObjective">OBJETIVO</span>
-          <p id="objectiveText"></p>
-        </div>
-        <div>
-          <span class="fact-label" id="labelPlatform">PLATAFORMA</span>
-          <p id="platformText"></p>
-        </div>
-      </div>
-    </div>
-  </section>
+// Estructura: la respuesta trae 5 productos (con ?limit=5)
+pm.test(&quot;Products length is 5&quot;, function () {
+    const response = pm.response.json();
+    pm.expect(response.products.length).to.eql(5);
+});
 
-  <!-- ===== ENDPOINTS ANALIZADOS ===== -->
-  <section class="project-section section--white reveal">
-    <span class="section-label"><span>02</span> <span>/</span> <span id="labelEndpoints">ENDPOINTS ANALIZADOS</span></span>
-    <p class="section-intro" id="endpointsDesc"></p>
-    <div class="table-wrap">
-      <table class="data-table" id="endpointsTable">
-        <thead><tr><th id="thEpId">Método</th><th id="thEpFeature">Endpoint</th><th id="thEpScenario">Escenario</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ===== ESCENARIOS DE PRUEBA ===== -->
-  <section class="project-section section--offwhite reveal">
-    <span class="section-label"><span>03</span> <span>/</span> <span id="labelScenarios">ESCENARIOS DE PRUEBA</span></span>
-    <div class="table-wrap">
-      <table class="data-table" id="scenariosTable">
-        <thead><tr><th>ID</th><th id="thScenScenario">Escenario</th></tr></thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ===== CASOS DE PRUEBA ===== -->
-  <section class="project-section section--light reveal">
-    <span class="section-label"><span>04</span> <span>/</span> <span id="labelCases">CASOS DE PRUEBA</span></span>
-    <p class="section-intro" id="casesP1"></p>
-    <p class="section-intro" id="casesP2"></p>
-    <div class="table-wrap">
-      <table class="data-table data-table--expand" id="casesTable">
-        <thead>
-          <tr>
-            <th id="thCaseId">ID</th>
-            <th id="thCaseFeature">Endpoint</th>
-            <th id="thCaseScenario">Escenario</th>
-            <th id="thCaseResult">Resultado</th>
-            <th id="thCaseStatus">Estado</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ===== AUTOMATIZACIONES POSTMAN ===== -->
-  <section class="project-section section--dark reveal">
-    <span class="section-label"><span>05</span> <span>/</span> <span id="labelAuto">AUTOMATIZACIONES POSTMAN</span></span>
-    <p class="section-intro" id="autoDesc"></p>
-    <div class="automations-grid" id="autoGrid"></div>
-  </section>
-
+// Tiempo de respuesta
+pm.test(&quot;Response time is less than 1000ms&quot;, function () {
+    pm.expect(pm.response.responseTime).to.be.below(1000);
+});</code></pre><div class="gallery"><figure><a href="../../assets/img/postman/aut-status-code.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/aut-status-code.jpg" alt="Test de código de estado superado en Postman" loading="lazy"></a><figcaption>Test de código de estado.</figcaption></figure><figure><a href="../../assets/img/postman/aut-time-response.jpg" target="_blank" rel="noopener"><img src="../../assets/img/postman/aut-time-response.jpg" alt="Test de tiempo de respuesta superado en Postman" loading="lazy"></a><figcaption>Test de tiempo de respuesta.</figcaption></figure></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Limitación del entorno</h2></div><div class="cs-body"><p class="cs-p">DummyJSON simula las escrituras: según su documentación, PUT, POST y DELETE devuelven la respuesta esperada pero no guardan nada en el servidor. Por eso el 200 de TC-003 confirma que la API acepta la petición, no que el cambio persista.</p><p class="cs-p">Siguiente prueba: un GET /products/1 justo después del PUT. Si devuelve el título original, queda demostrado. En una API real, ese GET de verificación es obligatorio.</p></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Siguientes pasos</h2></div><div class="cs-body"><ul class="cs-list"><li>Ejecutar TS-005 (listar carritos), que quedó sin caso.</li><li>Añadir aserciones de Content-Type y de esquema JSON.</li><li>Más casos negativos: ID no numérico, cuerpo vacío en POST, método no permitido.</li><li>Aplicar lo mismo a la API de Supabase de mis apps: que una usuaria no pueda leer filas de otra.</li></ul></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Qué aprendí</h2></div><div class="cs-body"><p class="cs-p">Un caso negativo pasa cuando el sistema falla como debe. El 404 de TC-007 era el resultado correcto y yo lo había marcado como fallo.</p><p class="cs-p">Definir el esperado exacto (código y mensaje) antes de ejecutar. “Devuelve error o un mensaje” no se puede verificar.</p><p class="cs-p">Un 200 no basta. En una API que simula escrituras, solo un GET posterior dice si el cambio existe.</p></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Certificación</h2></div><div class="cs-body"><div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap"><img src="../../assets/img/postman/postman-student-expert.png" alt="Insignia Postman API Fundamentals Student Expert" width="140" height="140" style="border-radius:16px"><p class="cs-p" style="flex:1 1 280px">Postman API Fundamentals Student Expert, obtenida en febrero de 2026: peticiones, variables, colecciones, scripts de test y ejecución de colecciones.</p></div></div></div></section>
+<a class="cs-next" href="../../proyectos-qa/un-clu-de-bordado/" data-transition><span><small>Siguiente proyecto</small><strong>Un Clú de Bordado</strong></span><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </main>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer__top">
-    <h2 class="footer__title reveal"><span class="footer__arrow">→</span> <span id="footerLine1">Contáctame</span></h2>
-    <div class="footer__cta reveal">
-      <a href="mailto:daiana.ciaramella@gmail.com" class="footer__btn footer__btn--accent">Email <span>↗</span></a>
-      <a href="https://www.linkedin.com/in/ciaramellad/" target="_blank" rel="noopener" class="footer__btn footer__btn--dark">LinkedIn <span>↗</span></a>
-      <a href="https://github.com/ciaramellad" target="_blank" rel="noopener" class="footer__btn footer__btn--dark">GitHub <span>↗</span></a>
+    <h2 class="footer__title"><span class="footer__arrow" aria-hidden="true">→</span> Trabajemos<br><em>juntos</em></h2>
+    <div class="footer__cta">
+      <a href="../../assets/docs/cv-daiana-ciaramella-qa-ux.pdf" target="_blank" rel="noopener" class="footer__btn footer__btn--accent">Descargar CV <span aria-hidden="true">↗</span></a>
+      <a href="mailto:daiana.ciaramella@gmail.com" class="footer__btn footer__btn--dark">daiana.ciaramella@gmail.com <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </footer>
-
-<script src="data.js"></script>
-<script src="../../project.js"></script>
-<script>
-  function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-
-  function render(lang) {
-    const d = POSTMAN[lang];
-    document.documentElement.lang = lang;
-    document.getElementById('pageTitle').textContent = d.title + ' · Daiana Ciaramella';
-    document.getElementById('pageDesc').setAttribute('content', d.subtitle);
-    document.getElementById('heroTitle').textContent = d.title;
-    document.getElementById('heroSubtitle').textContent = d.subtitle;
-    document.getElementById('certTitle').textContent = d.certification.title;
-
-    document.getElementById('labelDesc').textContent = d.labels.description;
-    document.getElementById('descText').textContent = d.description;
-    document.getElementById('labelObjective').textContent = d.labels.objective;
-    document.getElementById('objectiveText').textContent = d.objective;
-    document.getElementById('labelPlatform').textContent = d.labels.platform;
-    document.getElementById('platformText').textContent = d.platform;
-
-    document.getElementById('labelEndpoints').textContent = d.endpoints.title;
-    document.getElementById('endpointsDesc').textContent = d.endpoints.desc;
-    document.getElementById('thEpId').textContent = d.labels.thId;
-    document.getElementById('thEpFeature').textContent = d.labels.thFeature;
-    document.getElementById('thEpScenario').textContent = d.labels.thScenario;
-    document.querySelector('#endpointsTable tbody').innerHTML = d.endpoints.table.map(r => `
-      <tr><td class="mono">${esc(r.id)}</td><td class="mono">${esc(r.feature)}</td><td>${esc(r.scenario)}</td></tr>`).join('');
-
-    document.querySelector('#scenariosTable thead').innerHTML = `<tr><th>ID</th><th>${esc(d.labels.thScenario)}</th></tr>`;
-    document.querySelector('#scenariosTable tbody').innerHTML = d.scenarios.table.map(r => `
-      <tr><td class="mono">${esc(r.id)}</td><td>${esc(r.scenario)}</td></tr>`).join('');
-
-    document.getElementById('labelCases').textContent = d.labels.thFeature ? 'CASOS DE PRUEBA' : '';
-    document.getElementById('casesP1').textContent = d.casesIntro.p1;
-    document.getElementById('casesP2').textContent = d.casesIntro.p2;
-    document.getElementById('thCaseId').textContent = d.labels.thId === 'Método' || d.labels.thId === 'Method' ? 'ID' : d.labels.thId;
-    document.getElementById('thCaseFeature').textContent = d.labels.thFeature;
-    document.getElementById('thCaseScenario').textContent = d.labels.thScenario;
-    document.getElementById('thCaseResult').textContent = d.labels.thResult;
-    document.getElementById('thCaseStatus').textContent = d.labels.thStatus;
-    document.querySelector('#casesTable tbody').innerHTML = d.cases.map((r, i) => `
-      <tr class="case-row" data-target="case-${i}">
-        <td class="mono">${esc(r.id)}</td>
-        <td class="mono">${esc(r.feature)}</td>
-        <td>${esc(r.scenario)}</td>
-        <td>${esc(r.result)}</td>
-        <td><span class="pill pill--${r.status === 'pass' ? 'pass' : 'fail'}">${r.status === 'pass' ? d.labels.pass : d.labels.fail}</span></td>
-        <td><span class="row-caret">⌄</span></td>
-      </tr>
-      <tr class="case-detail" id="case-${i}">
-        <td colspan="6">
-          <div class="case-detail__inner case-detail__inner--single">
-            <div><span class="fact-label">${d.labels.evidence}</span><img class="evidence-img" src="${r.evidence}" alt="${esc(r.id)} evidencia"></div>
-          </div>
-        </td>
-      </tr>`).join('');
-    bindExpandRows();
-
-    document.getElementById('labelAuto').textContent = d.automations.title;
-    document.getElementById('autoDesc').textContent = d.automations.desc;
-    document.getElementById('autoGrid').innerHTML = d.automations.items.map(a => `
-      <div class="auto-card">
-        <h3>${esc(a.title)}</h3>
-        <pre><code>${esc(a.code)}</code></pre>
-        <img class="auto-card__evidence" src="${a.evidence}" alt="${esc(a.title)} evidencia">
-      </div>`).join('');
-
-    document.getElementById('footerLine1').textContent = d.labels.contact;
-    document.getElementById('langToggle').textContent = lang === 'es' ? 'EN' : 'ES';
-
-    const navLabels = {
-      es: { about: 'Sobre mí', qa: 'Proyectos QA', projects: 'Proyectos', skills: 'Habilidades' },
-      en: { about: 'About', qa: 'QA Projects', projects: 'Projects', skills: 'Skills' }
-    }[lang];
-    document.querySelectorAll('#navLinks [data-i18n]').forEach(a => {
-      const key = a.dataset.i18n.split('.')[1];
-      if (navLabels[key]) a.textContent = navLabels[key];
-    });
-
-    localStorage.setItem('lang', lang);
-  }
-
-  function bindExpandRows() {
-    document.querySelectorAll('.case-row').forEach(row => {
-      row.addEventListener('click', () => {
-        const detail = document.getElementById(row.dataset.target);
-        const isOpen = detail.classList.toggle('is-open');
-        row.classList.toggle('is-open', isOpen);
-      });
-    });
-  }
-
-  const langToggle = document.getElementById('langToggle');
-  let currentLang = localStorage.getItem('lang') || 'es';
-  render(currentLang);
-  langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'es' ? 'en' : 'es';
-    render(currentLang);
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-  });
-
-  initProjectPage();
-</script>
-
+<script src="../../assets/js/case.js"></script>
 </body>
 </html>

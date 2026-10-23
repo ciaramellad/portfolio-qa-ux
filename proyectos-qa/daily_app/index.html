@@ -3,296 +3,70 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title id="pageTitle">DAILY — App · Daiana Ciaramella</title>
-<meta name="description" id="pageDesc" content="Caso de estudio de QA: testing funcional, exploratorio y de casos límite sobre DAILY, una app financiera multimoneda.">
+<title>DAILY: caso de estudio QA · Daiana Ciaramella</title>
+<meta name="description" content="Caso de estudio QA de DAILY, una PWA de finanzas multimoneda: escenarios, casos trazables, valores límite y 7 defectos con evidencia.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../style.css">
-<link rel="stylesheet" href="../../project.css">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../assets/css/style.css">
+<link rel="stylesheet" href="../../assets/css/case.css">
 </head>
-<body class="project-page">
-
+<body>
 <div class="page-curtain" id="pageCurtain"></div>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
-<!-- ===== NAV ===== -->
-<nav class="nav is-scrolled" id="nav">
+<nav class="nav" id="nav">
   <a href="../../index.html" class="nav__brand" data-transition>DC</a>
   <div class="nav__group">
     <div class="nav__links" id="navLinks">
-      <a href="../../index.html#sobre-mi" data-i18n="nav.about" data-transition>Sobre mí</a>
-      <a href="../../index.html#proyectos-qa" data-i18n="nav.qa" data-transition>Proyectos QA</a>
-      <a href="../../index.html#proyectos" data-i18n="nav.projects" data-transition>Proyectos</a>
-      <a href="../../index.html#habilidades" data-i18n="nav.skills" data-transition>Habilidades</a>
+      <a href="../../index.html#sobre-mi" data-transition>Sobre mí</a>
+      <a href="../../index.html#proyectos-qa" data-transition>Proyectos QA</a>
+      <a href="../../index.html#proyectos" data-transition>Proyectos</a>
+      <a href="../../index.html#habilidades" data-transition>Habilidades</a>
     </div>
     <div class="nav__right">
-      <button class="lang-toggle" id="langToggle" aria-label="Cambiar idioma">EN</button>
-      <a href="../../index.html" class="nav__back" aria-label="Volver" title="Volver" data-transition>←</a>
-      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+      <a href="../../index.html#proyectos-qa" class="nav__back" data-transition><span aria-hidden="true">←</span> Proyectos</a>
+      <button class="nav__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="navLinks">
         <span></span><span></span>
       </button>
     </div>
   </div>
 </nav>
 
-<main class="project">
-
-  <!-- ===== HERO ===== -->
-  <section class="project-hero section--dark reveal">
-    <div class="project-hero__media ph ph--1">
-      <img src="../../img/daily/daily-dashboard-hero.jpeg" alt="DAILY App">
+<main class="cs" id="contenido">
+<section class="cs-hero">
+  <div class="cs-wrap cs-hero__grid">
+    <div>
+      <p class="cs-kicker">Proyecto QA · App propia en uso real</p>
+      <h1>DAILY</h1>
+      <p class="cs-lead">PWA de finanzas personales en tres monedas (ARS, USD y EUR). La diseñé, la desarrollé y la pruebo como lo haría un equipo de QA: escenarios priorizados, casos trazables, valores límite y defectos reportados con evidencia.</p>
+      <dl class="cs-facts"><div class=""><dt>Mi rol</dt><dd>Diseño, desarrollo y QA (única tester)</dd></div><div class=""><dt>Ciclos de prueba</dt><dd>Ciclo 1 en 2026 · Ciclo 2 en octubre de 2026</dd></div><div class=""><dt>Plataforma</dt><dd>PWA en Android, iOS y escritorio</dd></div><div class=""><dt>Stack</dt><dd>React, TypeScript, Vite, Supabase, Vercel</dd></div><div class="span-2"><dt>Herramientas</dt><dd>Chrome DevTools, Supabase Studio, GitHub</dd></div></dl>
     </div>
-    <div class="project-hero__info">
-      <h1>DAILY — App</h1>
-      <p id="heroSubtitle"></p>
-    </div>
-  </section>
-
-  <!-- ===== DESCRIPCIÓN / OBJETIVO / PLATAFORMA ===== -->
-  <section class="project-section section--light reveal">
-    <span class="section-label"><span id="numDesc">01</span> <span>/</span> <span id="labelDesc">DESCRIPCIÓN</span></span>
-    <div class="project-grid">
-      <p id="descText" class="project-desc"></p>
-      <div class="project-facts">
-        <div>
-          <span class="fact-label" id="labelObjective">OBJETIVO</span>
-          <p id="objectiveText"></p>
-        </div>
-        <div>
-          <span class="fact-label" id="labelPlatform">PLATAFORMA</span>
-          <p id="platformText"></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ALCANCE DEL TESTING ===== -->
-  <section class="project-section section--white reveal">
-    <span class="section-label"><span id="numScope">02</span> <span>/</span> <span id="labelScope">ALCANCE DEL TESTING</span></span>
-    <div class="scope-layout">
-      <ul class="scope-list" id="scopeList"></ul>
-      <div class="scope-media ph ph--2">
-        <img src="../../img/daily/daily-inicial-dashboard.jpeg" alt="DAILY App dashboard">
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== ESTRATEGIA DE TESTING ===== -->
-  <section class="project-section section--offwhite reveal">
-    <span class="section-label"><span id="numStrategy">03</span> <span>/</span> <span id="labelStrategy">ESTRATEGIA DE TESTING</span></span>
-    <div class="strategy-card">
-      <div class="strategy-grid" id="strategyGrid"></div>
-    </div>
-  </section>
-
-  <!-- ===== ESCENARIOS DE PRUEBA ===== -->
-  <section class="project-section section--light reveal">
-    <span class="section-label"><span id="numScenarios">04</span> <span>/</span> <span id="labelScenarios">ESCENARIOS DE PRUEBA</span></span>
-    <p class="section-intro" id="scenariosDesc"></p>
-    <div class="table-wrap">
-      <table class="data-table" id="scenariosTable">
-        <thead>
-          <tr>
-            <th id="thScenId">ID</th>
-            <th id="thScenFeature">Funcionalidad</th>
-            <th id="thScenScenario">Escenario</th>
-            <th id="thScenObjective">Objetivo</th>
-            <th id="thScenPriority">Prioridad</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ===== CASOS DE PRUEBA ===== -->
-  <section class="project-section section--white reveal">
-    <span class="section-label"><span id="numCases">05</span> <span>/</span> <span id="labelCases">CASOS DE PRUEBA</span></span>
-    <p class="section-intro" id="casesDesc"></p>
-    <div class="table-wrap">
-      <table class="data-table data-table--expand" id="casesTable">
-        <thead>
-          <tr>
-            <th id="thCaseId">ID</th>
-            <th id="thCaseFeature">Funcionalidad</th>
-            <th id="thCaseResult">Resultado</th>
-            <th id="thCaseStatus">Estado</th>
-            <th id="thCaseBug">Bug</th>
-            <th></th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
-    </div>
-  </section>
-
-  <!-- ===== BUGS DETECTADOS ===== -->
-  <section class="project-section section--offwhite reveal">
-    <span class="section-label"><span id="numBugs">06</span> <span>/</span> <span id="labelBugs">BUGS DETECTADOS</span></span>
-    <p class="section-intro" id="bugsDesc"></p>
-    <div class="bugs-grid" id="bugsGrid"></div>
-  </section>
-
-  <!-- ===== MEJORAS DE UX ===== -->
-  <section class="project-section section--dark reveal">
-    <span class="section-label"><span id="numUx">07</span> <span>/</span> <span id="labelUx">MEJORAS DE UX</span></span>
-    <ul class="ux-list" id="uxList"></ul>
-  </section>
-
+    <div><div class="phone"><img src="../../assets/img/daily/home-demo.jpg" alt="Pantalla de inicio de DAILY con los importes ocultos" width="462" height="960"></div></div>
+  </div>
+</section>
+<section class="cs-stats" aria-label="Resultados"><div class="cs-wrap"><div class="cs-stats__grid"><div class="cs-stat"><b class="">11</b><span>casos ejecutados en el ciclo 1</span></div><div class="cs-stat"><b class="">5 / 6</b><span>pasan / fallan en la primera ejecución</span></div><div class="cs-stat"><b class="is-accent">7</b><span>defectos reportados: 2 de severidad alta, 4 media, 1 baja</span></div><div class="cs-stat"><b class="">1</b><span>corregido y verificado; el resto, a re-probar en el ciclo 2</span></div></div><p class="cs-note">Las capturas usan importes ocultos: DAILY guarda mis finanzas reales, así que la evidencia no muestra saldos.</p></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Contexto y alcance</h2></div><div class="cs-body"><p class="cs-p">Llevo cuentas en tres monedas, en bancos de Argentina y de España. Las apps que probé mezclaban totales o no admitían varias monedas, así que construí la mía y la uso a diario.</p><p class="cs-p">El riesgo principal es la integridad de los saldos: un importe mal validado o un total que mezcla monedas hace que la app deje de ser fiable. Las pruebas se priorizaron por ese riesgo.</p><div class="cs-cols"><div class="cs-box"><h3>Dentro del alcance (ciclo 1)</h3><ul class="cs-list"><li>Acceso con PIN</li><li>Gastos e ingresos</li><li>Cuentas en varias monedas</li><li>Viajes y presupuestos</li><li>Deudas</li><li>Dashboard</li><li>Validación de importes</li></ul></div><div class="cs-box"><h3>Fuera del alcance (ciclo 1)</h3><ul class="cs-list"><li>Importación de extractos e inversiones: llegan en el ciclo 2</li><li>Rendimiento con grandes volúmenes</li><li>Pruebas automatizadas</li></ul></div></div></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Estrategia y técnicas</h2></div><div class="cs-body"><div class="cs-cols"><div class="cs-box cs-box--fill"><h3>Pruebas funcionales</h3><p class="cs-p">Contra los requisitos que escribí para cada módulo: qué debe pasar con el saldo, el dashboard y las otras vistas.</p></div><div class="cs-box cs-box--fill"><h3>Valores límite</h3><p class="cs-p">Importe vacío, 0, negativo y el máximo admitido. Presupuesto justo por debajo y por encima del 100 %.</p></div><div class="cs-box cs-box--fill"><h3>Partición de equivalencia</h3><p class="cs-p">Una clase por moneda: un movimiento en USD no debe tocar EUR ni ARS.</p></div><div class="cs-box cs-box--fill"><h3>Verificación contra la base</h3><p class="cs-p">Comparar el saldo que muestra la app con la suma de movimientos guardados en Supabase. Así apareció BUG-007.</p></div></div><p class="cs-p">Limitación que conviene decir: soy desarrolladora y tester a la vez, y sé cómo está construida la app. Para compensarlo escribo el resultado esperado antes de ejecutar cada caso.</p></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Entorno de pruebas</h2></div><div class="cs-body"><div class="table-wrap" role="region" aria-label="Entorno" tabindex="0"><table class="cs-table"><thead><tr><th scope="col">Elemento</th><th scope="col">Detalle</th></tr></thead><tbody><tr><td>Dispositivo</td><td>Móvil Android con la PWA instalada</td></tr><tr><td>Navegador</td><td>Chrome para Android</td></tr><tr><td>Despliegue</td><td>Producción personal en Vercel, base de datos en Supabase</td></tr><tr><td>Datos de prueba</td><td>Importes controlados en cada caso (ver datos de cada caso)</td></tr></tbody></table></div></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Escenarios</h2><p class="cs-intro">P1: si falla, la app deja de ser fiable. P2: función importante con alternativa.</p></div><div class="cs-body"><div class="table-wrap" role="region" aria-label="Escenarios de prueba" tabindex="0"><table class="cs-table" style="min-width:720px"><thead><tr><th scope="col">ID</th><th scope="col">Funcionalidad</th><th scope="col">Escenario</th><th scope="col">Prioridad</th><th scope="col">Casos</th></tr></thead><tbody><tr><td><span class="mono">TS-001</span></td><td>Acceso</td><td>Entrar con PIN y gestionar intentos fallidos</td><td>P1</td><td>TC-011</td></tr><tr><td><span class="mono">TS-002</span></td><td>Cuentas</td><td>Crear cuentas en varias monedas</td><td>P1</td><td>TC-003</td></tr><tr><td><span class="mono">TS-003</span></td><td>Movimientos</td><td>Registrar gastos e ingresos y su efecto en saldos</td><td>P1</td><td>TC-001, TC-002</td></tr><tr><td><span class="mono">TS-004</span></td><td>Monedas</td><td>Totales independientes por moneda</td><td>P1</td><td>TC-004</td></tr><tr><td><span class="mono">TS-005</span></td><td>Dashboard</td><td>Símbolos de moneda y coherencia visual</td><td>P2</td><td>TC-005</td></tr><tr><td><span class="mono">TS-006</span></td><td>Viajes</td><td>Asociar gastos a un viaje y ver el progreso</td><td>P2</td><td>TC-006</td></tr><tr><td><span class="mono">TS-007</span></td><td>Viajes</td><td>Superar el presupuesto de un viaje</td><td>P1</td><td>TC-007</td></tr><tr><td><span class="mono">TS-008</span></td><td>Deudas</td><td>Registrar y ver deudas</td><td>P2</td><td>TC-008</td></tr><tr><td><span class="mono">TS-009</span></td><td>Presupuestos</td><td>Porcentaje del presupuesto mensual</td><td>P2</td><td>TC-009</td></tr><tr><td><span class="mono">TS-010</span></td><td>Validación</td><td>Rechazar importes no válidos</td><td>P1</td><td>TC-010, TC-012</td></tr></tbody></table></div></div></div></section>
+<section class="cs-sec"><div class="cs-wrap"><div class="cs-head"><div><h2 class="cs-h2">Casos de prueba</h2><p class="cs-intro">Ciclo 1. Despliega cada caso para ver precondición, datos, pasos, resultado esperado y obtenido.</p></div></div><div class="tc-list"><details class="tc"><summary><span class="mono">TC-001</span><span class="tc__title">Registrar un gasto y ver el saldo actualizado</span><span class="tag tag--fail">Falla</span><span class="tc__bug">BUG-002</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Cuenta en ARS con saldo.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Saldo inicial 2000 · gasto 500 · categoría Comida</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Nueva transacción, tipo Gasto</li><li>Elegir la cuenta ARS</li><li>Importe 500, categoría Comida</li><li>Guardar</li><li>Revisar saldo de la cuenta y dashboard</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>El saldo pasa de 2000 a 1500 y se ve igual en la cuenta y en el dashboard.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>El saldo se actualiza, pero el dashboard muestra el valor anterior hasta refrescar la vista.</dd></dl></div></details><details class="tc"><summary><span class="mono">TC-002</span><span class="tc__title">Registrar un ingreso y ver el saldo actualizado</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">—</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Cuenta en ARS.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Saldo inicial 1000 · ingreso 3000</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Nueva transacción, tipo Ingreso</li><li>Elegir la cuenta ARS</li><li>Importe 3000</li><li>Guardar</li><li>Revisar saldo y dashboard</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>El saldo pasa de 1000 a 4000 en todas las vistas.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Como se esperaba.</dd></dl></div></details><details class="tc"><summary><span class="mono">TC-003</span><span class="tc__title">Crear una cuenta en EUR</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">—</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Sin cuenta en EUR.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Nombre “Cuenta Europa” · EUR · saldo 0</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Cuentas, nueva cuenta</li><li>Nombre y moneda EUR</li><li>Guardar</li><li>Revisar el listado y las demás cuentas</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>Se crea con el símbolo € y no cambia ninguna otra cuenta.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Como se esperaba.</dd></dl></div></details><details class="tc"><summary><span class="mono">TC-004</span><span class="tc__title">Un gasto en USD no altera EUR ni ARS</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">—</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Cuentas en USD, EUR y ARS con saldo.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>USD 200 → 150 · EUR 150 · ARS 5000</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Registrar un gasto de 50 en la cuenta USD</li><li>Guardar</li><li>Revisar los totales por moneda en el dashboard</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>Solo cambia el total en USD.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Como se esperaba.</dd></dl></div></details><details class="tc"><summary><span class="mono">TC-005</span><span class="tc__title">Símbolo € en una cuenta en EUR</span><span class="tag tag--fail">Falla</span><span class="tc__bug">BUG-004</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Cuenta EUR activa.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Cuenta EUR con saldo</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Abrir el dashboard</li><li>Entrar en la cuenta EUR</li><li>Revisar el símbolo en gráfico, lista y detalle</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>Se ve € en todos los componentes.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>El gráfico de gasto mensual muestra $.</dd></dl><figure class="tc__ev full"><a href="../../assets/img/daily/bug004.jpg" target="_blank" rel="noopener"><img src="../../assets/img/daily/bug004.jpg" alt="Gráfico de gasto mensual de una cuenta en euros con el símbolo de dólar marcado" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-006</span><span class="tc__title">Asociar un gasto a un viaje</span><span class="tag tag--fail">Falla</span><span class="tc__bug">BUG-003</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Viaje con presupuesto y un gasto previo.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Presupuesto 500 · gasto previo 200 · gasto nuevo 50</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Viajes, elegir viaje</li><li>Registrar un gasto de 50</li><li>Revisar el progreso</li><li>Intentar corregir el gasto desde el viaje</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>El progreso pasa al 50 % y el gasto se puede corregir desde el viaje.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>El progreso se actualiza, pero el gasto no se puede editar desde la vista del viaje.</dd></dl><figure class="tc__ev full"><a href="../../assets/img/daily/bug003.jpg" target="_blank" rel="noopener"><img src="../../assets/img/daily/bug003.jpg" alt="Lista de gastos de un viaje sin opción de edición, con los nombres ocultos" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-007</span><span class="tc__title">Superar el presupuesto de un viaje</span><span class="tag tag--fail">Falla</span><span class="tc__bug">BUG-006</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Viaje con el presupuesto casi agotado.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Presupuesto 1000 · gasto previo 950 · gasto nuevo 100</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Viajes, añadir gasto de 100</li><li>Guardar</li><li>Revisar aviso, barra y valores</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>Aviso claro de que se superó el presupuesto.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Se guarda y la barra pasa del 100 %, pero no aparece ningún aviso.</dd></dl><figure class="tc__ev full"><a href="../../assets/img/daily/bug006.jpg" target="_blank" rel="noopener"><img src="../../assets/img/daily/bug006.jpg" alt="Viaje al 130 % del presupuesto sin aviso, con la barra marcada" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-008</span><span class="tc__title">Registrar una deuda “Me deben”</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">—</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Sin deudas.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Persona ficticia · importe 300</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Deudas, nueva deuda</li><li>Elegir “Me deben”</li><li>Completar y guardar</li><li>Revisar las dos vistas</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>Aparece en “Me deben” y no en “Debo”.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Como se esperaba.</dd></dl></div></details><details class="tc"><summary><span class="mono">TC-009</span><span class="tc__title">Porcentaje del presupuesto mensual</span><span class="tag tag--pass">Pasa</span><span class="tc__bug">—</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Presupuesto con gastos.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Presupuesto 5000 · gasto 3500 → 4500</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Presupuestos, ver gasto actual</li><li>Añadir un gasto de 1000</li><li>Revisar el porcentaje</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>Marca el 90 % y avisa de que se acerca al límite.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Como se esperaba.</dd></dl></div></details><details class="tc"><summary><span class="mono">TC-010</span><span class="tc__title">Guardar un gasto con importe 0</span><span class="tag tag--fail">Falla</span><span class="tc__bug">BUG-005</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Cuenta activa.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Importe 0</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Nueva transacción</li><li>Escribir 0 en el importe</li><li>Guardar</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>No se guarda y se señala el campo importe.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Se guarda un movimiento con importe 0.</dd></dl><figure class="tc__ev full"><a href="../../assets/img/daily/bug005.jpg" target="_blank" rel="noopener"><img src="../../assets/img/daily/bug005.jpg" alt="Movimiento guardado con importe 0, marcado en la lista de últimos movimientos" loading="lazy"></a></figure></div></details><details class="tc"><summary><span class="mono">TC-011</span><span class="tc__title">Entrar con un PIN incorrecto</span><span class="tag tag--fail">Falla</span><span class="tc__bug">BUG-001</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>PIN configurado.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>PIN 1234 (incorrecto)</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Abrir la app</li><li>Introducir un PIN incorrecto</li><li>Confirmar</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>Bloquea el acceso y explica que el PIN es incorrecto.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Bloquea el acceso, pero no muestra ningún mensaje.</dd></dl></div></details><details class="tc"><summary><span class="mono">TC-012</span><span class="tc__title">Guardar un gasto con el importe vacío</span><span class="tag tag--warn">Pendiente</span><span class="tc__bug">—</span><span class="tc__chev" aria-hidden="true"></span></summary><div class="tc__body"><dl class="kv"><dt>Precondición</dt><dd>Usuaria autenticada. Cuenta activa.</dd></dl><dl class="kv"><dt>Datos de prueba</dt><dd>Importe vacío</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Nueva transacción</li><li>Dejar el importe vacío</li><li>Guardar</li></ol></dd></dl><dl class="kv"><dt>Resultado esperado</dt><dd>No se guarda y se señala el campo importe.</dd></dl><dl class="kv"><dt>Resultado obtenido</dt><dd>Se ejecuta en el ciclo 2. Es una partición distinta de TC-010.</dd></dl></div></details></div></div></section>
+<section class="cs-sec"><div class="cs-wrap"><div class="cs-head"><div><h2 class="cs-h2">Defectos</h2><p class="cs-intro">Severidad: cuánto daño hace. Prioridad: cuándo arreglarlo. Ordenados de más a menos grave.</p></div></div><div class="bugs"><article class="bug" id="bug-005"><div><div class="bug__tags"><span class="bug__id">BUG-005</span><span class="tag tag--fail">Severidad alta</span><span class="tag tag--info">Prioridad alta</span><span class="tag tag--warn">Por re-probar</span></div><h3>Se puede guardar un gasto con importe 0</h3><div class="bug__grid"><dl class="kv"><dt>Caso</dt><dd>TC-010 · TS-010</dd></dl><dl class="kv"><dt>Entorno</dt><dd>Android, Chrome, PWA instalada</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Nueva transacción</li><li>Escribir 0 en el importe</li><li>Guardar</li></ol></dd></dl><dl class="kv"><dt>Esperado</dt><dd>El formulario no guarda y señala el campo importe.</dd></dl><dl class="kv"><dt>Obtenido</dt><dd>Se guarda un movimiento de 0 que aparece en la lista.</dd></dl></div></div><figure><a href="../../assets/img/daily/bug005.jpg" target="_blank" rel="noopener"><img src="../../assets/img/daily/bug005.jpg" alt="Movimiento “Otros” con importe 0 marcado en rojo" loading="lazy"></a><figcaption>El movimiento de 0 queda registrado.</figcaption></figure></article><article class="bug bug--noimg" id="bug-007"><div><div class="bug__tags"><span class="bug__id">BUG-007</span><span class="tag tag--fail">Severidad alta</span><span class="tag tag--info">Prioridad alta</span><span class="tag tag--pass">Corregido</span></div><h3>Los saldos iniciales fijados en el código descuadraban los totales</h3><div class="bug__grid"><dl class="kv full"><dt>Cómo se detectó</dt><dd>Comparando el saldo de cada cuenta en la app con la suma de sus movimientos guardados en Supabase.</dd></dl><dl class="kv"><dt>Esperado</dt><dd>Saldo = saldo inicial configurado + ingresos − gastos.</dd></dl><dl class="kv"><dt>Obtenido</dt><dd>La app sumaba saldos iniciales distintos de cero escritos en <span class="mono">constants.tsx</span>, que no existían en los datos.</dd></dl><dl class="kv full"><dt>Corrección</dt><dd>Los saldos iniciales pasaron a la configuración de cada cuenta en la base. Verificado comparando de nuevo app y base.</dd></dl></div></div></article><article class="bug" id="bug-004"><div><div class="bug__tags"><span class="bug__id">BUG-004</span><span class="tag tag--warn">Severidad media</span><span class="tag tag--info">Prioridad media</span><span class="tag tag--warn">Por re-probar</span></div><h3>Símbolo $ en el gráfico de una cuenta en euros</h3><div class="bug__grid"><dl class="kv"><dt>Caso</dt><dd>TC-005 · TS-005</dd></dl><dl class="kv"><dt>Entorno</dt><dd>Android, Chrome, PWA instalada</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Abrir el dashboard</li><li>Entrar en una cuenta en EUR</li><li>Revisar el gráfico de gasto mensual</li></ol></dd></dl><dl class="kv"><dt>Esperado</dt><dd>€ en todos los componentes.</dd></dl><dl class="kv"><dt>Obtenido</dt><dd>El total del gráfico aparece con $.</dd></dl></div></div><figure><a href="../../assets/img/daily/bug004.jpg" target="_blank" rel="noopener"><img src="../../assets/img/daily/bug004.jpg" alt="Gráfico circular de una cuenta en euros con el símbolo de dólar marcado" loading="lazy"></a><figcaption>Importes ocultos. El símbolo $ está marcado.</figcaption></figure></article><article class="bug" id="bug-006"><div><div class="bug__tags"><span class="bug__id">BUG-006</span><span class="tag tag--warn">Severidad media</span><span class="tag tag--info">Prioridad media</span><span class="tag tag--warn">Por re-probar</span></div><h3>Sin aviso al superar el presupuesto de un viaje</h3><div class="bug__grid"><dl class="kv"><dt>Caso</dt><dd>TC-007 · TS-007</dd></dl><dl class="kv"><dt>Entorno</dt><dd>Android, Chrome, PWA instalada</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Añadir un gasto que supere el presupuesto</li><li>Guardar</li><li>Revisar el viaje</li></ol></dd></dl><dl class="kv"><dt>Esperado</dt><dd>Un aviso claro de presupuesto superado.</dd></dl><dl class="kv"><dt>Obtenido</dt><dd>La barra llega al 130 % sin ningún aviso.</dd></dl></div></div><figure><a href="../../assets/img/daily/bug006.jpg" target="_blank" rel="noopener"><img src="../../assets/img/daily/bug006.jpg" alt="Viaje al 130 % del presupuesto con la barra marcada" loading="lazy"></a><figcaption>Gastado 1300 sobre 1000 sin aviso.</figcaption></figure></article><article class="bug" id="bug-003"><div><div class="bug__tags"><span class="bug__id">BUG-003</span><span class="tag tag--warn">Severidad media</span><span class="tag tag--info">Prioridad baja</span><span class="tag tag--warn">Por re-probar</span></div><h3>Un gasto no se puede editar desde la vista del viaje</h3><div class="bug__grid"><dl class="kv"><dt>Caso</dt><dd>TC-006 · TS-006</dd></dl><dl class="kv"><dt>Entorno</dt><dd>Android, Chrome, PWA instalada</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Viajes, elegir un viaje</li><li>Intentar editar un gasto de la lista</li></ol></dd></dl><dl class="kv"><dt>Esperado</dt><dd>El gasto se puede corregir desde el viaje.</dd></dl><dl class="kv"><dt>Obtenido</dt><dd>No hay opción de edición; hay que ir a movimientos.</dd></dl><dl class="kv full"><dt>Nota</dt><dd>Es más una función no implementada que un fallo. Por eso baja la prioridad.</dd></dl></div></div><figure><a href="../../assets/img/daily/bug003.jpg" target="_blank" rel="noopener"><img src="../../assets/img/daily/bug003.jpg" alt="Lista de gastos de un viaje sin opción de editar, nombres ocultos" loading="lazy"></a><figcaption>Nombres de los gastos ocultos.</figcaption></figure></article><article class="bug" id="bug-001"><div><div class="bug__tags"><span class="bug__id">BUG-001</span><span class="tag tag--warn">Severidad media</span><span class="tag tag--info">Prioridad media</span><span class="tag tag--warn">Por re-probar</span></div><h3>Sin mensaje al introducir un PIN incorrecto</h3><div class="bug__grid"><dl class="kv"><dt>Caso</dt><dd>TC-011 · TS-001</dd></dl><dl class="kv"><dt>Entorno</dt><dd>Android, Chrome, PWA instalada</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Abrir la app</li><li>Introducir el PIN 1234 (incorrecto)</li></ol></dd></dl><dl class="kv"><dt>Esperado</dt><dd>Bloquea y explica que el PIN no es correcto.</dd></dl><dl class="kv"><dt>Obtenido</dt><dd>Bloquea sin decir nada: parece que la app no responde.</dd></dl></div></div><figure><video src="../../assets/img/daily/bug001-pin-incorrecto.mp4" controls muted playsinline preload="metadata" aria-label="Vídeo: se introduce un PIN incorrecto y la app no muestra ningún mensaje"></video><figcaption>Vídeo de la reproducción.</figcaption></figure></article><article class="bug bug--noimg" id="bug-002"><div><div class="bug__tags"><span class="bug__id">BUG-002</span><span class="tag tag--info">Severidad baja</span><span class="tag tag--info">Prioridad baja</span><span class="tag tag--warn">Por re-probar</span></div><h3>El dashboard tarda en reflejar un gasto nuevo</h3><div class="bug__grid"><dl class="kv"><dt>Caso</dt><dd>TC-001 · TS-003</dd></dl><dl class="kv"><dt>Entorno</dt><dd>Android, Chrome, PWA instalada</dd></dl><dl class="kv full"><dt>Pasos</dt><dd><ol><li>Registrar un gasto</li><li>Ir de inmediato al dashboard</li></ol></dd></dl><dl class="kv"><dt>Esperado</dt><dd>El dashboard muestra el saldo nuevo.</dd></dl><dl class="kv"><dt>Obtenido</dt><dd>Algunos valores no cambian hasta refrescar la vista.</dd></dl></div></div></article></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Ciclo 2: rediseño de octubre de 2026</h2></div><div class="cs-body"><p class="cs-p">En octubre la app cambió mucho: diseño para tablet y escritorio, importación de extractos bancarios, inversiones y totales sincronizados entre dispositivos. El ciclo 2 cubre esos cambios y vuelve a probar los defectos del ciclo 1. Está en curso: aquí está el plan, no los resultados.</p><div class="table-wrap" role="region" aria-label="Plan del ciclo 2" tabindex="0"><table class="cs-table" style="min-width:720px"><thead><tr><th scope="col">Cambio</th><th scope="col">Cómo se prueba</th><th scope="col">Estado</th></tr></thead><tbody><tr><td>Diseño responsive para tablet y escritorio</td><td>Regresión visual a 360, 768 y 1280 px</td><td><span class="tag tag--info">Planificado</span></td></tr><tr><td>Importación de extractos CSV y XLSX</td><td>Pares (pairwise): formato, moneda, formato numérico y tipo de cuenta. De 120 combinaciones a 20 casos</td><td><span class="tag tag--info">Planificado</span></td></tr><tr><td>Importes con formato local (1.234,56 y 1,234.56)</td><td>Valores límite y predicción de errores sobre la conversión</td><td><span class="tag tag--info">Planificado</span></td></tr><tr><td>Compras, ventas y comisiones de inversiones</td><td>Transición de estados de cada operación</td><td><span class="tag tag--info">Planificado</span></td></tr><tr><td>Mismos totales en todos los dispositivos</td><td>Comparar la app con consultas SQL en un proyecto Supabase de prueba</td><td><span class="tag tag--info">Planificado</span></td></tr><tr><td>Defectos BUG-001 a BUG-006</td><td>Re-test con los mismos pasos y datos</td><td><span class="tag tag--info">Planificado</span></td></tr></tbody></table></div><p class="cs-p">Las pruebas del ciclo 2 se hacen en un proyecto Supabase de prueba con datos ficticios, no sobre mis datos reales.</p></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Mejoras de UX propuestas</h2></div><div class="cs-body"><ul class="cs-list"><li>Transferencia directa entre cuentas: hoy hay que registrar un gasto en una y un ingreso en otra.</li><li>Al registrar un movimiento, mostrar solo las cuentas de la moneda elegida para evitar asignaciones erróneas.</li><li>Aviso visible al acercarse y al superar cualquier presupuesto, no solo el color de la barra.</li></ul></div></div></section>
+<section class="cs-sec"><div class="cs-wrap cs-split"><div><h2 class="cs-h2">Qué aprendí</h2></div><div class="cs-body"><p class="cs-p">Separar “importe vacío” e “importe 0”. En el primer diseño estaban en el mismo caso y el defecto quedó mal enlazado. Ahora cada partición tiene su caso.</p><p class="cs-p">Un saldo correcto en pantalla no prueba nada si no lo comparo con la base. Así apareció BUG-007.</p><p class="cs-p">Escribir el resultado esperado antes de ejecutar ayuda con el sesgo de probar mi propia app, pero no sustituye a otra persona probándola.</p></div></div></section>
+<a class="cs-next" href="../../ux-testing/" data-transition><span><small>Siguiente proyecto</small><strong>UX y accesibilidad en Ryanair</strong></span><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
 </main>
 
-<!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="footer__top">
-    <h2 class="footer__title reveal"><span class="footer__arrow">→</span> <span id="footerLine1">Contáctame</span></h2>
-    <div class="footer__cta reveal">
-      <a href="mailto:daiana.ciaramella@gmail.com" class="footer__btn footer__btn--accent">Email <span>↗</span></a>
-      <a href="https://www.linkedin.com/in/ciaramellad/" target="_blank" rel="noopener" class="footer__btn footer__btn--dark">LinkedIn <span>↗</span></a>
-      <a href="https://github.com/ciaramellad" target="_blank" rel="noopener" class="footer__btn footer__btn--dark">GitHub <span>↗</span></a>
+    <h2 class="footer__title"><span class="footer__arrow" aria-hidden="true">→</span> Trabajemos<br><em>juntos</em></h2>
+    <div class="footer__cta">
+      <a href="../../assets/docs/cv-daiana-ciaramella-qa-ux.pdf" target="_blank" rel="noopener" class="footer__btn footer__btn--accent">Descargar CV <span aria-hidden="true">↗</span></a>
+      <a href="mailto:daiana.ciaramella@gmail.com" class="footer__btn footer__btn--dark">daiana.ciaramella@gmail.com <span aria-hidden="true">↗</span></a>
     </div>
   </div>
 </footer>
-
-<script src="data.js"></script>
-<script src="../../project.js"></script>
-<script>
-  function esc(s) { const d = document.createElement('div'); d.textContent = s; return d.innerHTML; }
-  function stepsList(steps) { return steps.map(s => `<li>${esc(s)}</li>`).join(''); }
-
-  function render(lang) {
-    const d = DAILY[lang];
-    document.documentElement.lang = lang;
-    document.getElementById('pageTitle').textContent = d.title + ' · Daiana Ciaramella';
-    document.getElementById('pageDesc').setAttribute('content', d.subtitle);
-    document.getElementById('heroSubtitle').textContent = d.subtitle;
-
-    document.getElementById('labelDesc').textContent = d.labels.description;
-    document.getElementById('descText').textContent = d.description;
-    document.getElementById('labelObjective').textContent = d.labels.objective;
-    document.getElementById('objectiveText').textContent = d.objective;
-    document.getElementById('labelPlatform').textContent = d.labels.platform;
-    document.getElementById('platformText').textContent = d.platform;
-
-    document.getElementById('labelScope').textContent = d.labels.scope;
-    document.getElementById('scopeList').innerHTML = d.scope.map(i => `<li>${esc(i)}</li>`).join('');
-
-    document.getElementById('labelStrategy').textContent = d.labels.strategy;
-    document.getElementById('strategyGrid').innerHTML = d.strategy.map(s => `
-      <div class="strategy-item">
-        <h3>${esc(s.name)}</h3>
-        <p>${esc(s.description)}</p>
-      </div>`).join('');
-
-    document.getElementById('labelScenarios').textContent = d.labels.scenarios;
-    document.getElementById('scenariosDesc').textContent = d.scenariosDesc;
-    document.getElementById('thScenId').textContent = d.labels.thId;
-    document.getElementById('thScenFeature').textContent = d.labels.thFeature;
-    document.getElementById('thScenScenario').textContent = d.labels.thScenario;
-    document.getElementById('thScenObjective').textContent = d.labels.thObjective;
-    document.getElementById('thScenPriority').textContent = d.labels.thPriority;
-    document.querySelector('#scenariosTable tbody').innerHTML = d.scenarios.map(r => `
-      <tr>
-        <td class="mono">${esc(r.id)}</td>
-        <td>${esc(r.feature)}</td>
-        <td>${esc(r.scenario)}</td>
-        <td>${esc(r.objective)}</td>
-        <td><span class="pill pill--${r.priority === d.labels.critical ? 'critical' : 'serious'}">${esc(r.priority)}</span></td>
-      </tr>`).join('');
-
-    document.getElementById('labelCases').textContent = d.labels.cases;
-    document.getElementById('casesDesc').textContent = d.casesDesc;
-    document.getElementById('thCaseId').textContent = d.labels.thId;
-    document.getElementById('thCaseFeature').textContent = d.labels.thFeature;
-    document.getElementById('thCaseResult').textContent = d.labels.thResult;
-    document.getElementById('thCaseStatus').textContent = d.labels.thStatus;
-    document.getElementById('thCaseBug').textContent = 'Bug';
-    document.querySelector('#casesTable tbody').innerHTML = d.cases.map((r, i) => `
-      <tr class="case-row" data-target="case-${i}">
-        <td class="mono">${esc(r.id)}</td>
-        <td>${esc(r.feature)}</td>
-        <td>${esc(r.result)}</td>
-        <td><span class="pill pill--${r.status === 'pass' ? 'pass' : 'fail'}">${r.status === 'pass' ? d.labels.pass : d.labels.fail}</span></td>
-        <td class="mono">${r.bug ? esc(r.bug) : '—'}</td>
-        <td><span class="row-caret">⌄</span></td>
-      </tr>
-      <tr class="case-detail" id="case-${i}">
-        <td colspan="6">
-          <div class="case-detail__inner">
-            <div><span class="fact-label">${d.labels.precondition}</span><p>${esc(r.precondition)}</p></div>
-            <div><span class="fact-label">${d.labels.steps}</span><ol>${stepsList(r.steps)}</ol></div>
-            <div><span class="fact-label">${d.labels.testData}</span><p class="mono-block">${esc(r.testData)}</p></div>
-          </div>
-        </td>
-      </tr>`).join('');
-    bindExpandRows();
-
-    document.getElementById('labelBugs').textContent = d.labels.bugs;
-    document.getElementById('bugsDesc').textContent = d.bugsDescription;
-    document.getElementById('bugsGrid').innerHTML = d.bugs.map((b, i) => `
-      <div class="bug-card">
-        <div class="bug-card__head">
-          <span class="pill pill--sev-${b.severity.toLowerCase()}">${esc(b.severity)}</span>
-          <span class="bug-card__type">${esc(b.type)} · ${esc(b.testCaseId)}</span>
-        </div>
-        <h3>${esc(b.title)}</h3>
-        <div class="bug-card__ee">
-          <div><span>${d.labels.expected}</span><p>${esc(b.expected)}</p></div>
-          <div><span>${d.labels.actual}</span><p>${esc(b.actual)}</p></div>
-        </div>
-        <button class="bug-card__toggle" data-target="bug-steps-${i}">${d.labels.steps} <span>+</span></button>
-        <ol class="bug-card__steps" id="bug-steps-${i}">${stepsList(b.steps)}</ol>
-        <a href="${b.evidence}" target="_blank" rel="noopener" class="bug-card__link">${d.labels.evidence} ↗</a>
-      </div>`).join('');
-    bindBugToggles();
-
-    document.getElementById('labelUx').textContent = d.labels.ux;
-    document.getElementById('uxList').innerHTML = d.uxImprovements.map(i => `<li>${esc(i)}</li>`).join('');
-
-    document.getElementById('footerLine1').textContent = d.labels.contact;
-    document.getElementById('langToggle').textContent = lang === 'es' ? 'EN' : 'ES';
-
-    const navLabels = {
-      es: { about: 'Sobre mí', qa: 'Proyectos QA', projects: 'Proyectos', skills: 'Habilidades' },
-      en: { about: 'About', qa: 'QA Projects', projects: 'Projects', skills: 'Skills' }
-    }[lang];
-    document.querySelectorAll('#navLinks [data-i18n]').forEach(a => {
-      const key = a.dataset.i18n.split('.')[1];
-      if (navLabels[key]) a.textContent = navLabels[key];
-    });
-
-    localStorage.setItem('lang', lang);
-  }
-
-  function bindExpandRows() {
-    document.querySelectorAll('.case-row').forEach(row => {
-      row.addEventListener('click', () => {
-        const detail = document.getElementById(row.dataset.target);
-        const isOpen = detail.classList.toggle('is-open');
-        row.classList.toggle('is-open', isOpen);
-      });
-    });
-  }
-  function bindBugToggles() {
-    document.querySelectorAll('.bug-card__toggle').forEach(btn => {
-      btn.addEventListener('click', () => {
-        const list = document.getElementById(btn.dataset.target);
-        const isOpen = list.classList.toggle('is-open');
-        btn.classList.toggle('is-open', isOpen);
-      });
-    });
-  }
-
-  const langToggle = document.getElementById('langToggle');
-  let currentLang = localStorage.getItem('lang') || 'es';
-  render(currentLang);
-  langToggle.addEventListener('click', () => {
-    currentLang = currentLang === 'es' ? 'en' : 'es';
-    render(currentLang);
-    document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-  });
-
-  initProjectPage();
-</script>
-
+<script src="../../assets/js/case.js"></script>
 </body>
 </html>

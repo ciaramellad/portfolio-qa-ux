@@ -9,6 +9,11 @@
       "permanent": true
     },
     {
+      "source": "/proyectos-qa/ecommerce-testing/",
+      "destination": "/#proyectos-qa",
+      "permanent": true
+    },
+    {
       "source": "/proyectos-qa/ecommerce-testing/:path*",
       "destination": "/#proyectos-qa",
       "permanent": true

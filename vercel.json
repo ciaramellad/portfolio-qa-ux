@@ -1,5 +1,9 @@
 {
   "framework": null,
   "buildCommand": "echo \"static site, no build needed\"",
-  "outputDirectory": "."
+  "outputDirectory": ".",
+  "redirects": [
+    { "source": "/proyectos-qa/ecommerce-testing/:path*", "destination": "/#proyectos-qa", "permanent": true },
+    { "source": "/daily-app.html", "destination": "/proyectos-qa/daily_app/", "permanent": true }
+  ]
 }

@@ -8,11 +8,12 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
 
 <div class="page-curtain" id="pageCurtain"></div>
+<a class="skip-link" href="#sobre-mi">Saltar al contenido</a>
 
 <!-- ===== NAV ===== -->
 <nav class="nav" id="nav">
@@ -66,7 +67,7 @@
       </div>
       <div class="about-grid__text">
         <p data-i18n="about.p1">Vengo del diseño UX/UI y el desarrollo Frontend, lo que me dio una perspectiva que pocos QA tienen: entiendo cómo se construye lo que después voy a romper. Esa mirada integral me permite detectar no solo bugs funcionales sino inconsistencias de experiencia que impactan directamente al usuario final.</p>
-        <p data-i18n="about.p2">Con más de 3 años en entornos digitales, me especializo en testing funcional, diseño y ejecución de test cases, regression testing y gestión de defectos. Colaboro en equipos ágiles validando que el producto cumpla tanto los requerimientos técnicos como la experiencia esperada por el usuario.</p>
+        <p data-i18n="about.p2">Con más de 3 años en entornos digitales, me especializo en testing funcional, diseño y ejecución de test cases, regression testing y gestión de defectos. He trabajado en equipos ágiles como diseñadora y en mis proyectos de QA aplico Scrum y las técnicas de ISTQB para validar tanto los requisitos técnicos como la experiencia del usuario.</p>
       </div>
     </div>
   </section>
@@ -76,41 +77,45 @@
     <div class="section__head reveal">
       <span class="num">02.</span>
       <h2 data-i18n="qa.heading">Proyectos QA</h2>
-      <p data-i18n="qa.subtitle">Testing funcional, exploratorio y de API aplicado a productos reales.</p>
+      <p data-i18n="qa.subtitle">Una app en producción para una clienta, una app propia, una auditoría de accesibilidad y un proyecto de API.</p>
     </div>
     <div class="works__grid">
-      <a href="proyectos-qa/daily_app/" class="work-card reveal" style="--i:0" data-transition>
+      <a href="proyectos-qa/un-clu-de-bordado/" class="work-card reveal work-card--feature" style="--i:0;--bg:url('/assets/img/cards/unclu.jpg');--bg-size:cover;--bg-color:#f6efe0" data-transition>
         <div class="work-card__cover">
           <div class="work-card__center">
-            <h3>DAILY — App</h3>
-            <div class="work-card__tags"><span data-i18n="qa.card1.tag1">Financial App</span><span>PWA</span></div>
+            <h3>Un Clú de Bordado</h3>
+            <p class="work-card__result" data-i18n="qa.c0.res">App de reservas en producción para un taller real. 303 casos, 242 pruebas automatizadas en verde y 9 hallazgos.</p>
+            <div class="work-card__tags"><span data-i18n="qa.c0.t1">Cliente real</span><span>Next.js y Supabase</span><span data-i18n="qa.c0.t3">Funcional, seguridad y automatización</span></div>
           </div>
           <span class="work-card__cta" aria-hidden="true"><span data-i18n="qa.cta">Ver proyecto</span> ↗</span>
         </div>
       </a>
-      <a href="ux-testing/" class="work-card reveal" style="--i:1" data-transition>
+      <a href="proyectos-qa/daily_app/" class="work-card reveal" style="--i:1;--bg:url('/assets/img/cards/daily.jpg');--bg-size:cover;--bg-color:#ffffff" data-transition>
         <div class="work-card__cover">
           <div class="work-card__center">
-            <h3>UX &amp; Accesibilidad — Ryanair</h3>
-            <div class="work-card__tags"><span data-i18n="qa.card2.tag1">Accesibilidad</span><span data-i18n="qa.card2.tag2">Web Audit</span></div>
+            <h3>DAILY</h3>
+            <p class="work-card__result" data-i18n="qa.c1.res">11 casos trazables y 7 defectos con evidencia en una PWA de finanzas multimoneda.</p>
+            <div class="work-card__tags"><span data-i18n="qa.c1.t1">App propia</span><span>PWA</span><span>Supabase</span></div>
           </div>
           <span class="work-card__cta" aria-hidden="true"><span data-i18n="qa.cta">Ver proyecto</span> ↗</span>
         </div>
       </a>
-      <a href="proyectos-qa/testing-api-postman/" class="work-card reveal" style="--i:0" data-transition>
+      <a href="ux-testing/" class="work-card reveal" style="--i:0;--bg:url('/assets/img/cards/ryanair.jpg');--bg-size:cover;--bg-color:#073590" data-transition>
         <div class="work-card__cover">
           <div class="work-card__center">
-            <h3>API Testing — Postman</h3>
-            <div class="work-card__tags"><span>API Testing</span><span>E-commerce</span></div>
+            <h3>UX y accesibilidad · Ryanair</h3>
+            <p class="work-card__result" data-i18n="qa.c2.res">92 incidencias WCAG 2.1 AA en el flujo de reserva y 12 defectos reportados.</p>
+            <div class="work-card__tags"><span data-i18n="qa.c2.t1">Auditoría</span><span>Axe DevTools</span><span>WCAG 2.1 AA</span></div>
           </div>
           <span class="work-card__cta" aria-hidden="true"><span data-i18n="qa.cta">Ver proyecto</span> ↗</span>
         </div>
       </a>
-      <a href="proyectos-qa/ecommerce-testing/" class="work-card reveal" style="--i:1" data-transition>
+      <a href="proyectos-qa/testing-api-postman/" class="work-card reveal" style="--i:1;--bg:url('/assets/img/cards/postman.jpg');--bg-size:cover;--bg-color:#1b1b1b" data-transition>
         <div class="work-card__cover">
           <div class="work-card__center">
-            <h3 data-i18n="qa.card4.title">E-commerce Testing</h3>
-            <div class="work-card__tags"><span data-i18n="qa.card4.tag1">Manual Testing</span><span>E-commerce</span></div>
+            <h3>API Testing · Postman</h3>
+            <p class="work-card__result" data-i18n="qa.c3.res">7 casos en 5 endpoints REST con aserciones automáticas de estado, estructura y tiempo.</p>
+            <div class="work-card__tags"><span data-i18n="qa.c3.t1">Práctica</span><span>DummyJSON</span><span>Postman</span></div>
           </div>
           <span class="work-card__cta" aria-hidden="true"><span data-i18n="qa.cta">Ver proyecto</span> ↗</span>
         </div>
@@ -134,7 +139,7 @@
         </button>
         <div class="accordion__panel">
           <div class="accordion__panel-inner">
-            <div class="accordion__thumb"><img src="img/onus-proyectouxui.png" alt="Onus"></div>
+            <div class="accordion__thumb"><img src="assets/img/ux/onus.jpg" alt="Onus"></div>
             <div class="accordion__body">
               <p data-i18n="ux.item1.desc">Diseño de identidad visual y experiencia de usuario para Onus Solutions, incluyendo definición de marca, paleta de colores y diseño web enfocado en claridad de contenido y navegación.</p>
               <div class="accordion__tags"><span data-i18n="ux.item1.tag1">Identidad Visual</span><span data-i18n="ux.item1.tag2">Diseño Web</span></div>
@@ -150,7 +155,7 @@
         </button>
         <div class="accordion__panel">
           <div class="accordion__panel-inner">
-            <div class="accordion__thumb"><img src="img/grinplug-proyectouxui.png" alt="Grinplug"></div>
+            <div class="accordion__thumb"><img src="assets/img/ux/grinplug.jpg" alt="Grinplug"></div>
             <div class="accordion__body">
               <p data-i18n="ux.item2.desc">Diseño integral de una plataforma de carga eléctrica, definiendo flujos y arquitectura del producto para perfiles de usuario complejos.</p>
               <div class="accordion__tags"><span data-i18n="ux.item2.tag1">Producto</span><span data-i18n="ux.item2.tag2">Arquitectura de Flujos</span></div>
@@ -166,7 +171,7 @@
         </button>
         <div class="accordion__panel">
           <div class="accordion__panel-inner">
-            <div class="accordion__thumb"><img src="img/uminti-proyectouxui.png" alt="Uminti"></div>
+            <div class="accordion__thumb"><img src="assets/img/ux/uminti.jpg" alt="Uminti"></div>
             <div class="accordion__body">
               <p data-i18n="ux.item3.desc">Diseño de identidad visual y experiencia web para un servicio especializado, enfocado en claridad de comunicación y optimización de flujos de conversión.</p>
               <div class="accordion__tags"><span data-i18n="ux.item3.tag1">Identidad Visual</span><span data-i18n="ux.item3.tag2">Experiencia Web</span></div>
@@ -182,7 +187,7 @@
         </button>
         <div class="accordion__panel">
           <div class="accordion__panel-inner">
-            <div class="accordion__thumb"><img src="img/app-futfem.png" alt="HAY EQUIPO! App"></div>
+            <div class="accordion__thumb"><img src="assets/img/ux/hay-equipo.jpg" alt="HAY EQUIPO! App"></div>
             <div class="accordion__body">
               <p data-i18n="ux.item4.desc">Investigación, definición de producto y diseño UX/UI de una app orientada a la organización de partidos de fútbol femenino y generación de comunidad.</p>
               <div class="accordion__tags"><span>Research</span><span>UX/UI</span></div>
@@ -232,6 +237,17 @@
         </ul>
       </div>
     </div>
+      <div class="certs reveal">
+      <h3 class="certs__title" data-i18n="skills.certs">Formación y certificaciones</h3>
+      <ul class="certs__list">
+        <li><strong>ISTQB® Certified Tester Foundation Level 4.0</strong><span>ISTQB</span></li>
+        <li><strong>Postman API Fundamentals Student Expert</strong><span>Postman · 2026</span></li>
+        <li><strong>Scrum Foundation Professional Certificate (SFPC)</strong><span>CertiProf</span></li>
+        <li><strong data-i18n="skills.utn">Testing QA Manual</strong><span>UTN FRBA</span></li>
+        <li><strong data-i18n="skills.coder">Diseño UX/UI</strong><span>Coderhouse</span></li>
+        <li><strong data-i18n="skills.davinci">Diseño y Programación Web</strong><span>Escuela Da Vinci</span></li>
+      </ul>
+    </div>
   </section>
 
 </main>
@@ -258,10 +274,16 @@
       'about.label': 'Sobre mí',
       'about.title': 'Cerrando la brecha entre el diseño y la calidad del software',
       'about.p1': 'Vengo del diseño UX/UI y el desarrollo Frontend, lo que me dio una perspectiva que pocos QA tienen: entiendo cómo se construye lo que después voy a romper. Esa mirada integral me permite detectar no solo bugs funcionales sino inconsistencias de experiencia que impactan directamente al usuario final.',
-      'about.p2': 'Con más de 3 años en entornos digitales, me especializo en testing funcional, diseño y ejecución de test cases, regression testing y gestión de defectos. Colaboro en equipos ágiles validando que el producto cumpla tanto los requerimientos técnicos como la experiencia esperada por el usuario.',
+      'about.p2': 'Con más de 3 años en entornos digitales, me especializo en testing funcional, diseño y ejecución de test cases, regression testing y gestión de defectos. He trabajado en equipos ágiles como diseñadora y en mis proyectos de QA aplico Scrum y las técnicas de ISTQB para validar tanto los requisitos técnicos como la experiencia del usuario.',
       'qa.heading': 'Proyectos QA',
-      'qa.subtitle': 'Testing funcional, exploratorio y de API aplicado a productos reales.',
-      'qa.card1.tag1': 'App Financiera', 'qa.cta': 'Ver proyecto',
+      'qa.subtitle': 'Una app en producción para una clienta, una app propia, una auditoría de accesibilidad y un proyecto de API.',
+      'qa.cta': 'Ver proyecto',
+      'qa.c0.res': 'App de reservas en producción para un taller real. 303 casos, 242 pruebas automatizadas en verde y 9 hallazgos.',
+      'qa.c0.t1': 'Cliente real', 'qa.c0.t3': 'Funcional, seguridad y automatización',
+      'qa.c1.res': '11 casos trazables y 7 defectos con evidencia en una PWA de finanzas multimoneda.', 'qa.c1.t1': 'App propia',
+      'qa.c2.res': '92 incidencias WCAG 2.1 AA en el flujo de reserva y 12 defectos reportados.', 'qa.c2.t1': 'Auditoría',
+      'qa.c3.res': '7 casos en 5 endpoints REST con aserciones automáticas de estado, estructura y tiempo.', 'qa.c3.t1': 'Práctica',
+      'skills.certs': 'Formación y certificaciones', 'skills.utn': 'Testing QA Manual', 'skills.coder': 'Diseño UX/UI', 'skills.davinci': 'Diseño y Programación Web',
       'qa.card2.tag1': 'Accesibilidad', 'qa.card2.tag2': 'Auditoría Web',
       'qa.card4.title': 'Testing de E-commerce', 'qa.card4.tag1': 'Testing Manual',
       'ux.heading': 'Proyectos',
@@ -279,7 +301,7 @@
       'skills.uxa11y': 'UX & Accesibilidad', 'skills.figma': 'Figma / Diseño UX UI', 'skills.wcag': 'Pautas WCAG 2.1',
       'skills.heuristic': 'Evaluación Heurística',
       'footer.line1': 'Trabajemos', 'footer.line2': 'juntos', 'footer.cv': 'Descargar CV',
-      cv: 'img/CV Daiana Ciaramella - QA UX UI - ES.pdf'
+      cv: 'assets/docs/cv-daiana-ciaramella-qa-ux.pdf'
     },
     en: {
       'meta.title': 'Daiana Ciaramella — QA Tester | UX UI',
@@ -289,10 +311,16 @@
       'about.label': 'About me',
       'about.title': 'Bridging the gap between design and software quality',
       'about.p1': 'I come from UX/UI design and Frontend development, which gave me a perspective few QA testers have: I understand how what I later break gets built. That holistic view lets me spot not only functional bugs but also experience inconsistencies that directly impact the end user.',
-      'about.p2': 'With over 3 years in digital product environments, I specialize in functional testing, test case design and execution, regression testing, and defect management. I collaborate in agile teams, validating that the product meets both technical requirements and user expectations.',
+      'about.p2': 'With over 3 years in digital product environments, I specialize in functional testing, test case design and execution, regression testing, and defect management. I have worked in agile teams as a designer, and in my QA projects I apply Scrum and ISTQB techniques to validate both technical requirements and the user experience.',
       'qa.heading': 'QA Projects',
-      'qa.subtitle': 'Functional, exploratory and API testing applied to real products.',
-      'qa.card1.tag1': 'Financial App', 'qa.cta': 'View project',
+      'qa.subtitle': 'An app in production for a client, my own app, an accessibility audit and an API project.',
+      'qa.cta': 'View project',
+      'qa.c0.res': 'Booking app in production for a real workshop. 303 test cases, 242 automated checks passing and 9 findings.',
+      'qa.c0.t1': 'Real client', 'qa.c0.t3': 'Functional, security and automation',
+      'qa.c1.res': '11 traceable test cases and 7 defects with evidence in a multi-currency finance PWA.', 'qa.c1.t1': 'Own app',
+      'qa.c2.res': '92 WCAG 2.1 AA issues in the booking flow and 12 reported defects.', 'qa.c2.t1': 'Audit',
+      'qa.c3.res': '7 test cases across 5 REST endpoints with automated status, structure and timing assertions.', 'qa.c3.t1': 'Practice',
+      'skills.certs': 'Education and certifications', 'skills.utn': 'Manual QA Testing', 'skills.coder': 'UX/UI Design', 'skills.davinci': 'Web Design and Development',
       'qa.card2.tag1': 'Accessibility', 'qa.card2.tag2': 'Web Audit',
       'qa.card4.title': 'E-commerce Testing', 'qa.card4.tag1': 'Manual Testing',
       'ux.heading': 'Projects',
@@ -310,7 +338,7 @@
       'skills.uxa11y': 'UX & Accessibility', 'skills.figma': 'Figma / UX UI Design', 'skills.wcag': 'WCAG 2.1 Guidelines',
       'skills.heuristic': 'Heuristic Evaluation',
       'footer.line1': "Let's work", 'footer.line2': 'together', 'footer.cv': 'Download CV',
-      cv: 'img/CV Daiana Ciaramella - QA UX UI - ES.pdf'
+      cv: 'assets/docs/cv-daiana-ciaramella-qa-ux.pdf'
     }
   };
 
